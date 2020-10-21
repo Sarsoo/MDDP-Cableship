@@ -5,11 +5,6 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
-\begin_preamble
-\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
-\let\endchangemargin=\endlist 
-\pagenumbering{roman}
-\end_preamble
 \use_default_options true
 \begin_modules
 customHeadersFooters
@@ -18,7 +13,7 @@ todonotes
 figs-within-sections
 \end_modules
 \maintain_unincluded_children false
-\language english
+\language british
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -41,7 +36,7 @@ figs-within-sections
 \index_command default
 \paperfontsize 11
 \spacing other 1.5
-\use_hyperref true
+\use_hyperref false
 \pdf_title "Linear Predictive Speech Synthesizer"
 \pdf_author "Andy Pack"
 \pdf_subject "EEEM030 Speech & Audio Processing & Recognition"
@@ -71,8 +66,8 @@ figs-within-sections
 \cite_engine_type authoryear
 \biblio_style plain
 \biblio_options urldate=long
-\biblatex_bibstyle ieee
-\biblatex_citestyle ieee
+\biblatex_bibstyle apa
+\biblatex_citestyle authoryear
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -84,7 +79,7 @@ figs-within-sections
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 3.17cm
+\leftmargin 2.54cm
 \topmargin 2.54cm
 \rightmargin 2.54cm
 \bottommargin 2.54cm
@@ -94,7 +89,7 @@ figs-within-sections
 \defskip medskip
 \is_math_indent 0
 \math_numbering_side default
-\quotes_style english
+\quotes_style british
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
@@ -135,7 +130,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Right Footer
-Andy Pack / 6420013
+Andy Pack
 \end_layout
 
 \begin_layout Left Footer
@@ -143,25 +138,123 @@ October 2020
 \end_layout
 
 \begin_layout Left Header
-Sustainable Cableship - Group 1
+Sustainable Cable Ship - Group 1
+\end_layout
+
+\begin_layout Section
+Electrical Propulsion
+\end_layout
+
+\begin_layout Section
+Onboard Operating Systems
+\end_layout
+
+\begin_layout Section
+Mission Ops - ROV
+\end_layout
+
+\begin_layout Section
+Network Connections
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+In designing a distributed cable repair environment across a depot and ship
+ where digitalisation is a key design parameter, a secure and flexible network
+ layout is critical.
+\end_layout
+
+\begin_layout Standard
+The final environment will consist of between 2 and 3 networked sites depending
+ on the layout of the depot, some of these sites should have bi-directional
+ communications with the others.
+ Each site will have a firewall/router at the edge of the network in order
+ to enforce security, ports can then be opened to allow specific public
+ access to internal services.
+\end_layout
+
+\begin_layout Subsection
+Depot
+\end_layout
+
+\begin_layout Standard
+The depot will function as the main site for the wider network requiring
+ capabilities for mission planning and administration.
+ Besides what could be expected - WiFi, internet connected PCs, the depot
+ should also have on-premises server hardware to provide services to the
+ entire network.
+\end_layout
+
+\begin_layout Standard
+These services would include DNS, DHCP, NAS, Active Directory, Exchange
+ and print servers to effectively stand up a full corporate network.
+ A VPN gateway would also be required to allow access from other sites.
+ Security could be further ensured through the use of VLANs to separate
+ types of device and prevent unnecessary access to sensitive servers.
+\end_layout
+
+\begin_layout Subsection
+Leisure Facilities
+\end_layout
+
+\begin_layout Standard
+The structure of the network designed for the separate leisure facilities
+ will depend upon it's location compared to the main depot.
+ If the leisure facilities are directly co-located with the main depot then
+ one large network could be constructed across both of the buildings.
+ This could be done physically or with a wireless connection however a wired
+ connection would be preferred for speed and stability.
+\end_layout
+
+\begin_layout Standard
+Should the leisure facilities be separate from the main depot then it would
+ be designed as a separate site with a firewall/router at the edge.
+ Some services would be provided locally (DHCP, DNS) while others would
+ be retrieved from the main depot over a VPN connection (Exchange, NAS).
+ Both of these layouts can be seen conceptualised in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Network-layouts"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../network/NetworkDiagramJointDepot.png
+	lyxscale 20
+	width 60col%
+
+\end_inset
 
 
-\backslash
-pagenumbering{arabic} 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
 
-
-\backslash
-setcounter{page}{1}
+\begin_layout Plain Layout
+Layout with flat depot network across leisure facilities
 \end_layout
 
 \end_inset
@@ -169,8 +262,163 @@ setcounter{page}{1}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../network/NetworkDiagramSplitDepot.png
+	lyxscale 20
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Layout with separate main depot and leisure facilities
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Network layouts distributed across the depot, ship and cloud
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Network-layouts"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ship
+\end_layout
+
+\begin_layout Standard
+The ship will be a contained site with multiple gateways to the wider internet.
+ While berthed, the ship should be able to directly connect to the main
+ depot, whether physically with an Ethernet cable alongside shore-power
+ or via a high-strength wireless connection.
+ 
+\end_layout
+
+\begin_layout Standard
+While at sea, the ship should be connected to the internet via a satellite
+ connection.
+ Satellite connectivity presents limited speed at a high price however it
+ is one of the only methods to ensure consistent connectivity throughout
+ the ship's operating range.
+ With speeds typically below 1Mbps, specific QoS and flow controls would
+ be necessary to prioritise mission critical traffic over user activity.
+\end_layout
+
 \begin_layout Section
-Introduction
+Digitalisation
+\end_layout
+
+\begin_layout Standard
+The concept of digitalisation has a somewhat broad definition, sometimes
+ dependent on the domain and context in which it is used.
+ For the purposes of this project, the following adequately describes the
+ goal being pursued,
+\end_layout
+
+\begin_layout Quote
+The use of digital technologies to change a business model and provide new
+ revenue and value-producing opportunities; it is the process of moving
+ to a digital business.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gartner-digitalization"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The most relevant areas within which to explore the process of digitalisation
+ are the ship and mission operations, approaching what could colloquially
+ be deemed a 
+\emph on
+Smart Ship
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+As included in the discussion of the network layout, there will be server
+ computation capabilities on the ship.
+ Through the use of virtualisation, this hardware could be used both for
+ network services and additional computation.
+ These capabilities could be utilised for fields including AI and machine
+ learning.
+\end_layout
+
+\begin_layout Standard
+Combining bi-directional communication between ship and depot with local
+ computation, mission coordination and could be made more efficient.
+ Simple implementations could include live mission details being passed
+ from depot-to-ship such as fault locations and equipment requirements and
+ live, 
+\emph on
+heartbeat
+\emph default
+-like data being passed back to the depot such as location, speed, battery
+ and fuel levels.
+\end_layout
+
+\begin_layout Standard
+One of the main limitations would likely be the limited internet speed and
+ latency of a satellite connection.
+ It will be critical to ensure that, where possible, calculations with results
+ relevant to the ship are computed locally in order to reduce the required
+ bandwidth of the limited connection.
 \end_layout
 
 \begin_layout Standard
