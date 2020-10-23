@@ -66,7 +66,7 @@ figs-within-sections
 \cite_engine_type authoryear
 \biblio_style plain
 \biblio_options urldate=long
-\biblatex_bibstyle apa
+\biblatex_bibstyle authoryear
 \biblatex_citestyle authoryear
 \use_bibtopic false
 \use_indices false
@@ -142,78 +142,61 @@ Sustainable Cable Ship - Group 1
 \end_layout
 
 \begin_layout Section
+Vessel Technical Study
+\end_layout
+
+\begin_layout Subsection
 Electrical Propulsion
 \end_layout
 
-\begin_layout Section
-Onboard Operating Systems
-\end_layout
-
-\begin_layout Section
-Mission Ops - ROV
-\end_layout
-
-\begin_layout Section
-Network Connections
+\begin_layout Standard
+The design of the vessel propulsion system is a critical factor in the final
+ design for the project.
+ The propulsion will have a significant influence on other factors of the
+ design as well as being one of the main opportunities to reduce the operational
+ carbon footprint.
+ Working from the brief, the design of the propulsion system will be particularl
+y focusing on two specifications, that of net-zero carbon operations and
+ having a modular design facilitating a possible retrofit in the future.
 \end_layout
 
 \begin_layout Standard
-In designing a distributed cable repair environment across a depot and ship
- where digitalisation is a key design parameter, a secure and flexible network
- layout is critical.
+Investigations were made into fully renewable electricity generation for
+ the purpose of propulsion without chemical fuels.
+ The main form of renewable electricity to have maritime applications would
+ be solar.
 \end_layout
 
 \begin_layout Standard
-The final environment will consist of between 2 and 3 networked sites depending
- on the layout of the depot, some of these sites should have bi-directional
- communications with the others.
- Each site will have a firewall/router at the edge of the network in order
- to enforce security, ports can then be opened to allow specific public
- access to internal services.
-\end_layout
-
-\begin_layout Subsection
-Depot
-\end_layout
-
-\begin_layout Standard
-The depot will function as the main site for the wider network requiring
- capabilities for mission planning and administration.
- Besides what could be expected - WiFi, internet connected PCs, the depot
- should also have on-premises server hardware to provide services to the
- entire network.
+Solar-powered ships have been commercially available for around 30 years
+ however they are typically not of the same form factor as that being pursued
+ here, tending towards smaller ferries and river or canal settings as opposed
+ to sea-faring industrial vessels.
+ Currently, the largest completely solar-powered ship is the Swiss 
+\noun on
+Tûranor PlanetSolar
+\noun default
+, the first solar electric ship to circumnavigate the globe.
+ Standing at 30m long, the vessel is at least half the length of typical
+ cable ships, it is not an industrial craft and was instead designed as
+ a luxury yacht.
+ The deck of the vessel is also almost entirely covered in solar cells,
+ an impractical design point for an industrial ship.
 \end_layout
 
 \begin_layout Standard
-These services would include DNS, DHCP, NAS, Active Directory, Exchange
- and print servers to effectively stand up a full corporate network.
- A VPN gateway would also be required to allow access from other sites.
- Security could be further ensured through the use of VLANs to separate
- types of device and prevent unnecessary access to sensitive servers.
-\end_layout
-
-\begin_layout Subsection
-Leisure Facilities
-\end_layout
-
-\begin_layout Standard
-The structure of the network designed for the separate leisure facilities
- will depend upon it's location compared to the main depot.
- If the leisure facilities are directly co-located with the main depot then
- one large network could be constructed across both of the buildings.
- This could be done physically or with a wireless connection however a wired
- connection would be preferred for speed and stability.
-\end_layout
-
-\begin_layout Standard
-Should the leisure facilities be separate from the main depot then it would
- be designed as a separate site with a firewall/router at the edge.
- Some services would be provided locally (DHCP, DNS) while others would
- be retrieved from the main depot over a VPN connection (Exchange, NAS).
- Both of these layouts can be seen conceptualised in figure 
+In order to evaluate the efficacy of a solar-powered propulsion system,
+ estimations were made using the average deck area and propulsion power
+ requirements of the existing fleet of cable laying and maintenance vehicles.
+ A range of solar panels were included in an effort to find the highest
+ energy density possible.
+ Even with the generous and somewhat unrealistic assumptions that the panels
+ could produce their maximum rated power for 8 hours a day with 50% coverage
+ of the deck, only 1% of the required power could be provided by the solar
+ array, see appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Network-layouts"
+reference "sec:Solar-Power-Estimations"
 plural "false"
 caps "false"
 noprefix "false"
@@ -221,124 +204,163 @@ noprefix "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../network/NetworkDiagramJointDepot.png
-	lyxscale 20
-	width 60col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Layout with flat depot network across leisure facilities
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../network/NetworkDiagramSplitDepot.png
-	lyxscale 20
-	width 60col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Layout with separate main depot and leisure facilities
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Network layouts distributed across the depot, ship and cloud
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Network-layouts"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+ Ultimately, a fully solar-powered industrial ship of scale being pursued
+ in this project is not currently viable, despite solar being one of the
+ most promising for such an application.
 \end_layout
 
 \begin_layout Subsection
-Ship
+Modular Propulsion
 \end_layout
 
 \begin_layout Standard
-The ship will be a contained site with multiple gateways to the wider internet.
+Some of the power generation methods discussed are not currently viable
+ for the scale of vessel and endurance required.
+ Many are close to being viable and will soon allow net-zero carbon operations
+ with the feasibility of current fossil fuel solutions.
+ With this and the design principle of modulation in mind, one method to
+ allow retrofitting more advanced power generation in the future would be
+ to abstract the power generation away from it's application in vessel propulsio
+n.
+ 
+\end_layout
+
+\begin_layout Standard
+In doing so, the propulsion system could be divided into two areas of concern,
+ power generation and drive.
+\end_layout
+
+\begin_layout Subsubsection
+Generation
+\end_layout
+
+\begin_layout Standard
+The generation stage of propulsion would include methods of generating electrici
+ty for the drive stage.
+ This would include the power generated by chemical fuels as described in
+ section NICK-PROPULSION and any renewable energy contributing to the propulsion
+ of the vessel.
+ Those systems not directly producing electrical power would include methods
+ to transfer it, for example an alternator can be used to turn mechanical
+ energy from a combustion engine to AC current.
+\end_layout
+
+\begin_layout Subsubsection
+Drive
+\end_layout
+
+\begin_layout Standard
+The drive section includes methods to store the energy from the generation
+ stage and the thrust mechanisms, be they water jets, propellors or an alternati
+ve.
+ Although, in theory, the generation stage could be directly connected to
+ the thrust methods, the inclusion of energy storage provides a buffer to
+ smooth power draw spikes.
+ This would reduce the need to increase the power being generated to serve
+ periods of high power draw.
+ If used, this would allow combustion engines to run in their most efficient
+ states, partially decoupled from the power draw.
+\end_layout
+
+\begin_layout Subsection
+Onboard Operating Systems
+\end_layout
+
+\begin_layout Standard
+To operate effectively at sea, the ship requires a number of systems to
+ aid in navigation and control.
+ Many of these are standard for marine operations, the scope of systems
+ being used must be considered in order to estimate power usage, this will
+ have implications on the wider power systems including propulsion.
+ With part-electric propulsion including batteries, designs could include
+ powering the onboard systems from this battery set or from a separate array.
+ Additionally, final designs could generate power for these systems using
+ onboard renewable energy such as solar power or from the combustion engines,
+ the use of renewables would be favoured in order to contribute to the goal
+ of net-zero carbon operations.
+\end_layout
+
+\begin_layout Subsubsection
+Navigation
+\end_layout
+
+\begin_layout Standard
+The use of a maritime radar system is critical for safety when maneuvering
+ at-sea and close to shore.
+ By measuring the reflections of emitted microwave beams, possible collisions
+ both static and mobile including other ships and land obstacles can be
+ identified and avoided.
+ This allows safe movement even without any visibility.
+\end_layout
+
+\begin_layout Standard
+A sonar system is also standard for maritime operations.
+ While radar provides mapping of obstacles at the surface, sonar typically
+ maps below the water.
+ In its simplest form this provides depth information, more advanced systems
+ can provide more extensive mapping of the surroundings.
+\end_layout
+
+\begin_layout Standard
+Finally, a satellite navigation system such as GPS or Galileo will provide
+ global mapping when navigating throughout the mission life-cycle.
+\end_layout
+
+\begin_layout Standard
+These systems will serve as inputs to the higher-level navigation systems
+ including autonomous control and dynamic positioning.
+ Originally designed merely to hold a course, autonomous piloting systems
+ are now capable of performing SLAM (Simultaneous localisation and mapping)
+ to construct an intelligent and dynamic course that will reroute around
+ objects, be they other ships or land masses.
+\end_layout
+
+\begin_layout Standard
+Dynamic positioning is in many ways similar to the more intelligent autonomous
+ systems described above.
+ Originally used for offshore drilling operations, dynamic positioning systems
+ are responsible for keeping a ship static, counteracting the moving ocean
+ and wind.
+ Advanced systems provide reliability and redundancy likely beyond the requireme
+nts of this project,
+\end_layout
+
+\begin_layout Quote
+Operations where loss of position keeping capability may cause fatal accidents,
+ or severe pollution or damage with major economic consequences.
+\end_layout
+
+\begin_layout Standard
+A suitable system for the repair operations taking into account it's capabilitie
+s and cost with be important during the design.
+\end_layout
+
+\begin_layout Subsubsection
+Communications
+\end_layout
+
+\begin_layout Standard
+The ship will be fitted with a VHF (Very high frequency) radio system, standard
+ for maritime ship-to-ship, ship-to-shore and possibly ship-to-air communication
+s.
+ With transmitters limited to 25 watts, the radio has a range of roughly
+ 100 kilometers which would not typically be useful for ship-to-mission
+ control communications, this use case would be provided by an internet
+ connection.
+\end_layout
+
+\begin_layout Standard
+Supplementing the collision avoidance provided by the radar system, the
+ use of a VHF radio with AIS (Automatic identification system) capabilities
+ provide additional information to passing ships.
+ Ships broadcast messages including a unique identifier, status (moving,
+ anchored), speed and bearing.
+ Advanced systems can also relay information from other ships, creating
+ a mesh network.
+\end_layout
+
+\begin_layout Standard
+The ship should have multiple gateways to the wider internet.
  While berthed, the ship should be able to directly connect to the main
  depot, whether physically with an Ethernet cable alongside shore-power
  or via a high-strength wireless connection.
@@ -353,6 +375,67 @@ While at sea, the ship should be connected to the internet via a satellite
  the ship's operating range.
  With speeds typically below 1Mbps, specific QoS and flow controls would
  be necessary to prioritise mission critical traffic over user activity.
+\end_layout
+
+\begin_layout Subsubsection
+Auxiliary
+\end_layout
+
+\begin_layout Standard
+Other, more boilerplate, systems should be also included.
+ This would include onboard lighting, both internal and external and an
+ audio system for tannoy broadcasts.
+\end_layout
+
+\begin_layout Subsection
+Mission Ops - ROV
+\end_layout
+
+\begin_layout Section
+Depot Technical Structure
+\end_layout
+
+\begin_layout Subsection
+Interaction with Ship
+\end_layout
+
+\begin_layout Subsubsection
+Network Architecture
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Network-Architecture"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In designing a distributed cable repair environment across a depot and ship
+ where digitalisation is a key design parameter, a secure and flexible network
+ layout is critical.
+\end_layout
+
+\begin_layout Standard
+The final environment will likely consist of between 2 and 3 networked sites
+ depending on the physical layout of the depot, some of these sites should
+ have bi-directional communications with the others.
+ One of the critical design parameters will be security, both internal and
+ external.
+ External security includes protecting the network from outside actors with
+ a firewall, access can be controlled with a virtual private network (VPN).
+ Internally, security can be controlled using virtual LANs or VLANS.
+ VLANs allow logical grouping of connected devices in order to specify rules
+ defining who else on the network can be communicated with.
+\end_layout
+
+\begin_layout Standard
+The structure of the network designed for the separate leisure facilities
+ will depend upon it's location compared to the main depot.
+ If the leisure facilities are directly co-located with the main depot then
+ one large network could be constructed across both of the buildings.
+ This could be done physically or with a wireless connection however a wired
+ connection would be preferred for speed and stability.
 \end_layout
 
 \begin_layout Section
@@ -445,6 +528,40 @@ options "bibtotoc"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Solar Power Estimations
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Solar-Power-Estimations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Nuclear Extract
+\end_layout
+
+\begin_layout Standard
+Nuclear energy is a proven technology for vessels of this size however there
+ are many caveats that effectively discount it from applications in this
+ project.
+ Despite effectively producing zero emissions, the required infrastructure,
+ specialists, liability, and safety requirements are far beyond the scope
+ of this project, insuring the vessel would also be a significant obstacle.
+ For these and other reasons, nuclear marine propulsion is still mostly
+ limited to military vessels.
 \end_layout
 
 \end_body
