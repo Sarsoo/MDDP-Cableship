@@ -32,7 +32,7 @@ figs-within-sections
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command biber
+\bibtex_command default
 \index_command default
 \paperfontsize 11
 \spacing other 1.5
@@ -164,24 +164,105 @@ y focusing on two specifications, that of net-zero carbon operations and
 Investigations were made into fully renewable electricity generation for
  the purpose of propulsion without chemical fuels.
  The main form of renewable electricity to have maritime applications would
- be solar.
+ be solar, methods such as hydroelectric generators and wind turbines would
+ drastically affect the aero and hydrodynamics of the craft and fail to
+ produce more power than being lost via this drag.
+\end_layout
+
+\begin_layout Subsubsection
+Solar
 \end_layout
 
 \begin_layout Standard
 Solar-powered ships have been commercially available for around 30 years
- however they are typically not of the same form factor as that being pursued
- here, tending towards smaller ferries and river or canal settings as opposed
+ however they are not of the same form factor as that being pursued here,
+ tending towards smaller ferries and river or canal settings as opposed
  to sea-faring industrial vessels.
  Currently, the largest completely solar-powered ship is the Swiss 
 \noun on
 Tûranor PlanetSolar
 \noun default
-, the first solar electric ship to circumnavigate the globe.
- Standing at 30m long, the vessel is at least half the length of typical
+, the first solar electric ship to circumnavigate the globe
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-Tûranor-PlanetSolar"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Standing at 30m long, the vessel is less than half the length of typical
  cable ships, it is not an industrial craft and was instead designed as
- a luxury yacht.
+ a luxury yacht, see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-Tûranor-PlanetSolar"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  The deck of the vessel is also almost entirely covered in solar cells,
  an impractical design point for an industrial ship.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename planetsolar.jpg
+	lyxscale 30
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The 
+\noun on
+Tûranor PlanetSolar
+\noun default
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "planetsolar"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-Tûranor-PlanetSolar"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -190,10 +271,13 @@ In order to evaluate the efficacy of a solar-powered propulsion system,
  requirements of the existing fleet of cable laying and maintenance vehicles.
  A range of solar panels were included in an effort to find the highest
  energy density possible.
- Even with the generous and somewhat unrealistic assumptions that the panels
+\end_layout
+
+\begin_layout Standard
+Even with the generous and somewhat unrealistic assumptions that the panels
  could produce their maximum rated power for 8 hours a day with 50% coverage
- of the deck, only 1% of the required power could be provided by the solar
- array, see appendix 
+ of the deck, only 1% of the required operating power could be provided
+ by the solar array, see appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Solar-Power-Estimations"
@@ -204,9 +288,12 @@ noprefix "false"
 \end_inset
 
 .
- Ultimately, a fully solar-powered industrial ship of scale being pursued
- in this project is not currently viable, despite solar being one of the
- most promising for such an application.
+ This would also require that the the vessel only be mobile during the day,
+ a highly impractical restriction for a vessel.
+ Ultimately, a fully solar-powered industrial ship of the scale being pursued
+ in this project does not appear to currently be viable, despite solar being
+ one of the most promising renewable electric solution for such an application
+ in the future.
 \end_layout
 
 \begin_layout Subsection
@@ -214,7 +301,7 @@ Modular Propulsion
 \end_layout
 
 \begin_layout Standard
-Some of the power generation methods discussed are not currently viable
+Some of the power generation methods being discussed are not currently viable
  for the scale of vessel and endurance required.
  Many are close to being viable and will soon allow net-zero carbon operations
  with the feasibility of current fossil fuel solutions.
@@ -235,14 +322,14 @@ Generation
 \end_layout
 
 \begin_layout Standard
-The generation stage of propulsion would include methods of generating electrici
-ty for the drive stage.
+The generation stage of propulsion would comprise methods of generating
+ electricity for the drive stage.
  This would include the power generated by chemical fuels as described in
  section NICK-PROPULSION and any renewable energy contributing to the propulsion
  of the vessel.
  Those systems not directly producing electrical power would include methods
- to transfer it, for example an alternator can be used to turn mechanical
- energy from a combustion engine to AC current.
+ to transfer it, an alternator can be used to convert mechanical energy
+ from a combustion engine to electrical energy in the form of AC current.
 \end_layout
 
 \begin_layout Subsubsection
@@ -250,9 +337,9 @@ Drive
 \end_layout
 
 \begin_layout Standard
-The drive section includes methods to store the energy from the generation
- stage and the thrust mechanisms, be they water jets, propellors or an alternati
-ve.
+The drive section would include methods to store the produced energy and
+ the final thrust mechanisms, whether that be water jets, propellors or
+ an alternative.
  Although, in theory, the generation stage could be directly connected to
  the thrust methods, the inclusion of energy storage provides a buffer to
  smooth power draw spikes.
@@ -270,14 +357,27 @@ Onboard Operating Systems
 To operate effectively at sea, the ship requires a number of systems to
  aid in navigation and control.
  Many of these are standard for marine operations, the scope of systems
- being used must be considered in order to estimate power usage, this will
- have implications on the wider power systems including propulsion.
- With part-electric propulsion including batteries, designs could include
- powering the onboard systems from this battery set or from a separate array.
+ being used must be considered in order to estimate power usage.
+ Should a hybrid-electric propulsion including batteries be considered,
+ designs could include powering the onboard systems from this battery set
+ or from a separate array.
  Additionally, final designs could generate power for these systems using
- onboard renewable energy such as solar power or from the combustion engines,
- the use of renewables would be favoured in order to contribute to the goal
- of net-zero carbon operations.
+ onboard renewable energy such as solar power or from the generation stage
+ of the propulsion system, the use of renewables would be favoured in order
+ to contribute to the goal of net-zero carbon operations.
+ This would likely be more achievable than fully renewable electric propulsion
+ as the power draw could be orders of magnitude less than the average 9
+ MW being used by current cable ship propulsion (appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Solar-Power-Estimations"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsubsection
@@ -289,7 +389,15 @@ The use of a maritime radar system is critical for safety when maneuvering
  at-sea and close to shore.
  By measuring the reflections of emitted microwave beams, possible collisions
  both static and mobile including other ships and land obstacles can be
- identified and avoided.
+ identified and avoided, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Radar"
+literal "false"
+
+\end_inset
+
+.
  This allows safe movement even without any visibility.
 \end_layout
 
@@ -298,7 +406,15 @@ A sonar system is also standard for maritime operations.
  While radar provides mapping of obstacles at the surface, sonar typically
  maps below the water.
  In its simplest form this provides depth information, more advanced systems
- can provide more extensive mapping of the surroundings.
+ can provide more extensive mapping of the surroundings, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sonar-slam"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -312,27 +428,44 @@ These systems will serve as inputs to the higher-level navigation systems
  Originally designed merely to hold a course, autonomous piloting systems
  are now capable of performing SLAM (Simultaneous localisation and mapping)
  to construct an intelligent and dynamic course that will reroute around
- objects, be they other ships or land masses.
+ objects, be they other ships or land masses, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sonar-slam,maritime-autonomy.vs.autpilot,unmanned-slam"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Dynamic positioning is in many ways similar to the more intelligent autonomous
- systems described above.
+Dynamic positioning (DP) is in many ways similar to the more intelligent
+ autonomous systems described above.
  Originally used for offshore drilling operations, dynamic positioning systems
- are responsible for keeping a ship static, counteracting the moving ocean
- and wind.
+ are responsible for keeping a ship static by using the propulsion systems
+ to counteract the moving ocean and incident wind force, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dyn-pos"
+literal "false"
+
+\end_inset
+
+.
  Advanced systems provide reliability and redundancy likely beyond the requireme
-nts of this project,
-\end_layout
+nts of this project, the DNV GL standard class 3 requires stability even
+ during a complete burn fire subdivision or flooded watertight compartments
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dnv-dp,offshore-dp"
+literal "false"
 
-\begin_layout Quote
-Operations where loss of position keeping capability may cause fatal accidents,
- or severe pollution or damage with major economic consequences.
-\end_layout
+\end_inset
 
-\begin_layout Standard
-A suitable system for the repair operations taking into account it's capabilitie
-s and cost with be important during the design.
+.
+ A suitable DP system for the cable repair operations taking into account
+ it's capabilities and cost will be important during the design.
 \end_layout
 
 \begin_layout Subsubsection
@@ -342,21 +475,57 @@ Communications
 \begin_layout Standard
 The ship will be fitted with a VHF (Very high frequency) radio system, standard
  for maritime ship-to-ship, ship-to-shore and possibly ship-to-air communication
-s.
- With transmitters limited to 25 watts, the radio has a range of roughly
- 100 kilometers which would not typically be useful for ship-to-mission
- control communications, this use case would be provided by an internet
- connection.
+s, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "icom-radio"
+literal "false"
+
+\end_inset
+
+.
+ The UK Maritime & Coastguard agency requires a radio along with a license
+ both for the ship and operator (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "yachtcom-requirements"
+literal "false"
+
+\end_inset
+
+).
+ The radio has a range dependent on the height of the antenna, for an elevation
+ of 100m the radio should have a range of roughly 50 kilometers (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "yachtcom-vhf"
+literal "false"
+
+\end_inset
+
+) which would not typically be useful for ship-to-mission control communications
+, this use case would need to be provided by an internet connection.
 \end_layout
 
 \begin_layout Standard
 Supplementing the collision avoidance provided by the radar system, the
  use of a VHF radio with AIS (Automatic identification system) capabilities
- provide additional information to passing ships.
- Ships broadcast messages including a unique identifier, status (moving,
- anchored), speed and bearing.
+ provide additional information to passing ships and vessel traffic services
+ (VTS).
+ Ships broadcast messages including unique identifiers, status (moving,
+ anchored), speed and bearing among others, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "marininsight-ais"
+literal "false"
+
+\end_inset
+
+.
  Advanced systems can also relay information from other ships, creating
  a mesh network.
+ This information is also used by the autonomous piloting system, allowing
+ coordination of vessel headings with the headings of surrounding vessels.
 \end_layout
 
 \begin_layout Standard
@@ -364,7 +533,6 @@ The ship should have multiple gateways to the wider internet.
  While berthed, the ship should be able to directly connect to the main
  depot, whether physically with an Ethernet cable alongside shore-power
  or via a high-strength wireless connection.
- 
 \end_layout
 
 \begin_layout Standard
@@ -373,8 +541,18 @@ While at sea, the ship should be connected to the internet via a satellite
  Satellite connectivity presents limited speed at a high price however it
  is one of the only methods to ensure consistent connectivity throughout
  the ship's operating range.
- With speeds typically below 1Mbps, specific QoS and flow controls would
- be necessary to prioritise mission critical traffic over user activity.
+ Although there are many different provider options, state of the art speeds
+ can read 50/5 Mbps
+\begin_inset CommandInset citation
+LatexCommand cite
+key "digisat"
+literal "false"
+
+\end_inset
+
+.
+ With these speeds, specific QoS and flow controls could be used to prioritise
+ mission critical traffic over user activity.
 \end_layout
 
 \begin_layout Subsubsection
@@ -382,13 +560,171 @@ Auxiliary
 \end_layout
 
 \begin_layout Standard
-Other, more boilerplate, systems should be also included.
+Other, more boilerplate, systems should also be included.
  This would include onboard lighting, both internal and external and an
  audio system for tannoy broadcasts.
 \end_layout
 
 \begin_layout Subsection
-Mission Ops - ROV
+Mission Operations
+\end_layout
+
+\begin_layout Standard
+Faults in sub-sea cables or their signal repeaters are generally repaired
+ by raising the length of affected cable up to the stern of ship, splicing
+ in a new section of cable or repairing/replacing the repeater and then
+ re-situating the cable on the seabed, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "deccan-repair,subcom-anim"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This project is not focused on the specific act of repair as this is the
+ responsibility of specialist crew members, instead the focus is on the
+ process of slicing and raising the cable to the vessel.
+ There are generally two methods for completing this slicing/raising process,
+ using grapnels or a remotely operated underwater vehicle (ROV).
+\end_layout
+
+\begin_layout Subsubsection
+Grapnels
+\end_layout
+
+\begin_layout Standard
+Grapnels are tools attached to an anchor chain that trail the stern of the
+ ship along the seabed.
+ The aforementioned slicing and gripping for retrieval is completed by two
+ different grapnels and requires repeated motions of the vessel perpendicular
+ to the cable in order to intersect it, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "subcom-anim"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The disadvantage of this method is the need for repeated motions of the
+ vessel and the lack of fine control over the grapnels.
+\end_layout
+
+\begin_layout Subsubsection
+ROV
+\end_layout
+
+\begin_layout Standard
+ROVs are submersible robotic devices used to complete remote work at sea.
+ The wide range of applications have led to many form factors of vehicle
+ from 
+\emph on
+micro
+\emph default
+ and 
+\emph on
+observation
+\emph default
+ ROVs for inspection and data collection in shallow water to larger 
+\emph on
+work
+\emph default
+ class vehicles responsible for deep water operations such oil drilling
+ or cable laying.
+ The use of a remote-controllable device allows the ship to remain static
+ as the ROV can complete both cutting and gripping motions in-place.
+\end_layout
+
+\begin_layout Standard
+This reduces the movement required by the vessel and allows finer control
+ over the manual grapnel method.
+ This, along with the ability to see what is happening at the actuators
+ using onboard cameras would likely make these operations faster and more
+ accurate.
+\end_layout
+
+\begin_layout Standard
+A disadvantage to using an ROV is the depth to which it is rated.
+ ROVs have a maximum operating depth due to the increasing pressure of the
+ sea, the 
+\noun on
+ROV Subastian
+\noun default
+ has a maximum working depth of 4,500m for example.
+ Once an operating range is defined for the ship, much of this could include
+ areas of sea floor that require a heavier duty ROV, see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sea-depth"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ As such, a balance must be found between an ROV that will be useful throughout
+ a suitable operating area without being over-engineered, possible incurring
+ higher initial and maintenance costs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename SeaDepth.png
+	lyxscale 30
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The depth of the sea floor surrounding western Europe, darker regions indicate
+ deeper waters
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sea-depth"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One method to achieve this balance would be to have the capability to conduct
+ operations with both traditional grapnels and an ROV, this would allow
+ grapnels to be used outside of the ROVs operating range.
+ From a redundancy point of view it would also be advantageous to have grapnels
+ onboard in case of a ROV fault.
 \end_layout
 
 \begin_layout Section
@@ -400,23 +736,20 @@ Interaction with Ship
 \end_layout
 
 \begin_layout Subsubsection
-Network Architecture
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Network-Architecture"
-
-\end_inset
-
-
+Network Connection
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 In designing a distributed cable repair environment across a depot and ship
  where digitalisation is a key design parameter, a secure and flexible network
  layout is critical.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The final environment will likely consist of between 2 and 3 networked sites
  depending on the physical layout of the depot, some of these sites should
  have bi-directional communications with the others.
@@ -429,13 +762,18 @@ The final environment will likely consist of between 2 and 3 networked sites
  defining who else on the network can be communicated with.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The structure of the network designed for the separate leisure facilities
  will depend upon it's location compared to the main depot.
  If the leisure facilities are directly co-located with the main depot then
  one large network could be constructed across both of the buildings.
  This could be done physically or with a wireless connection however a wired
  connection would be preferred for speed and stability.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -450,9 +788,13 @@ The concept of digitalisation has a somewhat broad definition, sometimes
 \end_layout
 
 \begin_layout Quote
+
+\emph on
 The use of digital technologies to change a business model and provide new
  revenue and value-producing opportunities; it is the process of moving
  to a digital business.
+
+\emph default
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -475,17 +817,15 @@ Smart Ship
 \end_layout
 
 \begin_layout Standard
-As included in the discussion of the network layout, there will be server
- computation capabilities on the ship.
+Autonomous piloting and dynamic positioning are computationally expensive
+ and will likely require server computation capabilities on the ship.
  Through the use of virtualisation, this hardware could be used both for
- network services and additional computation.
- These capabilities could be utilised for fields including AI and machine
- learning.
+ these applications, network services and additional computation.
 \end_layout
 
 \begin_layout Standard
 Combining bi-directional communication between ship and depot with local
- computation, mission coordination and could be made more efficient.
+ computation, mission coordination could be made more efficient.
  Simple implementations could include live mission details being passed
  from depot-to-ship such as fault locations and equipment requirements and
  live, 
@@ -549,11 +889,310 @@ name "sec:Solar-Power-Estimations"
 
 \end_layout
 
+\begin_layout Standard
+From the fleet of current cable laying and repair ships the following average
+ measurements were taken,
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average Width
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+116.5 m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average Length
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20.53 m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average Sum Propulsion Power
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9,111.84 kW
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A deck area was calculated using the rectangle formed by this average width
+ and length, 2391.75 
+\begin_inset Formula $m^{2}$
+\end_inset
+
+, this is an over-estimation as boat footprints are not rectangular.
+ 50% of this deck was used to estimate power generation, 2391.75 
+\begin_inset Formula $m^{2}$
+\end_inset
+
+, while likely not feasible on typical industrial boat designs a theoretical
+ pure solar-powered vessel would require high coverage.
+\end_layout
+
+\begin_layout Standard
+For estimation purposes, the power generation profile of the investigated
+ solar panels was that of max power output for 8 hours a day.
+ This is far from the actual profile but will provide reasonable numbers
+ for these purposes, it will be an overestimation of the potential power
+ output.
+\end_layout
+
+\begin_layout Standard
+Finally the vessel is assumed to be operate continuously at 75% of max power
+ draw, this in order to average the periods with which the vessel is stationary
+ and when it is operating at full power.
+\end_layout
+
+\begin_layout Standard
+Using these premises, the percentage of required power being generated by
+ the panels can be roughly estimated by the following equation,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{\%}=\frac{A_{deck}\bullet50\%}{A_{panel}}\bullet\frac{P_{max\:panel}\bullet33\%}{P_{max\:vessel}\bullet70\%}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using this, the following panels provided the following percentage of required
+ power using the rated dimensions and 
+\begin_inset Formula $P_{max}$
+\end_inset
+
+ from their respective datasheets,
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Make
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Model
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Required Power %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CMPower
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CMP24110SR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.15
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CMPower
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CMP24175SR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.24
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Panasonic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+VBHN340SJ53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.27
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sunpower Maxeon 5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SPR-MAX5-450-COM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.41
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Nuclear Extract
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 Nuclear energy is a proven technology for vessels of this size however there
  are many caveats that effectively discount it from applications in this
  project.
@@ -562,6 +1201,11 @@ Nuclear energy is a proven technology for vessels of this size however there
  of this project, insuring the vessel would also be a significant obstacle.
  For these and other reasons, nuclear marine propulsion is still mostly
  limited to military vessels.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
