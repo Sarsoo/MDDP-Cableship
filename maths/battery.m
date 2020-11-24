@@ -101,6 +101,7 @@ end
 
 max_power_out = voltage_out * current_out; % W
 total_capacity = parallel_length * cell_capacity; % Ah
+total_capacity_Wh = total_capacity * voltage_out; % Ah
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          Physical Space
@@ -119,7 +120,7 @@ printf('%d cells arranged %d x %d cells\n', total_cells, series_length, parallel
 printf('%.2f m3, weighs %.2f kg\n', total_volume, total_weight);
 printf('£%.2fM\n\n', total_cells * cell_price / 1e6);
 
-printf('%.2f Ah\n', total_capacity);
+printf('%.2f Ah, %.2f MWh, \n', total_capacity, total_capacity_Wh / 1e6);
 printf('%.2f V, %.2f A for %.2f MW\n', voltage_out, current_out, max_power_out / 1e6);
 if P_OUT_INCLUDES_P_IN
     printf('Totals to %.2f MW including %.2f MW of coupled input power\n', P_OUT / 1e6, P_IN / 1e6);
