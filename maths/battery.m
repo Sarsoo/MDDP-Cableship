@@ -26,7 +26,7 @@ cell_weight     = 48;   % g
 cell_dia        = 18.4; % mm
 cell_height     = 65;   % mm
 
-cell_price      = 6;    % £
+cell_price      = 6;    % Â£
 
 
 %%%%%%% P IN
@@ -116,12 +116,12 @@ total_weight = cell_weight * total_cells; % kg
 %%             Output
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-printf('%d cells arranged %d x %d cells\n', total_cells, series_length, parallel_length);
-printf('%.2f m3, weighs %.2f kg\n', total_volume, total_weight);
-printf('£%.2fM\n\n', total_cells * cell_price / 1e6);
+fprintf('%d cells arranged %d x %d cells\n', total_cells, series_length, parallel_length);
+fprintf('%.2f m3, weighs %.2f kg\n', total_volume, total_weight);
+fprintf('Â£%.2fM\n\n', total_cells * cell_price / 1e6);
 
-printf('%.2f Ah, %.2f MWh, \n', total_capacity, total_capacity_Wh / 1e6);
-printf('%.2f V, %.2f A for %.2f MW\n', voltage_out, current_out, max_power_out / 1e6);
+fprintf('%.2f Ah, %.2f MWh, \n', total_capacity, total_capacity_Wh / 1e6);
+fprintf('%.2f V, %.2f A for %.2f MW\n', voltage_out, current_out, max_power_out / 1e6);
 if P_OUT_INCLUDES_P_IN
-    printf('Totals to %.2f MW including %.2f MW of coupled input power\n', P_OUT / 1e6, P_IN / 1e6);
+    fprintf('Totals to %.2f MW including %.2f MW of coupled input power\n', P_OUT / 1e6, P_IN / 1e6);
 end
