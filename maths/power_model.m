@@ -16,27 +16,46 @@ SAVE = ~true;
 %%           Parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-ITERATIONS = 5;
+ITERATIONS      = 5;
+% SIMULATION_DAYS = 1;   % days
 
 CELL_TOTAL      = 159201; % from battery script
 % CELL_TOTAL      = 500000;
 
 MIN_P_IN        = 0;  % W, max power from fuel cells
 MAX_P_IN        = 8e6;  % W, max power from fuel cells
-P_IN_LOAD       = 0.8;  % most efficient load percent
+P_IN_LOAD       = 0.3;  % most efficient load percent
 
-INIT_P_OUT      = 0.70;
-PROP_P_OUT      = 8e6;  % W, propulsion max output power
-HOTEL_P_OUT     = 3e4;  % W, hotel average power usage
+%%%%% DP (SS7)
+% MAX_P_OUT       = 3842e3;  % W
+% MIN_P_OUT       = 362e3;    % W
+% TITLE           = 'Dyn. Pos. Sea State 7';
+% SIMULATION_DAYS = 2;   % days
 
-P_IN_INTERVAL   = 1e2;  % W amount that gen power increases when required
-P_OUT_INTERVAL  = 2e4;  % W amount that load can varies by randomly
+%%%%% Outbound
+% MAX_P_OUT       = 1600e3; % W
+% MIN_P_OUT       = 600e3; % W
+% TITLE           = 'Outbound Steaming';
+% SIMULATION_DAYS = 3;   % days
+% 
+%%%%% Manouvering
+% MAX_P_OUT       = 800e3; % W
+% MIN_P_OUT       = 200e3; % W
+% TITLE           = 'Manouvering';
+% SIMULATION_DAYS = 1;   % days
+% 
+% %%%%% Home
+% MAX_P_OUT       = 800e3; % W
+% MIN_P_OUT       = 200e3; % W
+% TITLE           = 'Homebound';
+% SIMULATION_DAYS = 3; % days
 
-SIMULATION_DAYS = 1;   % days
+P_IN_INTERVAL   = ( 200e3/(5*60) ) * 0.75;  % W amount that gen power increases when required
+P_OUT_INTERVAL  = 1e4;  % W amount that load can varies by randomly
 
 BATT_INIT_LEVEL = 0.5;
-BATT_FULL_LEVEL = 0.95;  % battery level at which the power input decreases
-BATT_WARN_LEVEL = 0.4;  % battery level at which the power input increases
+BATT_FULL_LEVEL = 0.9;  % battery level at which the power input decreases
+BATT_WARN_LEVEL = 0.3;  % battery level at which the power input increases
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Specs
@@ -55,8 +74,8 @@ batt_charge_p   = cell_charge_i * cell_voltage * CELL_TOTAL; % W
 
 batt_capacity   = CELL_TOTAL * cell_capacity * cell_voltage / 1e3; % Wh
 
-P_IN            = MAX_P_IN * P_IN_LOAD; % W
-P_OUT           = PROP_P_OUT + HOTEL_P_OUT; % W
+% P_IN            = MAX_P_IN * P_IN_LOAD; % W, efficient load
+P_IN            = (MIN_P_OUT + MAX_P_OUT) / 2; % W, Average power out
 
 sim_seconds     = SIMULATION_DAYS * 24 * 60 * 60;
 
@@ -80,7 +99,7 @@ unavailable_energy = zeros(1, sim_seconds);
 
 % 'cursor' values that change throughout sim
 current_p_in    = P_IN;
-current_p_out   = P_OUT * INIT_P_OUT;
+current_p_out   = (MAX_P_OUT + MIN_P_OUT) / 2;
 
 % Set initial value
 power_in(1)     = current_p_in;
@@ -144,7 +163,7 @@ for SECOND=1:sim_seconds
     
     % CHANGE LOAD
     power_out_delta = (rand - 0.5) * 2 * P_OUT_INTERVAL;
-    current_p_out = min(max(current_p_out + power_out_delta, 0), P_OUT);
+    current_p_out = min(max(current_p_out + power_out_delta, MIN_P_OUT), MAX_P_OUT);
     
     % BATTERY LOW, INCREASE POWER IN
 %     if battery_net < 0 && (battery_level(SECOND)/batt_capacity) < BATT_WARN_LEVEL
@@ -169,26 +188,45 @@ end
 x = (1:sim_seconds) / (60 * 60);
 x_ticks = (1: sim_seconds / (60 * 60));
 
-if SIMULATION_DAYS > 2
+if SIMULATION_DAYS > 1
+    if SIMULATION_DAYS < 4
+        x_ticks = (1: sim_seconds / (60 * 60));
+    else
+%         x_ticks = (1: sim_seconds / (60 * 60 * 24));
+    end
+    
     x = x / 24;
-    x_ticks = (1: sim_seconds / (60 * 60 * 24));
 end
 
-figure(I)
-line_width = 2;
-subplot(3, 1, 1);
+% figure(I)
+figure('Renderer', 'painters', 'Position', [10 10 1000 800])
+% t = tiledlayout(1,1,'Padding','none');
+% t.Units = 'inches';
+% t.OuterPosition = [0.25 0.25 5 5];
+% nexttile;
 
+line_width = 1;
+subplot(3, 1, 1);
+sgtitle(TITLE);
 hold on;
 grid on;
-plot(x, power_in / 1e6, 'g', 'LineWidth', line_width);
-plot(x, power_out / 1e6, 'r', 'LineWidth', line_width);
-yline(P_IN / 1e6, '--m', 'LineWidth', line_width * 0.5)
-legend('Power In', 'Power Out', 'Ideal Power In');
+
+plot(x, power_in / 1e6, 'g', 'LineWidth', 2);
+plot(x, power_out / 1e6, 'r', 'LineWidth', 1);
+
+max_line = yline(MAX_P_OUT / 1e6, '-c', 'LineWidth', line_width * 0.75);
+min_line = yline(MIN_P_OUT / 1e6, '-c', 'LineWidth', line_width * 0.75);
+max_line.Alpha = 0.5;
+min_line.Alpha = 0.5;
+
+yline(P_IN / 1e6, '--m', 'LineWidth', line_width * 0.5);
+
+legend('P In', 'P Out', 'Max P Out', 'Min P Out', 'Ideal P In');
 ylabel('Power (MW)')
 xlim([0 inf])
-ylim([0 max(P_OUT, P_IN) / 1e6])
+ylim([0 ceil(max(max(power_in/1e6), max(power_out/1e6)))])
 xticks(x_ticks)
-if SIMULATION_DAYS > 2
+if SIMULATION_DAYS > 1
     xlabel('Time (Days)')
 else
     xlabel('Time (Hours)')
@@ -200,13 +238,13 @@ subplot(3, 1, 2);
 
 hold on;
 grid on;
-plot(x, battery_level * 100 / batt_capacity, 'LineWidth', line_width);
+plot(x, battery_level * 100 / batt_capacity, 'LineWidth', 2);
 legend('Battery Level');
 ylabel('Capacity (%)')
 xlim([0 inf])
 ylim([0 100])
 xticks(x_ticks)
-if SIMULATION_DAYS > 2
+if SIMULATION_DAYS > 1
     xlabel('Time (Days)')
 else
     xlabel('Time (Hours)')
@@ -228,7 +266,7 @@ end
 xlim([0 inf])
 ylim([0 inf])
 xticks(x_ticks)
-if SIMULATION_DAYS > 2
+if SIMULATION_DAYS > 1
     xlabel('Time (Days)')
 else
     xlabel('Time (Hours)')
@@ -236,7 +274,7 @@ end
 hold off;
 
 if SAVE
-    print(sprintf('%i', I),'-dpng')
+    exportgraphics(gcf, sprintf('%s-%i.png', TITLE, I), 'Resolution', '250')
 end
 
 end
