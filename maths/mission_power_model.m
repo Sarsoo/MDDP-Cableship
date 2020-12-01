@@ -10,13 +10,13 @@ close all;clear all;clc;
 
 CUMULATIVE_ERRORS = false;
 ITERATE = ~true;
-SAVE = ~true;
+SAVE = true;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           Parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-ITERATIONS      = 5;
+day_to_seconds = 24*60*60;
+hours_to_seconds = 60*60;
 
 MIN_P_IN        = 0;  % W, max power from fuel cells
 MAX_P_IN        = 8e6;  % W, max power from fuel cells
@@ -26,6 +26,12 @@ P_IN_LOAD       = 0.3;  % most efficient load percent
 dp_MAX_P_OUT       = 3842e3;  % W
 dp_MIN_P_OUT       = 362e3;    % W
 dp_SIMULATION_DAYS = 2;   % days
+
+cable_drum      = get_extra_p(dp_SIMULATION_DAYS*day_to_seconds, 3*hours_to_seconds, 1.5*hours_to_seconds, 946.26e3);
+cable_lower     = get_extra_p(dp_SIMULATION_DAYS*day_to_seconds, 40*hours_to_seconds, 1.5*hours_to_seconds, 908.41e3);
+crane           = get_extra_p(dp_SIMULATION_DAYS*day_to_seconds, 12*hours_to_seconds, 15*60, 245.25e3);
+rov_launch      = get_extra_p(dp_SIMULATION_DAYS*day_to_seconds, 8*hours_to_seconds, 20*60, 454.2e3);
+dp_EXTRA_P      = [cable_drum ; cable_lower ; crane ; rov_launch];
 
 %%%%% Outbound
 out_MAX_P_OUT       = 1600e3; % W
@@ -63,7 +69,7 @@ unused_energy = [unused_energy u_energy];
 unavailable_energy = [unavailable_energy una_energy];
 
 % DP
-[p_in,b_level,p_out,u_energy,una_energy, ~] = power_sim(dp_MAX_P_OUT, dp_MIN_P_OUT, MAX_P_IN, MIN_P_IN, dp_SIMULATION_DAYS, power_out(end), power_in(end), battery_level(end), CUMULATIVE_ERRORS);
+[p_in,b_level,p_out,u_energy,una_energy, ~] = power_sim(dp_MAX_P_OUT, dp_MIN_P_OUT, MAX_P_IN, MIN_P_IN, dp_SIMULATION_DAYS, power_out(end), power_in(end), battery_level(end), CUMULATIVE_ERRORS, dp_EXTRA_P);
 power_in = [power_in p_in];
 battery_level = [battery_level b_level];
 power_out = [power_out p_out];
@@ -79,7 +85,7 @@ unused_energy = [unused_energy u_energy];
 unavailable_energy = [unavailable_energy una_energy];
 
 % DP
-[p_in,b_level,p_out,u_energy,una_energy, ~] = power_sim(dp_MAX_P_OUT, dp_MIN_P_OUT, MAX_P_IN, MIN_P_IN, dp_SIMULATION_DAYS, power_out(end), power_in(end), battery_level(end), CUMULATIVE_ERRORS);
+[p_in,b_level,p_out,u_energy,una_energy, ~] = power_sim(dp_MAX_P_OUT, dp_MIN_P_OUT, MAX_P_IN, MIN_P_IN, dp_SIMULATION_DAYS, power_out(end), power_in(end), battery_level(end), CUMULATIVE_ERRORS, dp_EXTRA_P);
 power_in = [power_in p_in];
 battery_level = [battery_level b_level];
 power_out = [power_out p_out];
@@ -159,7 +165,7 @@ xlabel('Time (Days)')
 hold off;
 
 if SAVE
-    exportgraphics(gcf, sprintf('%s-%i.png', TITLE, I), 'Resolution', '250')
+    exportgraphics(gcf, sprintf('mission.png'), 'Resolution', '250', 'ContentType','vector')
 end
 
 % FINAL STATS

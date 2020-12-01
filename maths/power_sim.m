@@ -1,5 +1,5 @@
 function [power_in,battery_level,power_out,unused_energy,unavailable_energy, batt_capacity] = ...
-    power_sim(MAX_P_OUT, MIN_P_OUT, MAX_P_IN, MIN_P_IN, SIMULATION_DAYS, init_p_out, init_p_in, init_battery, CUMULATIVE_ERRORS)
+    power_sim(MAX_P_OUT, MIN_P_OUT, MAX_P_IN, MIN_P_IN, SIMULATION_DAYS, init_p_out, init_p_in, init_battery, CUMULATIVE_ERRORS, extra_p_out)
 %POWER_SIM Summary of this function goes here
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -36,7 +36,7 @@ sim_seconds     = SIMULATION_DAYS * 24 * 60 * 60;
 batt_capacity   = batt_capacity * 3600; % J
 
 BATT_FULL_LEVEL = 0.8;  % battery level at which the power input decreases
-BATT_WARN_LEVEL = 0.4;  % battery level at which the power input increases
+BATT_WARN_LEVEL = 0.5;  % battery level at which the power input increases
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            Simulate
@@ -63,9 +63,18 @@ else
 end
 power_out(1)    = init_p_out;
 
+EXTRA_POWER = false;
+if exist('extra_p_out')
+    EXTRA_POWER = true;
+end
+
 % loop through day
 for SECOND=1:sim_seconds    
     battery_net = current_p_in - current_p_out; % net power this second
+    
+    if EXTRA_POWER
+        battery_net = battery_net - sum(extra_p_out(:, SECOND));
+    end
     
     % get last energy value at the battery
     % set cumulative values
@@ -118,19 +127,25 @@ for SECOND=1:sim_seconds
     battery_level(SECOND) = max(min(curr_battery, batt_capacity), 0);
     power_out(SECOND) = current_p_out;
     
+    if EXTRA_POWER
+        power_out(SECOND) = power_out(SECOND) + sum(extra_p_out(:, SECOND));
+    end
+    
     % CHANGE LOAD
     power_out_delta = (rand - 0.5) * 2 * P_OUT_INTERVAL;
     current_p_out = min(max(current_p_out + power_out_delta, MIN_P_OUT), MAX_P_OUT);
     
+    batt_percent = (battery_level(SECOND)/batt_capacity);
+    
     % BATTERY LOW, INCREASE POWER IN
-%     if battery_net < 0 && (battery_level(SECOND)/batt_capacity) < BATT_WARN_LEVEL
-    if (battery_level(SECOND)/batt_capacity) < BATT_WARN_LEVEL
-        percent_diff = (BATT_WARN_LEVEL - (battery_level(SECOND)/batt_capacity)) / BATT_WARN_LEVEL;
+%     if battery_net < 0 && batt_percent < BATT_WARN_LEVEL
+    if batt_percent < BATT_WARN_LEVEL
+        percent_diff = (BATT_WARN_LEVEL - batt_percent) / BATT_WARN_LEVEL;
         current_p_in = min(current_p_in + percent_diff * P_IN_INTERVAL, MAX_P_IN);
     
     % BATTERY HIGH, DECREASE POWER IN
-    elseif (battery_level(SECOND)/batt_capacity) > BATT_FULL_LEVEL
-        percent_diff = 1 - (abs(BATT_FULL_LEVEL - (battery_level(SECOND)/batt_capacity)) / (1 - BATT_FULL_LEVEL));
+    elseif batt_percent > BATT_FULL_LEVEL && batt_percent < 1
+        percent_diff = 1 - (abs(BATT_FULL_LEVEL - batt_percent) / (1 - BATT_FULL_LEVEL));
         current_p_in = max(current_p_in - percent_diff * P_IN_INTERVAL, MIN_P_IN);
     
     % NEITHER, RELAX TO EFFICIENT STATE

@@ -9,12 +9,14 @@ close all;clear all;clc;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 CUMULATIVE_ERRORS = false;
-ITERATE = ~true;
-SAVE = ~true;
+ITERATE = true;
+SAVE = true;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           Parameters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+day_to_seconds = 24*60*60;
+hours_to_seconds = 60*60;
 
 ITERATIONS      = 5;
 
@@ -27,6 +29,12 @@ MAX_P_OUT       = 3842e3;  % W
 MIN_P_OUT       = 362e3;    % W
 TITLE           = 'Dyn. Pos. Sea State 7';
 SIMULATION_DAYS = 2;   % days
+
+cable_drum      = get_extra_p(SIMULATION_DAYS*day_to_seconds, 3*hours_to_seconds, 1.5*hours_to_seconds, 946.26e3);
+cable_lower     = get_extra_p(SIMULATION_DAYS*day_to_seconds, 40*hours_to_seconds, 1.5*hours_to_seconds, 908.41e3);
+crane           = get_extra_p(SIMULATION_DAYS*day_to_seconds, 12*hours_to_seconds, 15*60, 245.25e3);
+rov_launch      = get_extra_p(SIMULATION_DAYS*day_to_seconds, 8*hours_to_seconds, 20*60, 454.2e3);
+EXTRA_P         = [cable_drum ; cable_lower ; crane ; rov_launch];
 
 %%%%% Outbound
 % MAX_P_OUT       = 1600e3; % W
@@ -46,14 +54,16 @@ SIMULATION_DAYS = 2;   % days
 % TITLE           = 'Homebound';
 % SIMULATION_DAYS = 3; % days
 
-BATT_INIT_LEVEL = 0.5;
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%            Simulate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 p_av = (MAX_P_OUT + MIN_P_OUT) / 2;
-[power_in,battery_level,power_out,unused_energy,unavailable_energy, batt_capacity] = power_sim(MAX_P_OUT, MIN_P_OUT, MAX_P_IN, MIN_P_IN, SIMULATION_DAYS, p_av, p_av, -1, CUMULATIVE_ERRORS);
+if exist('EXTRA_P')
+    [power_in,battery_level,power_out,unused_energy,unavailable_energy, batt_capacity] = power_sim(MAX_P_OUT, MIN_P_OUT, MAX_P_IN, MIN_P_IN, SIMULATION_DAYS, p_av, p_av, -1, CUMULATIVE_ERRORS, EXTRA_P);
+else
+    [power_in,battery_level,power_out,unused_energy,unavailable_energy, batt_capacity] = power_sim(MAX_P_OUT, MIN_P_OUT, MAX_P_IN, MIN_P_IN, SIMULATION_DAYS, p_av, p_av, -1, CUMULATIVE_ERRORS);
+end
 
 sim_seconds = length(power_in);
 
@@ -141,7 +151,7 @@ end
 hold off;
 
 if SAVE
-    exportgraphics(gcf, sprintf('%s-%i.png', TITLE, I), 'Resolution', '250')
+    exportgraphics(gcf, sprintf('%s.png', TITLE), 'Resolution', '250', 'ContentType','vector')
 end
 
 % FINAL STATS
