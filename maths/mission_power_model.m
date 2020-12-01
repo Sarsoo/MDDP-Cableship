@@ -113,8 +113,8 @@ plot(x, power_out / 1e6, 'r', 'LineWidth', 1);
 
 % max_line = yline(MAX_P_OUT / 1e6, '-c', 'LineWidth', line_width * 0.75);
 % min_line = yline(MIN_P_OUT / 1e6, '-c', 'LineWidth', line_width * 0.75);
-max_line.Alpha = 0.5;
-min_line.Alpha = 0.5;
+% max_line.Alpha = 0.5;
+% min_line.Alpha = 0.5;
 
 % yline(P_IN / 1e6, '--m', 'LineWidth', line_width * 0.5);
 

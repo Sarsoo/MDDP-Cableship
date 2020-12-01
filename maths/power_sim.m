@@ -32,7 +32,7 @@ sim_seconds     = SIMULATION_DAYS * 24 * 60 * 60;
 %%%%%%% unit conversions
 batt_capacity   = batt_capacity * 3600; % J
 
-BATT_FULL_LEVEL = 0.9;  % battery level at which the power input decreases
+BATT_FULL_LEVEL = 0.8;  % battery level at which the power input decreases
 BATT_WARN_LEVEL = 0.4;  % battery level at which the power input increases
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,7 +127,8 @@ for SECOND=1:sim_seconds
     
     % BATTERY HIGH, DECREASE POWER IN
     elseif (battery_level(SECOND)/batt_capacity) > BATT_FULL_LEVEL
-        current_p_in = max(current_p_in - P_IN_INTERVAL, MIN_P_IN);
+        percent_diff = 1 - (abs(BATT_FULL_LEVEL - (battery_level(SECOND)/batt_capacity)) / (1 - BATT_FULL_LEVEL));
+        current_p_in = max(current_p_in - percent_diff * P_IN_INTERVAL, MIN_P_IN);
     
     % NEITHER, RELAX TO EFFICIENT STATE
     else
