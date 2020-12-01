@@ -28,6 +28,9 @@ cell_height     = 65;   % mm
 
 cell_price      = 6;    % £
 
+cell_emb_c      = 117.5; % kgCO2eq/kWh
+cell_rec_emb_c  = 15; % kgCO2eq/kWh
+
 
 %%%%%%% P IN
 %V_IN            = 450;  % V
@@ -101,7 +104,7 @@ end
 
 max_power_out = voltage_out * current_out; % W
 total_capacity = parallel_length * cell_capacity; % Ah
-total_capacity_Wh = total_capacity * voltage_out; % Ah
+total_capacity_Wh = total_capacity * voltage_out; % Wh
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%          Physical Space
@@ -125,3 +128,6 @@ fprintf('%.2f V, %.2f A for %.2f MW\n', voltage_out, current_out, max_power_out 
 if P_OUT_INCLUDES_P_IN
     fprintf('Totals to %.2f MW including %.2f MW of coupled input power\n', P_OUT / 1e6, P_IN / 1e6);
 end
+
+fprintf('%.2ft (CO2e)\n', ((total_capacity_Wh / 1e3) * cell_emb_c) / 1e3);
+fprintf('%.2ft (CO2e) for recycling\n', ((total_capacity_Wh / 1e3) * cell_rec_emb_c) / 1e3);

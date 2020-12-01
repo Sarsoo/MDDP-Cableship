@@ -8,6 +8,9 @@ function [power_in,battery_level,power_out,unused_energy,unavailable_energy, bat
 
 CELL_TOTAL      = 159201; % from battery script
 
+CHARGE_EFF      = 0.8;
+DISCHARGE_EFF   = 0.8;
+
 P_IN_INTERVAL   = ( 200e3/(5*60) ) * 0.75;  % W amount that gen power increases when required
 P_OUT_INTERVAL  = 1e4;  % W amount that load can varies by randomly
 
@@ -82,7 +85,7 @@ for SECOND=1:sim_seconds
     
     % CHARGING
     if battery_net > 0
-        curr_battery = battery_last + min(battery_net, batt_charge_p);
+        curr_battery = battery_last + min(battery_net, batt_charge_p) * CHARGE_EFF;
         
         % TOO MUCH FOR BATTERY CAPACITY
         if batt_capacity < curr_battery
@@ -97,7 +100,7 @@ for SECOND=1:sim_seconds
     % DISCHARGING
     else
         discharge_p = min(abs(battery_net), batt_dis_p);
-        curr_battery = battery_last - discharge_p;
+        curr_battery = battery_last - discharge_p / DISCHARGE_EFF;
         
         % BATTERY EMPTY
         if curr_battery < 0
