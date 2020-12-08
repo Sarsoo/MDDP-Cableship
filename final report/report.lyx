@@ -141,8 +141,48 @@ January 2021
 Sustainable Cable Ship - Group 1
 \end_layout
 
+\begin_layout Part
+Vessel Study
+\end_layout
+
 \begin_layout Section
-report
+Propulsion
+\end_layout
+
+\begin_layout Subsection
+Power Requirements
+\end_layout
+
+\begin_layout Subsubsection
+Hotel Load [AP]
+\end_layout
+
+\begin_layout Section
+Efficiency Investigations
+\end_layout
+
+\begin_layout Subsection
+Solar [AP]
+\end_layout
+
+\begin_layout Section
+Energy Storage [AP]
+\end_layout
+
+\begin_layout Subsection
+Battery Chemistry
+\end_layout
+
+\begin_layout Subsection
+Time-dependent Modelling
+\end_layout
+
+\begin_layout Section
+Mission Ops
+\end_layout
+
+\begin_layout Subsection
+ROV [AP]
 \end_layout
 
 \begin_layout Standard
