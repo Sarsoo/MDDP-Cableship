@@ -182,7 +182,59 @@ Mission Ops
 \end_layout
 
 \begin_layout Subsection
-ROV [AP]
+Unmanned Underwater Vehicle Operations [AP]
+\end_layout
+
+\begin_layout Standard
+The following section outlines how the use of an unmanned underwater vehicle
+ (UUV) can make mission operations more efficient and precise.
+ The state of current UUV usage throughout cable repair operations is outlined
+ in order to identify the critical capabilities and requirements.
+ The future of the domain is then explored and the challenges identified
+ before exploring how these can be overcome in order to meet the determined
+ requirements.
+ Prior to this, the domain of UUVs as a whole is described in order to outline
+ the scope of available vehicles.
+\end_layout
+
+\begin_layout Subsubsection
+ROVs and AUVs
+\end_layout
+
+\begin_layout Subsubsection
+Current ROV Usage
+\end_layout
+
+\begin_layout Paragraph
+Requirements Specification
+\end_layout
+
+\begin_layout Subsubsection
+Current AUV Usage
+\end_layout
+
+\begin_layout Subsubsection
+Domain Challenges
+\end_layout
+
+\begin_layout Subsubsection
+Navigation
+\end_layout
+
+\begin_layout Paragraph
+Underwater Acoustic Positioning
+\end_layout
+
+\begin_layout Paragraph
+Acoustic Doppler Current Profiling
+\end_layout
+
+\begin_layout Subsubsection
+Control
+\end_layout
+
+\begin_layout Subsubsection
+Summary
 \end_layout
 
 \begin_layout Standard
