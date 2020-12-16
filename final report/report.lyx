@@ -17,7 +17,7 @@ figs-within-sections
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "times" "default"
+\font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
@@ -34,13 +34,11 @@ figs-within-sections
 \output_sync 0
 \bibtex_command default
 \index_command default
-\paperfontsize 11
-\spacing other 1.5
-\use_hyperref false
-\pdf_title "Linear Predictive Speech Synthesizer"
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_title "Net-zero Cable Repair Ship"
 \pdf_author "Andy Pack"
-\pdf_subject "EEEM030 Speech & Audio Processing & Recognition"
-\pdf_keywords "EEEM030"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false
@@ -79,10 +77,10 @@ figs-within-sections
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 2.54cm
-\topmargin 2.54cm
-\rightmargin 2.54cm
-\bottommargin 2.54cm
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 3.5cm
+\bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation skip
@@ -108,6 +106,14 @@ figs-within-sections
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
 
 \end_inset
 
@@ -182,6 +188,46 @@ Mission Ops
 \end_layout
 
 \begin_layout Subsection
+Grapnel-based Operations [AP]
+\end_layout
+
+\begin_layout Standard
+While the use of robotics has made sub-sea cable repair operations more
+ efficient, durable and accurate, as will be discussed there are situations
+ where this is not available and it is worth briefly outlining how grapnels
+ are used in repair operations.
+\end_layout
+
+\begin_layout Standard
+Grapnels are specialised tools attached to lengths of chain which trail
+ the stern of the ship.
+ For cable repair operations, a cut & hold grapnel is used 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "cut-and-hold-paper,cut-and-hold-eta-product"
+literal "false"
+
+\end_inset
+
+.
+ With knowledge of the path of the subject cable and the location of the
+ fault, the grapnel is lowered before the boat makes a pass perpendicular
+ to the cable.
+ As the grapnel makes contact it is able to both cut and grip the cable
+ before being raised to the surface vessel.
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Disadvantages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Unmanned Underwater Vehicle Operations [AP]
 \end_layout
 
@@ -195,34 +241,977 @@ The following section outlines how the use of an unmanned underwater vehicle
  requirements.
  Prior to this, the domain of UUVs as a whole is described in order to outline
  the scope of available vehicles.
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Why ROVS?
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
+UUV Classes
+\end_layout
+
+\begin_layout Paragraph
 ROVs and AUVs
+\end_layout
+
+\begin_layout Standard
+UUVs are generally divided into two categories, remotely operated underwater
+ vehicles (ROV) and autonomous underwater vehicles (AUV) with the distinction
+ being between whether a human is controlling the vehicle or whether it
+ operates independently; as such they have different applications.
+ ROVs have been the vehicle class of choice where intervention and actuation
+ is required such as offshore oil and gas operations and cable repair.
+ A human operator controls the vehicle from the surface vessel, bi-directional
+ communication including data, control, video and power are transmitted
+ through an umbilical cord tether between the two vessels.
+ AUVs on the other hand have primarily been used for survey and research
+ purposes.
+ 
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+No umbilical cord?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This distinction in responsibilities is not static, however.
+ Like other robotics domains such as auto-mobiles and ships, autonomy is
+ a rapidly developing area of research and development and newer vehicles
+ are able to complete many more complex operations without human intervention
+ and with longer endurance.
+\end_layout
+
+\begin_layout Paragraph
+Physical Configuration
+\end_layout
+
+\begin_layout Standard
+The physical layout of a UUV can generally be described by one of two classes,
+ box frames or torpedo shaped.
+ 
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+determined by the size and range of the vehicle.
+ 
+\end_layout
+
+\end_inset
+
+Box frame UUVs are typically larger with more space for instruments and
+ actuators but are not expected to make longer distance journeys as a result
+ of their poor hydrodynamic profile.
+ Torpedo shaped vehicles tend to be smaller without actuators; their hydrodynami
+c profile makes them well suited for faster, longer distance missions however
+ this comes at the cost of reduced stability and control.
 \end_layout
 
 \begin_layout Subsubsection
 Current ROV Usage
 \end_layout
 
+\begin_layout Standard
+Cable repair operations are currently undertaken, where possible, with human-con
+trolled ROVs.
+ With visual contact and direct actuation at the seabed, the ROV is used
+ to identify, cut and grip the cable for retrieval to the surface-vessel.
+ In doing so the need for repeated motions of the ship across the cable
+ is removed, saving time and fuel.
+ Instead the surface vessel uses dynamic positioning in order to maintain
+ it's position above the ROV and cable.
+\end_layout
+
+\begin_layout Standard
+While this finer control is a key benefit for ROV use over grapnels, one
+ of the most important benefits is the ability to bury repaired cables in
+ the sea floor using high-powered water jets.
+ 70% of cable damage is caused by man-made activity, of which over a third
+ is a result of fishing activity; another quarter is as a result ship anchors
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ultra-map-cable-damage-causes"
+literal "false"
+
+\end_inset
+
+.
+ As such, the ability to protect sub-sea cables in shallower waters by burying
+ them from human intervention is a key parameter in protecting cables from
+ further damage.
+ While this can be completed with a separate plough, this would require
+ more deck space, motion of the surface vessel.
+ Ploughs are also typically extremely heavy pieces of equipment and would
+ make the vessel less efficient overall.
+\end_layout
+
+\begin_layout Standard
+The need for fine movement control and actuators with which to manipulate
+ cables has led to box frame vehicles dominating this field, figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-HECTOR-7-ROV"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows SIMEC Technology's HECTOR-7 ROV, a typical design for sub-sea cable
+ repair vehicles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename hector-7.jpg
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+SIMEC Technology's HECTOR-7 ROV used on Orange Marine's Pierre de Fermat,
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "rov-hector-7-datasheet"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-HECTOR-7-ROV"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Limited depth
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ROV-specs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ lists the specifications for the ROVs currently being used as part of the
+ ACMA cable repair agreement along with similarly classed vehicles from
+ other providers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+HECTOR-7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Atlas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+ST200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+QTrencher 600
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Company
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SIMEC Technology
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Global Marine
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SMD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Vessel
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pierre de Fermat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wave Sentinel
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cable Innovator
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N/A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C.S Sovereign
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Depth Rating
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,000 m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,000 m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,500 m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,000 m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Weight in Air
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9 t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.6 t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.5 t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11 t
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Power
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+300 kW
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+300 kW
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+450 kW
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Burial Depth
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5 m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "rov-hector-7-datasheet,global-marine-atlas-data-sheet,glboal-marine-st200-datasheet,smd-qtrencher-600-datasheet"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Relevant specifications and operating capabilities for sub-sea cable repair
+ ROVs 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:ROV-specs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Requirements Specification
 \end_layout
 
+\begin_layout Standard
+Using this information the requirements for a cable repair UUV could be
+ described as the following,
+\end_layout
+
+\begin_layout Enumerate
+The UUV should have actuators in order to both cut and grip cables
+\end_layout
+
+\begin_layout Enumerate
+The UUV should be able to operate to at least 2 km of depth
+\end_layout
+
+\begin_layout Enumerate
+The UUV should be able to locate the cable without visual information i.e.
+ electromagnetically
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+In shallower water the cable is buried and will not be able to be visually
+ identified
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The UUV should be able to re-bury the cable in shallower waters
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+This should provide more protection to the cable from interference including
+ fishing operations
+\end_layout
+
+\end_deeper
 \begin_layout Subsubsection
 Current AUV Usage
+\end_layout
+
+\begin_layout Standard
+Autonomous underwater vehicles are well suited to survey and research operations
+, without human intervention they sweep a given area collecting data for
+ analysis.
+ This can include bathymetry
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The measurement of the depth of a body of water
+\end_layout
+
+\end_inset
+
+, surveys and chemical composition investigations such as pH and toxin levels.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename hugin-superior.jpg
+	lyxscale 30
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kongsberg Maritime's HUGIN Superior AUV, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "auv-hugin-superior-datasheet"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
 Domain Challenges
 \end_layout
 
+\begin_layout Paragraph
+Navigation
+\end_layout
+
+\begin_layout Standard
+One of the main advantages of using an autonomous vehicle for sub-sea cable
+ repairs would be the physical de-coupling of the vehicles, however this
+ also poses the most significant challenge.
+ In typical ROV operations, the operator has knowledge of the location of
+ the ROV relative to the surface vessel.
+ As the surface vessel is GNSS-enabled (Likely GPS) it has knowledge of
+ its position in world co-ordinates and the operator can use this to reduce
+ the ROV's cable search space.
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Diagram?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Decoupling the vehicles introduces complications that are not necessarily
+ typical to the existing use cases for AUVs.
+ The frequency of EM waves used by GNSS systems do not penetrate deep through
+ the water and an AUV must be able to operate without world co-ordinates
+ provided in this manner.
+ As such, navigation systems used by AUVs are typically 
+\emph on
+dead reckoning
+\emph default
+ systems.
+ This is a form of navigation that operates relative to a known fixed point
+ (where a UUV is deployed for example) as opposed to one relative to world
+ co-ordinates.
+\end_layout
+
+\begin_layout Standard
+With an accurate system, this will satisfy many surveying and research use
+ cases where relative location data can be transformed to world-coordinates
+ after the fact.
+ This will prove less effective when the vehicle is expected to autonomously
+ navigate to a specific location (the cable fault).
+ A dead reckoning system as described above uses relative sensors to measure
+ it's speed and infer it's current location however these relative sensors
+ have associated measurement errors which accumulate over time.
+ This would be more pronounced under the water where sea currents are liable
+ to accentuate these errors, the efficacy of an AUV's fault location capabilitie
+s may be reduced to the point of unacceptability.
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Kalman filter now?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Launch & Recovery
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Top hat or garage TMS to act as LARS interface?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Proposed Design
+\end_layout
+
+\begin_layout Standard
+The vehicle will be designed for hybrid ROV/AUV operations.
+ The vehicle should be able to complete missions independently of the surface
+ vessel with the ability to operate in a similar fashion to existing ROVs
+ (human controller, tethered power and data connection).
+ This will have a number of benefits, primarily that the vehicle should
+ be able to benefit from autonomous operation with the ability for direct
+ human control in missions deemed to complex for autonomous control.
+ 
+\end_layout
+
+\begin_layout Standard
+The existing remit of AUV operations is primarily survey, inspection and
+ light intervention, it is likely that the autonomous capabilities of this
+ vehicle would not be capable of conducting all existing cable repair missions
+ which involve a lot more involved intervention.
+ It is important that enabling autonomous operations does not ultimately
+ reduce it's operating capabilities.
+\end_layout
+
+\begin_layout Standard
+As previously described, box frame UUVs are well suited to sub-sea cable
+ operations where fine movement control and space for actuators are critical.
+ As such a box frame of similar specifications to those currently used,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "global-marine-atlas-data-sheet,rov-hector-7-datasheet"
+literal "false"
+
+\end_inset
+
+ will be used.
+ The vehicle will likely be at the larger and heavier end of existing ROVs
+ as the vehicle must now have the onboard energy capabilities to complete
+ a mission without a constant power supply from the surface vessel.
+\end_layout
+
 \begin_layout Subsubsection
 Navigation
 \end_layout
 
+\begin_layout Standard
+As previously described, the navigation system will primarily be built on
+ the principle of 
+\emph on
+dead reckoning
+\emph default
+ using an inertial navigation system (INS).
+ An INS uses input from many types of sensor such as accelerometers and
+ gyroscopes to measure the movement of the vehicle and hence infer it's
+ location.
+ None of these could individually provide an accurate determination of location
+ and as such 
+\emph on
+sensor fusion
+\emph default
+ is employed.
+ Each sensor has an associated measurement uncertainty which compounds over
+ time, sensor fusion allows all the sensor measurements to be combined in
+ such a way as to produce a single output measurement with an uncertainty
+ smaller than any of each sensor individually.
+ A common method for implementing sensor fusion is using a 
+\emph on
+Kalman filter
+\emph default
+
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+reference, explain?
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+However, despite the use of a Kalman filter allowing more precise approximations
+ of the vehicles relative location, the lack of external calibrating updates
+ means that the overall uncertainty will still continually increase over
+ time.
+ In land-based robotics this is mitigated through the use of periodic GPS
+ measurements which have low uncertainty and help to place an upper bound
+ on the overall error.
+ As previously mentioned, GNSS systems do not work deep underwater and as
+ such, another method for providing these external updates must be used.
+\end_layout
+
 \begin_layout Paragraph
 Underwater Acoustic Positioning
+\end_layout
+
+\begin_layout Paragraph
+Underwater Acoustic Communications
 \end_layout
 
 \begin_layout Paragraph
