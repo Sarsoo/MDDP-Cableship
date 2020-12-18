@@ -236,9 +236,9 @@ The following section outlines how the use of an unmanned underwater vehicle
  (UUV) can make mission operations more efficient and precise.
  The state of current UUV usage throughout cable repair operations is outlined
  in order to identify the critical capabilities and requirements.
- The future of the domain is then explored and the challenges identified
- before exploring how these can be overcome in order to meet the determined
- requirements.
+ The future of the domain is then explored and the challenges in applying
+ these developments to sub-sea cable repair are identified before exploring
+ how these can be overcome in order to meet the determined requirements.
  Prior to this, the domain of UUVs as a whole is described in order to outline
  the scope of available vehicles.
 \begin_inset Flex TODO Note (Margin)
@@ -962,14 +962,14 @@ Current AUV Usage
 
 \begin_layout Standard
 Autonomous underwater vehicles are well suited to survey and research operations
-, without human intervention they sweep a given area collecting data for
+; without human intervention they sweep a given area collecting data for
  analysis.
  This can include bathymetry
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-The measurement of the depth of a body of water
+Measurement of the depth of a body of water
 \end_layout
 
 \end_inset
@@ -1026,6 +1026,36 @@ literal "false"
 \end_layout
 
 \begin_layout Subsubsection
+Advantages
+\end_layout
+
+\begin_layout Standard
+An advantage of using an autonomous vehicle would be the lack of need for
+ the surface vessel to maintain position directly above the ROV and fault;
+ instead the surface vessel would stay within a larger area only to maintain
+ contact with the UUV.
+ This could reduce the required power directed to dynamic positioning which
+ in higher sea states can become a significant draw.
+ Additionally as the UUV can move independently, the surface vehicle would
+ not need to directly track the vehicles movement; for example when the
+ UUV is re-burying the repaired cable in shallower waters.
+ This would, again, lower the required propulsion power used by the surface
+ vessel.
+\end_layout
+
+\begin_layout Standard
+Another advantage could be a reduction in risk during mission operations.
+ With a traditional tethered ROV, should the umbilical cable be broken the
+ vehicle would likely lose functionality and require specialist recovery.
+ This break could occur as a result of a fault in the tether management
+ system, high storm activity causing too much tension on the system, or
+ in less likely scenarios, animal intervention.
+ An autonomous vehicle has no tether to break and a hybrid ROV/AUV could
+ likely be instructed to take control and return home should the tether
+ break during missions involving direct human control.
+\end_layout
+
+\begin_layout Subsubsection
 Domain Challenges
 \end_layout
 
@@ -1034,14 +1064,25 @@ Navigation
 \end_layout
 
 \begin_layout Standard
-One of the main advantages of using an autonomous vehicle for sub-sea cable
- repairs would be the physical de-coupling of the vehicles, however this
- also poses the most significant challenge.
+As mentioned, one of the main advantages of using an autonomous vehicle
+ for sub-sea cable repairs would be the physical de-coupling of the vehicles,
+ however this also poses the most significant challenge.
  In typical ROV operations, the operator has knowledge of the location of
  the ROV relative to the surface vessel.
- As the surface vessel is GNSS-enabled (Likely GPS) it has knowledge of
- its position in world co-ordinates and the operator can use this to reduce
- the ROV's cable search space.
+ As the surface vessel is GNSS
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Global Navigation Satellite System, the generic term for satellite aided
+ global navigation of which the American GPS, Russian GLONASS and European
+ Galileo systems are examples
+\end_layout
+
+\end_inset
+
+-enabled (Likely GPS) it has knowledge of its position in world co-ordinates
+ and the operator can use this to reduce the ROV's cable search space.
 \begin_inset Flex TODO Note (Margin)
 status open
 
@@ -1121,8 +1162,8 @@ The vehicle will be designed for hybrid ROV/AUV operations.
  vessel with the ability to operate in a similar fashion to existing ROVs
  (human controller, tethered power and data connection).
  This will have a number of benefits, primarily that the vehicle should
- be able to benefit from autonomous operation with the ability for direct
- human control in missions deemed to complex for autonomous control.
+ be able to benefit from autonomous operation where possible with the ability
+ for direct human control in missions deemed to complex for autonomous control.
  
 \end_layout
 
@@ -1141,7 +1182,7 @@ As previously described, box frame UUVs are well suited to sub-sea cable
  As such a box frame of similar specifications to those currently used,
  
 \begin_inset CommandInset citation
-LatexCommand cite
+LatexCommand citep
 key "global-marine-atlas-data-sheet,rov-hector-7-datasheet"
 literal "false"
 
@@ -1151,6 +1192,26 @@ literal "false"
  The vehicle will likely be at the larger and heavier end of existing ROVs
  as the vehicle must now have the onboard energy capabilities to complete
  a mission without a constant power supply from the surface vessel.
+\end_layout
+
+\begin_layout Subsubsection
+Communication
+\end_layout
+
+\begin_layout Standard
+As the UUV is now expected to operate independently of the surface vessel,
+ it should have the ability to bi-directionally wirelessly communicate with
+ the surface vessel.
+ Uses for such a communications channel include the UUV reporting it's mission
+ status and the surface vessel providing high-level instructions such as
+ 
+\emph on
+return home
+\emph default
+ orders.
+ When operating underwater, acoustic signals are the primary medium for
+ wireless communication.
+ 
 \end_layout
 
 \begin_layout Subsubsection
@@ -1200,22 +1261,154 @@ However, despite the use of a Kalman filter allowing more precise approximations
  means that the overall uncertainty will still continually increase over
  time.
  In land-based robotics this is mitigated through the use of periodic GPS
- measurements which have low uncertainty and help to place an upper bound
- on the overall error.
+ measurements which have low, constant uncertainty and help to place an
+ upper bound on the overall error.
  As previously mentioned, GNSS systems do not work deep underwater and as
  such, another method for providing these external updates must be used.
+ 
+\end_layout
+
+\begin_layout Standard
+The following proposes methods for providing global positioning to the UUV
+ without a traditional GNSS system.
+ This will be completed in two stages, the first being to provide the UUV
+ with the ability to measure the location of a fixed point relative to itself.
+ In parallel, the global co-ordinates of this fixed point will be communicated
+ to the UUV in order to infer it's own global location.
 \end_layout
 
 \begin_layout Paragraph
 Underwater Acoustic Positioning
 \end_layout
 
+\begin_layout Standard
+Alongisde the use of acoustic signals for communications it will also be
+ employed for positioning.
+ One application for this is underwater acoustic positioning which employs
+ the use of time-of-flight measurements to beacons of a known location to
+ triangulate an object's location.
+ There are different configurations for such a system depending on how these
+ beacons are laid out, 
+\emph on
+long-baseline
+\emph default
+ (LBL) systems involve beacons located on the sea floor.
+ Spreading these beacons around the working area of an ROV widens the baseline
+ of the system and provides higher accuracy when triangulating.
+ This configuration is best suited to static areas of research such as ship
+ wrecks where an initial time devoted to deploying and calibrating these
+ underwater beacons is a reasonable expense to pay for the required high
+ accuracy.
+ This is not the case for sub-sea cable repairs where the deployment, calibratio
+n and recovery of beacons on the seabed would be prohibitively complex and
+ add significant time to the duration of a mission.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Short-baseline
+\emph default
+ (SBL) systems involve a number of beacons placed at the furthest corners
+ of the surface vessel, this has the benefit of requiring little set-up
+ and pack-down at the cost of reduced accuracy.
+ Relative to the UUV these beacons are all on a similar bearing when operating
+ at a distance, as a result changes in the vehicle's location would be reflected
+ in similar changes to the measurements from all of the beacons.
+ Previously, with a long-baseline, the beacons are ideally surrounding the
+ UUV's working area and changes in its location are reflected in different
+ distance deltas for each beacon allowing tighter triangulation.
+ Accuracy can be improved by extending the beacons away from the vessel
+ to extend the baseline as far as possible.
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+such as on a boom?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+One method to mitigate the drawbacks of both described methods is by using
+ GPS Intelligent Buoys (GIBs).
+ This configuration, also referred to as an 
+\emph on
+inverted long-baseline
+\emph default
+, allows a much wider baseline than the surface-vessel-mounted beacons by
+ deploying a group of 
+\emph on
+smart buoys
+\emph default
+ around the expected working area of the UUV.
+ The use of buoys as opposed to beacons on the sea-floor significantly decreases
+ the preparation and clean-up mission phases.
+\end_layout
+
+\begin_layout Standard
+Of these methods it is proposed that the surface vessel be equipped with
+ a short-baseline beacon array as well as a population of GIBs.
+ This will allow the choice between higher accuracy or faster mission turnaround
+ be decided by mission conditions as well as providing redundancy for either
+ system.
+ In shallower waters, the accuracy of the onboard SBL may be deemed sufficient
+ however in deeper water where the UUV is operating far further from the
+ surface vessel, the compactness of the SBL baseline may require the higher
+ accuracy of the GIBs
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In practice the two could be used in conjunction for efficiency.
+ As the UUV is deployed it initially uses the onboard SBL array while the
+ surface vessel makes a pass around the working area deploying GIBs for
+ use as the UUV gets deeper
+\end_layout
+
+\end_inset
+
+.
+ The GIBs would be considered additional accuracy, the SBL would be used
+ alongside the GIBs and act as an extra node in the array.
+ Additionally the weather and sea conditions could play a factor in the
+ decision.
+ In higher sea states and stormy weather, the deployment and recovery of
+ GIBs may be deemed too risky and the SBL could be used alone.
+\end_layout
+
 \begin_layout Paragraph
-Underwater Acoustic Communications
+Global Calibration
+\end_layout
+
+\begin_layout Standard
+The above underwater acoustic positioning system will allow the UUV to keep
+ track of it's position relative to known points at the surface, however
+ this alone will not provide the UUV with its global location.
+ In order for the UUV to calibrate it's local map to global co-ordinates,
+ the global position of these surface points must be provided.
+ This will be conducted over the previously described acoustic communication
+ channel.
+ As it could be expected that this channel has a low bandwidth, these updates
+ need not be excessively frequent.
 \end_layout
 
 \begin_layout Paragraph
 Acoustic Doppler Current Profiling
+\end_layout
+
+\begin_layout Standard
+While accelerometers and gyroscopes would be expected components of any
+ mobile dead reckoning navigation system, additional sensors well-suited
+ to sub-sea localisation will allow the vessel's movement to be more precise.
+ One such sensor is a 
+\emph on
+Doppler velocity log
+\emph default
+ which estimates the vessel's velocity by tracking the seabed.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1224,6 +1417,10 @@ Control
 
 \begin_layout Subsubsection
 Summary
+\end_layout
+
+\begin_layout Section
+Digitalisation
 \end_layout
 
 \begin_layout Standard
