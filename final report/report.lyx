@@ -110,6 +110,10 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -175,8 +179,878 @@ Solar [AP]
 Energy Storage [AP]
 \end_layout
 
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Justify need for buffer battery, surrounding power electronics
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-Battery Chemistry
+Rechargeable Battery Chemistry
+\end_layout
+
+\begin_layout Standard
+There are many different methods for constructing a traditional rechargeable
+ battery or 
+\emph on
+secondary cell
+\emph default
+; the chemistry of the reactants determines the characteristics of the system
+ as well as having drastic implications on the safety and sustainability.
+ Secondary cells are a consumable item, their components degrade with usage
+ and this lifespan will be reduced if not constructed and maintained correctly.
+ This only accentuates the importance of the solution's sustainability as
+ it constitute a significant amount of material which will periodically
+ require source and disposal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="7">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="15col%">
+<column alignment="center" valignment="middle" width="10col%">
+<column alignment="center" valignment="middle" width="10col%">
+<column alignment="center" valignment="middle" width="10col%">
+<column alignment="center" valignment="middle" width="10col%">
+<column alignment="center" valignment="middle" width="10col%">
+<column alignment="center" valignment="middle" width="10col%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+NiCd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+NiMH
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Lead Acid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Li-ion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Li-ion Polymer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Reusable Alkaline
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gravimetric Energy Density
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+(Wh/kg)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+45 - 80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60 - 120
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30 - 50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+110 - 160
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100 - 130
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+80 (initial)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cycle Life
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+(to 80% of initial)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+300 - 500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+200 - 300
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500 - 1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+300 - 500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Self-discharge / Month
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+(room temperature)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+~10%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.3%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Load Current
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+(Peak)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+>2C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+>2C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Load Current
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+(Ideal)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\leq$
+\end_inset
+
+0.5C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.2C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\leq$
+\end_inset
+
+1C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\leq$
+\end_inset
+
+1C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\leq$
+\end_inset
+
+0.2C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Operating Temperature
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+(discharge only)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-40 - 60°C 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-20 - 60°C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-20 - 60°C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-20 - 60°C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 - 60°C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 - 65°C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Commercial Use Since
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1950 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1990
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1970 (sealed lead acid)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1991
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1999
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1992
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand citep
+key "battery-uni-chemistry-types"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparison of physical characteristics for common rechargeable battery chemistri
+es
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:battery-chemistry-stats"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:battery-chemistry-stats"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ outlines the relevant characteristics for the most common configurations
+ of rechargeable battery.
+ As can be seen, Lithium-ion technology leads the other solutions in most
+ of the categories.
+ While Nickel-Cadmium has a higher lifespan than Li-ion there are other
+ factors that led to this being discounted.
+ NiCd suffers from the 
+\emph on
+memory effect
+\emph default
+, where frequent charge/discharge cycles lead to the battery 
+\emph on
+remembering
+\emph default
+ the point at which charging began and experiencing a drop in voltage past
+ this point.
+ Additionally, Cadmium is a highly toxic heavy metal requiring specialist
+ containment; in fact, many types of Cadmium battery are now banned in the
+ EU.
+\end_layout
+
+\begin_layout Standard
+Lithium-ion batteries are a mature domain and one of active research; they
+ are essentially the standard for portable electronics and the growing electric
+ vehicle market.
+\end_layout
+
+\begin_layout Subsection
+Innovative Solutions
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Flow battery, solid state
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposed Solution
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Justify lithium & 18650 cell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For this project, Lithium was proposed as the solution for a vessel energy
+ storage solution.
+ As previously mentioned, the domain is an area of fervent research as a
+ result of it's critical importance to consumer electronics and electric
+ vehicles.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Configuration
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Matlab code, C rates etc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The amount of required cells for the battery system was calculated using
+ the expected propulsion power requirements in conjunction with the expected
+ generation capabilities of the Ammonia fuel cells.
+ The specifics for the calculations can be seen in appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Battery-Cell-Calculations"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+; to summarise, the amount of required cells was calculated from the required
+ power draw of the battery and the characteristics of the 18650 Lithium
+ cell being used.
+ The result was 237,169 cells.
+ These cells are arranged into a M x N matrix of parallel and series blocks,
+ all the series blocks connected in parallel must be of the same length
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Figure?
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The balance of parallel to series blocks not necessarily a critical design
+ parameter; as the drive motors are AC, transformers can be used to modify
+ the two parameters.
+ For high power applications high voltage is typically preferred to high
+ current.
+\end_layout
+
+\begin_layout Subsubsection
+Challenges
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+\begin_inset Quotes bld
+\end_inset
+
+rapid disassembly
+\begin_inset Quotes brd
+\end_inset
+
+, lifespan reduction (replacement required)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Safety Circuitry
+\end_layout
+
+\begin_layout Subsubsection
+Lifespan
+\end_layout
+
+\begin_layout Subsubsection
+Financial
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Price per pack
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Life-cycle Analysis
 \end_layout
 
 \begin_layout Subsection
@@ -235,22 +1109,13 @@ Unmanned Underwater Vehicle Operations [AP]
 The following section outlines how the use of an unmanned underwater vehicle
  (UUV) can make mission operations more efficient and precise.
  The state of current UUV usage throughout cable repair operations is outlined
- in order to identify the critical capabilities and requirements.
+ in order to identify the critical capabilities, requirements and advantages
+ over traditional grapnel operations.
  The future of the domain is then explored and the challenges in applying
  these developments to sub-sea cable repair are identified before exploring
  how these can be overcome in order to meet the determined requirements.
  Prior to this, the domain of UUVs as a whole is described in order to outline
  the scope of available vehicles.
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-Why ROVS?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -262,12 +1127,13 @@ ROVs and AUVs
 \end_layout
 
 \begin_layout Standard
-UUVs are generally divided into two categories, remotely operated underwater
- vehicles (ROV) and autonomous underwater vehicles (AUV) with the distinction
- being between whether a human is controlling the vehicle or whether it
- operates independently; as such they have different applications.
- ROVs have been the vehicle class of choice where intervention and actuation
- is required such as offshore oil and gas operations and cable repair.
+UUVs can be divided into two categories based on their control scheme.
+ Remotely operated underwater vehicles (ROV) and autonomous underwater vehicles
+ (AUV) are distinguished by whether a human is controlling the vehicle or
+ whether it operates independently; as such they have different applications.
+ ROVs have been the vehicle class of choice where complex intervention and
+ actuation is required such as offshore oil and gas operations and cable
+ repair.
  A human operator controls the vehicle from the surface vessel, bi-directional
  communication including data, control, video and power are transmitted
  through an umbilical cord tether between the two vessels.
@@ -289,9 +1155,9 @@ No umbilical cord?
 \begin_layout Standard
 This distinction in responsibilities is not static, however.
  Like other robotics domains such as auto-mobiles and ships, autonomy is
- a rapidly developing area of research and development and newer vehicles
- are able to complete many more complex operations without human intervention
- and with longer endurance.
+ a rapidly developing area of research and development; newer vehicles are
+ able to complete more complex operations without human intervention and
+ with longer endurance.
 \end_layout
 
 \begin_layout Paragraph
@@ -425,35 +1291,6 @@ name "fig:The-HECTOR-7-ROV"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-Limited depth
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:ROV-specs"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- lists the specifications for the ROVs currently being used as part of the
- ACMA cable repair agreement along with similarly classed vehicles from
- other providers.
 \end_layout
 
 \begin_layout Standard
@@ -916,6 +1753,47 @@ name "tab:ROV-specs"
 
 \end_layout
 
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ROV-specs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ lists the specifications for the ROVs currently being used as part of the
+ ACMA cable repair agreement along with similarly classed vehicles from
+ other providers.
+ As can be seen, current ROVs for this domain have a maximum working depth
+ of about 3 km.
+ This poses a problem to cable repair operations where, further out to sea,
+ the sea floor can extend much further, see figure 
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+bathymetry chart
+\end_layout
+
+\end_inset
+
+.
+ While ROVs could be capable, in theory, of reaching lower depths it is
+ important to balance these working capabilities with other considerations
+ such as price and weight.
+ In practice, this working depth is a reasonable range to work within, it
+ could be argued that the most important capability of current ROVs is their
+ ability to re-bury the cable post-repair.
+ As described previously, this is in order to protect the cable from human
+ intervention including fishing and anchor operations.
+ These incidents are more prevalent in shallower waters within the operating
+ range of the ROV, therefore it is acceptable to use a grapnel outside of
+ this operating range where burying the cable is less important.
+\end_layout
+
 \begin_layout Paragraph
 Requirements Specification
 \end_layout
@@ -1216,6 +2094,13 @@ return home
 
 \begin_layout Subsubsection
 Navigation
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Navigation"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1282,7 +2167,7 @@ Underwater Acoustic Positioning
 \end_layout
 
 \begin_layout Standard
-Alongisde the use of acoustic signals for communications it will also be
+Alongside the use of acoustic signals for communications it will also be
  employed for positioning.
  One application for this is underwater acoustic positioning which employs
  the use of time-of-flight measurements to beacons of a known location to
@@ -1408,7 +2293,30 @@ While accelerometers and gyroscopes would be expected components of any
 \emph on
 Doppler velocity log
 \emph default
- which estimates the vessel's velocity by tracking the seabed.
+ (DVL) which estimates the vessel's velocity by tracking the seabed.
+ DVLs apply the broader concept of 
+\emph on
+acoustic Doppler current profiling
+\emph default
+ which measures the velocity of water by measuring the change in frequency
+ caused by the Doppler effect.
+ Combined with depth measurements calculated from the signal's echo time,
+ this can be used to estimate the vessel's velocity.
+ DVLs are crucial to a sub-sea INS as, like GPS, their error does not grow
+ when employed correctly unlike other relative sensors.
+ As described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Navigation"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, a sensor who's measurement error does not compound and grow but stays
+ constant is important as it places an upper bound on the overall error
+ and allows the system to maintain accuracy over time.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1416,11 +2324,136 @@ Control
 \end_layout
 
 \begin_layout Subsubsection
+Power
+\end_layout
+
+\begin_layout Subsubsection
+Financials
+\end_layout
+
+\begin_layout Subsubsection
 Summary
 \end_layout
 
-\begin_layout Section
+\begin_layout Part
 Digitalisation
+\end_layout
+
+\begin_layout Standard
+Before discussing how this project aims to leverage 
+\emph on
+digitalisation
+\emph default
+ it is worth defining the term and the adjacent term 
+\emph on
+digitisation
+\emph default
+.
+ Digitisation describes the transforming of data or a process from an analogue
+ system to a digital one, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "workingmouse-digitalisation"
+literal "false"
+
+\end_inset
+
+.
+ It is a value-neutral term in of itself and could have positive or negative
+ effects.
+ A simple example would be transitioning from working with pen-and-paper
+ forms to digital documents and PDFs.
+ 
+\end_layout
+
+\begin_layout Standard
+Digitalisation describes the use of digitisation to increase efficiency
+ and access new value-producing business opportunities, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "workingmouse-digitalisation,gartner-digitalization"
+literal "false"
+
+\end_inset
+
+.
+ To follow the above example, digitalisation could include using groupware
+ in order to collaboratively work on a cloud document as opposed to delivering
+ hard copy revisions of a document between locations.
+\end_layout
+
+\begin_layout Standard
+As a broad concept, there are many ways that the concept of digitalisation
+ could be applied to this project, as a whole, though, the initiative could
+ be described as a 
+\emph on
+smart ship
+\emph default
+.
+ Many of the features rely on interconnected sites, the internet network
+ topology can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Network-topology"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The surface vessel will be connected to the internet via two gateways.
+ While berthed, the vessel should be able to connect to the depot via Ethernet
+ which can be run alongside the shore power line.
+ For internet connectivity while at sea, the vessel will be equipped with
+ satellite internet apparatus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../network/NetworkDiagramJointDepot.png
+	lyxscale 30
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Network topology across the depot, vessel and cloud environment; main services
+ highlighted
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Network-topology"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1450,7 +2483,7 @@ options "bibtotoc"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1458,7 +2491,14 @@ options "bibtotoc"
 
 \begin_layout Section
 \start_of_appendix
-appendix placeholder
+Battery Cell Calculations
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Battery-Cell-Calculations"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
