@@ -37,7 +37,7 @@ cell_rec_emb_c  = 15; % kgCO2eq/kWh
 %I_IN            = 10;   % A
 % above ignored if P_IN defined
 MAX_P_IN        = 8e6;  % W, max power from fuel cells
-P_IN_LOAD       = 0.8;  % most efficient load percent
+P_IN_LOAD       = 0.7;  % most efficient load percent
 P_IN            = MAX_P_IN * P_IN_LOAD; % W
 
 

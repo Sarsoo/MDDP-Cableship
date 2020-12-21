@@ -70,7 +70,7 @@ figs-within-sections
 \use_indices false
 \paperorientation portrait
 \suppress_date true
-\justification true
+\justification false
 \use_refstyle 1
 \use_minted 0
 \index Index
@@ -151,6 +151,14 @@ January 2021
 Sustainable Cable Ship - Group 1
 \end_layout
 
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Subsection
+Sustainability
+\end_layout
+
 \begin_layout Part
 Vessel Study
 \end_layout
@@ -190,6 +198,211 @@ Justify need for buffer battery, surrounding power electronics
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The use of Ammonia fuel cells for power generation on the vessel provides
+ the opportunity to eliminate direct 
+\begin_inset Formula $CO_{2}$
+\end_inset
+
+ emissions from the vessel; when produced using renewable energy (
+\emph on
+green ammonia
+\emph default
+), the entire fuel supply chain from production to use can be made carbon-neutra
+l.
+ From an electrical perspective, however, the current-voltage characteristics
+ of such a system must be considered.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:fuel-cell-iv"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ presents the I-V characteristics for a typical fuel cell, it can be seen
+ that drawing more current from a cell reduces it's voltage.
+ As 
+\begin_inset Formula $P=IV$
+\end_inset
+
+, this inverse relationship results in an optimum current draw to operate
+ with the highest efficiency or power density.
+ Operating outside of this area will accentuate losses, the dominant effects
+ of each operating region can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:fuel-cell-iv-losses"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Comparing the two graphs, it can be seen that the optimum operating state
+ would be in R-2; in fact drawing excess current and pushing into R-3 can
+ damage the cell, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "elec-a2z-fuel-cell-iv"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fuel-cell-i-v.gif
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Current-Voltage characteristics for a typical fuel cell, rated operating
+ point highlighted, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "strathclyde-fuel-cell-efficiency"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fuel-cell-iv"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename fuel-cell-iv-a2z.jpg
+	lyxscale 50
+	width 60col%
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Current-Voltage characteristics for a fuel cell with dominant losses highlighted
+ in each operating region, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "elec-a2z-fuel-cell-iv"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fuel-cell-iv-losses"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+From these figures, fuel cells could be described as being sensitive to
+ a noisy or dynamic load draw.
+ This could pose a complication if these cells to be directly coupled to
+ the drive motor stage where changes in thrust and therefore required power
+ can be vary quickly, especially when using dynamic positioning in a high
+ sea state.
+ Ideally, the use of more cells operating in their optimum state would be
+ preferred over increasing the draw on a smaller population
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Is this valid?
+\end_layout
+
+\end_inset
+
+.
+ However, this increase in active cells is not an instantaneous operation
+ and cells require time to reach their optimum state.
+ To allow this focus on efficiency, the load including hotel and propulsion
+ power should be decoupled from the fuel cells with an electrical storage
+ buffer in between.
+ This will allow the buffer to absorb spikes in load draw and allow the
+ fuel cells to increase power generation by increasing active cells instead
+ of individual draw.
+\end_layout
+
+\begin_layout Standard
+The following outlines solutions for this described buffer, rechargeable
+ batteries are the natural option and as such this is considered first.
+ Other, innovative solutions are also outlined before the implementation
+ of a suitable solution is presented along with the safety and financial
+ implications of such a system.
 \end_layout
 
 \begin_layout Subsection
@@ -978,8 +1191,8 @@ noprefix "false"
  power draw of the battery and the characteristics of the 18650 Lithium
  cell being used.
  The result was 237,169 cells.
- These cells are arranged into a M x N matrix of parallel and series blocks,
- all the series blocks connected in parallel must be of the same length
+ These cells are arranged into a matrix of parallel and series blocks, all
+ the series blocks connected in parallel must be of the same length
 \begin_inset Flex TODO Note (Margin)
 status open
 
@@ -1051,6 +1264,68 @@ Price per pack
 
 \begin_layout Subsection
 Life-cycle Analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Changing over time
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Meta analysis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cradle-to-Gate
+\end_layout
+
+\begin_layout Subsubsection
+End-of-Life
+\end_layout
+
+\begin_layout Subsubsection
+Summary
+\end_layout
+
+\begin_layout Subsection
+Sustainability
+\end_layout
+
+\begin_layout Standard
+Although many of the important environmental aspects of sustainability are
+ covered by a life-cycle analysis, there are other elements to sustainability
+ as previously described.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Lithium and cobalt mining
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -2464,13 +2739,6 @@ name "fig:Network-topology"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:bibliography"
-
-\end_inset
-
-
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
