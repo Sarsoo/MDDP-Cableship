@@ -6,7 +6,7 @@ function [power_in,battery_level,power_out,unused_energy,unavailable_energy, bat
 %%             Specs
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-CELL_TOTAL      = 159201; % from battery script
+CELL_TOTAL      = 193600; % from battery script
 
 CHARGE_EFF      = 0.8;
 DISCHARGE_EFF   = 0.8;
@@ -15,7 +15,8 @@ P_IN_INTERVAL   = ( 200e3/(5*60) ) * 0.75;  % W amount that gen power increases 
 P_OUT_INTERVAL  = 1e4;  % W amount that load can varies by randomly
 
 cell_voltage    = 3.6;  % V
-cell_capacity   = 2850; % mAh
+% cell_capacity   = 2850; % mAh
+cell_capacity   = 3500; % mAh
 cell_dis_c      = 1;    % 1/h
 cell_charge_c   = 0.5;  % 1/h
 

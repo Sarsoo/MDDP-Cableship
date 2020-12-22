@@ -84,19 +84,19 @@ figure('Renderer', 'painters', 'Position', [10 10 1000 800])
 
 line_width = 1;
 subplot(3, 1, 1);
-sgtitle(TITLE);
+%sgtitle(TITLE);
 hold on;
 grid on;
 
 plot(x, power_in / 1e6, 'g', 'LineWidth', 2);
 plot(x, power_out / 1e6, 'r', 'LineWidth', 1);
 
-max_line = yline(MAX_P_OUT / 1e6, '-c', 'LineWidth', line_width * 0.75);
-min_line = yline(MIN_P_OUT / 1e6, '-c', 'LineWidth', line_width * 0.75);
-max_line.Alpha = 0.5;
-min_line.Alpha = 0.5;
+%max_line = yline(MAX_P_OUT / 1e6, '-c', 'LineWidth', line_width * 0.75);
+%min_line = yline(MIN_P_OUT / 1e6, '-c', 'LineWidth', line_width * 0.75);
+%max_line.Alpha = 0.5;
+%min_line.Alpha = 0.5;
 
-yline(p_av / 1e6, '--m', 'LineWidth', line_width * 0.5);
+%yline(p_av / 1e6, '--m', 'LineWidth', line_width * 0.5);
 
 legend('P In', 'P Out', 'Max P Out', 'Min P Out', 'Average P In');
 ylabel('Power (MW)')

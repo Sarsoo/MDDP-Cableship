@@ -109,7 +109,7 @@ figure('Renderer', 'painters', 'Position', [10 10 1000 800])
 
 line_width = 1;
 subplot(3, 1, 1);
-sgtitle('Mission Power Usage');
+%sgtitle('Mission Power Usage');
 % sgtitle(TITLE);
 hold on;
 grid on;

@@ -1132,6 +1132,13 @@ Flow battery, solid state
 
 \begin_layout Subsection
 Proposed Solution
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Proposed-UUV-Battery-Solution"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1154,6 +1161,235 @@ For this project, Lithium was proposed as the solution for a vessel energy
  result of it's critical importance to consumer electronics and electric
  vehicles.
  
+\end_layout
+
+\begin_layout Standard
+There are many standard Lithium-ion standard cell formats from flat pouches
+ and prismatic cells designed for mobile phones to the more standard cylindrical
+ cells.
+ For these applications, cylindrical cells are a suitable choice where compactne
+ss and thinness are not critical design parameters.
+\end_layout
+
+\begin_layout Standard
+The 18650 cell is a mature cylindrical cell with good reliability records
+ and high rates of use among medical equipment, drones and electric vehicles;
+ Tesla uses battery packs composed of 18650 cells.
+\end_layout
+
+\begin_layout Standard
+As with other battery cells, the voltage is a characteristic of the chemistry,
+ for Lithium this is around 3.6 V.
+ The key parameters that vary amongst producers are the capacity and charge/disc
+harge C-rates.
+ In order to estimate the cell specification for use in this project, the
+ existing range of available cells was taken into account.
+ Typical, mid-range 18650 cells can range between 2500 - 3000 mAh capacity;
+ the highest energy density can currently extend this to 3500 - 3600 mAh.
+ As technology improves, it is expected that by the point of construction
+ this higher range will be more accessible and reliable, as such 3500 mAh
+ is used as the cell capacity for further calculations.
+\end_layout
+
+\begin_layout Standard
+The 18650 cell specifications being used herein are described in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:18650-specs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+18650 Cell
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Voltage, (
+\begin_inset Formula $V$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Capacity, (
+\begin_inset Formula $mAh$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3500
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ideal Discharge C-Rate, (
+\begin_inset Formula $h^{-1}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ideal Charge C-Rate, (
+\begin_inset Formula $h^{-1}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Weight, (
+\begin_inset Formula $g$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+48
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+General specifications for 18650 Lithium-ion cells
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:18650-specs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1190,7 +1426,7 @@ noprefix "false"
 ; to summarise, the amount of required cells was calculated from the required
  power draw of the battery and the characteristics of the 18650 Lithium
  cell being used.
- The result was 237,169 cells.
+ The result was 193,600 cells.
  These cells are arranged into a matrix of parallel and series blocks, all
  the series blocks connected in parallel must be of the same length
 \begin_inset Flex TODO Note (Margin)
@@ -1292,12 +1528,139 @@ Meta analysis
 
 \end_layout
 
+\begin_layout Standard
+The life-cycle analysis of Lithium-ion batteries is a complicated process
+ for a couple of reasons.
+ As repeatedly stated, Li-ion batteries have been critical to the explosion
+ of mobile consumer electronics; the development of the fabrication process
+ and the associated environmental effects has changed dramatically.
+ Additionally, as a global product the values for various greenhouse gas
+ (GHG) and other emissions is contingent on the country within which the
+ cells are made.
+\end_layout
+
+\begin_layout Standard
+Both the cumulative energy demand (CED) and the GHG emissions are considered.
+ Cumulative energy demand allows 
+\end_layout
+
 \begin_layout Subsubsection
 Cradle-to-Gate
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename battery-breakdown-mj-kwh.png
+	lyxscale 50
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CED breakdown for a NCM11 battery pack (MJ/kWh), 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "circular-energy-li-lca,argonne-li-ion-lca"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:battery-ced-breakdown"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename cell-breakdown-mj-kwh.png
+	lyxscale 50
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CED breakdown for a NCM11 cell without BMS or pack (MJ/kWh), 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "circular-energy-li-lca,argonne-li-ion-lca"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cell-ced-breakdown"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 End-of-Life
+\end_layout
+
+\begin_layout Standard
+There are two main approaches to sustainable end-of-life processing for
+ Lithium-ion processing, second-use and recycling.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1310,9 +1673,98 @@ Sustainability
 
 \begin_layout Standard
 Although many of the important environmental aspects of sustainability are
- covered by a life-cycle analysis, there are other elements to sustainability
- as previously described.
+ covered by a life-cycle analysis, there are other elements to consider
+ regarding sustainability.
+ One of the most important aspects is a social one, that of the mining of
+ Lithium and Cobalt.
+ The majority of both minerals are located in two areas of the global south
+ where resource shortages and unethical mining practices lead to dangerous
+ and damaging results both socially and environmentally.
+\end_layout
+
+\begin_layout Subsubsection
+Lithium
+\end_layout
+
+\begin_layout Standard
+The majority of global Lithium deposits can be found in an area of South
+ America referred to as the 
+\emph on
+Lithium Triangle
+\emph default
+ covering areas of Chile, Argentina and Bolivia.
+ The area has been estimated to constitute between 54 and 70% of the world's
+ deposits, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wired-lithium,resourceworld-54-lithium"
+literal "false"
+
+\end_inset
+
+.
+ The extraction process is a water-intensive process in an area already
+ without an adequate supply; in Chile this is as much as 65% of the area's
+ water or 500,000 gallons per tonne of Lithium, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wired-lithium"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The processing can also include dangerous chemicals including various acids
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Leaking into water supply Tibet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cobalt
+\end_layout
+
+\begin_layout Standard
+Over half of the world's Cobalt deposits are found in the Democratic Republic
+ of Congo, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wired-lithium,ethical-consumer-conflict-materials"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Although not widely officially designated as such, there are efforts to
+ class Cobalt as a conflict mineral as it's importance grows to one of the
+ most notorious countries for other such minerals including Gold and Tungsten.
  
+\end_layout
+
+\begin_layout Standard
+20% of the exported cobalt has been estimated to come from artisanal mines,
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ethical-consumer-conflict-materials"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1320,7 +1772,33 @@ Although many of the important environmental aspects of sustainability are
 status open
 
 \begin_layout Plain Layout
-Lithium and cobalt mining
+Child workers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Overworked, bad conditions, no PPE, lung disease
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+DRC political implications
 \end_layout
 
 \end_inset
@@ -2506,7 +2984,9 @@ smart buoys
 \emph default
  around the expected working area of the UUV.
  The use of buoys as opposed to beacons on the sea-floor significantly decreases
- the preparation and clean-up mission phases.
+ the preparation and clean-up mission phases.75% would likely be an overestimatio
+n for an overall average usage, 10 hours would be a minimum range for the
+ vehicle
 \end_layout
 
 \begin_layout Standard
@@ -2600,6 +3080,84 @@ Control
 
 \begin_layout Subsubsection
 Power
+\end_layout
+
+\begin_layout Standard
+The ability to operate autonomously without an umbilical cord implies that
+ the UUV must have an onboard power supply.
+\end_layout
+
+\begin_layout Standard
+As mentioned, much of the vehicle specification is being inherited from
+ existing ROV technology and this would include expected operating power.
+ The expansion of the UUV's capabilities to include autonomous operation
+ would primarily be completed through software and not significantly alter
+ the required power.
+\end_layout
+
+\begin_layout Standard
+300 kW was used as the required max power to calculate the energy storage
+ capabilities, an operating time of 10 hours was also defined.
+ An average draw of 50% max power was used to calculate 1.5 MWh of required
+ storage.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+It is proposed that the UUV battery be removable and that two are available.
+ This will provide redundancy as well as providing flexibility during missions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The previously described 18650 cells (section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Proposed-UUV-Battery-Solution"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) will be used for the UUV's battery pack, this will allow a single process
+ for sourcing and end-of-life processing and increase efficiency by utilising
+ the economy of scale.
+ As such, the previously mentioned notes on sustainability including processes
+ for second-use and recycling would apply to the UUVs battery pack.
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+As described in the sustainability, operating at scale has allowed the carbon
+ cost of cells to go down, this is the same thing
+\end_layout
+
+\end_inset
+
+ Lithium-polymer batteries have found usage in AUVs as a result of their
+ lighter weight than Lithium-ion batteries.
+ While this will increase efficiency, it is proposed that the use of a single
+ supply chain will improve sustainability, a key parameter for this project.
+\end_layout
+
+\begin_layout Standard
+The cell voltage (3.6 V) and capacity (3.5 Ah) were multiplied for 12.6 Wh
+ of power capacity per cell.
+ This would require 119,048 cells to meet the capacity requirements.
+\end_layout
+
+\begin_layout Standard
+The battery system constitutes an extra 5,700 kg of extra weight for the
+ UUV, it is important that the battery be removable for tethered operation
+ in order to increase efficiency when independent operation is not required.
 \end_layout
 
 \begin_layout Subsubsection

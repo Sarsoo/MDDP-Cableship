@@ -10,7 +10,7 @@ close all;clear all;clc;
 
 INTEGER_CELLS       = true;
 P_OUT_INCLUDES_P_IN = true; % subtract power in from power out
-% assumes that battery and generation coupled for connection to P out
+% assumes that batter17y and generation coupled for connection to P out
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%           Parameters
@@ -18,7 +18,8 @@ P_OUT_INCLUDES_P_IN = true; % subtract power in from power out
 
 %%%%%%% 18650 Cell
 cell_voltage    = 3.6;  % V
-cell_capacity   = 2850; % mAh
+% cell_capacity   = 2850; % mAh
+cell_capacity   = 3500; % mAh
 cell_dis_c      = 1;    % 1/h
 cell_charge_c   = 0.5;  % 1/h
 
@@ -26,7 +27,8 @@ cell_weight     = 48;   % g
 cell_dia        = 18.4; % mm
 cell_height     = 65;   % mm
 
-cell_price      = 6;    % £
+%cell_price      = 6;    % £
+cell_price      = 5;    % £
 
 cell_emb_c      = 117.5; % kgCO2eq/kWh
 cell_rec_emb_c  = 15; % kgCO2eq/kWh
