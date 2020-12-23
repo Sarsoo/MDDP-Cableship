@@ -1481,6 +1481,62 @@ Safety Circuitry
 Lifespan
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename discharge-voltage-temperature.jpg
+	lyxscale 30
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Voltage-Capacity characteristics for a 18650 Li-ion cell at varying temperatures
+, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "batt-uni-discharge-temp"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:temperature-characteristics"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Financial
 \end_layout
@@ -1503,37 +1559,13 @@ Life-cycle Analysis
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Changing over time
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Meta analysis
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The life-cycle analysis of Lithium-ion batteries is a complicated process
- for a couple of reasons.
+The life-cycle analysis (LCA) of Lithium-ion batteries is a complicated
+ process for a couple of reasons.
  As repeatedly stated, Li-ion batteries have been critical to the explosion
  of mobile consumer electronics; the development of the fabrication process
  and the associated environmental effects has changed dramatically.
+ More recent LCAs and meta-analyses of previous data is considered in order
+ to account for this.
  Additionally, as a global product the values for various greenhouse gas
  (GHG) and other emissions is contingent on the country within which the
  cells are made.
@@ -1541,7 +1573,15 @@ The life-cycle analysis of Lithium-ion batteries is a complicated process
 
 \begin_layout Standard
 Both the cumulative energy demand (CED) and the GHG emissions are considered.
- Cumulative energy demand allows 
+ Cumulative energy demand allows abstraction over the specific method of
+ energy production and the associated emissions.
+\end_layout
+
+\begin_layout Standard
+Many of the LCA studies on Lithium-ion batteries consider a cradle-to-gate
+ scope without including use or end-of-life.
+ Two end-of-life procedures are considered as well as practices to improve
+ usage lifetime.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1594,13 +1634,39 @@ name "fig:battery-ced-breakdown"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:battery-ced-breakdown"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ outlines the cumulative energy demand for the major elements of a Nickel/Cobalt
+/Manganese cathode (NCM11) battery.
+ As 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "circular-energy-li-lca"
+literal "false"
+
+\end_inset
+
+ points out, cathodes are tending towards a higher cathode composition of
+ Nickel, however the general proportions are relevant to other chemistries.
+ It can be seen that the production of the cells constitutes the majority
+ of the required CED at 75% of the total.
+ As this is also the element of the battery that requires periodic replacement
+ following degradation, a closer look at the contributing stages should
+ be considered.
 \end_layout
 
 \begin_layout Standard
@@ -1652,6 +1718,249 @@ name "fig:cell-ced-breakdown"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+This further breakdown can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:cell-ced-breakdown"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename battery-breakdown-c02e-kwh.png
+	lyxscale 50
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Equivalent carbon breakdown for a NCM11 battery pack (kg CO2e/kWh), 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "circular-energy-li-lca,argonne-li-ion-lca"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:battery-co2e-breakdown"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Use
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Smart charging
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The use of Lithium batteries does not inherently incur a Carbon cost; the
+ associated cost of energy stored is accounted for by the source of this
+ energy, in this case ammonia fuel cells
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+solar panels?
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The use of the batteries does require analysis, however.
+ The source and end-of-life procedures for a battery pack is a carbon intensive
+ operation and the ability to extend the time in-between replacement will
+ improve the environmental impact overall.
+\end_layout
+
+\begin_layout Standard
+There are a number of ways to increase the lifespan of a battery pack.
+ As previously mentioned, the temperature of the cells is a key parameter
+ affecting both performance and lifespan, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "batt-uni-discharge-temp"
+literal "false"
+
+\end_inset
+
+.
+ Although operating at a higher temperature increases performance it also
+ decreases lifespan.
+ Temperature control is already critical for safety purposes, 20°C provides
+ the ideal temperature for prolonging lifespan and as such will be set as
+ the target temperature, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "batt-uni-discharge-temp"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Another important aspect to the lifespan of Lithium-ion batteries is the
+ depth-of-discharge (DOD) which determines the number of charge cycles that
+ the battery will last for.
+ The depth-of-discharge describes the amount of capacity used each cycle
+ before recharging.
+ Lithium batteries are able to handle moderate DOD without significantly
+ affecting the lifespan however frequent deep discharge cycles, completely
+ emptying the battery, will reduce shorten it's life, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bat-uni-prolong-liion"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Similar to frequently completely discharging the battery, storing a battery
+ fully charged for long periods of time can also shorten it's lifespan.
+ This can be seen presented in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:charge-lifespan"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ where higher cell charge voltages can be seen to reduce capacity much faster
+ as time or charge cycles increases.
+ Also worth noting is that the capacity is initially higher for higher voltages,
+ it is the lifespan that can be extended by picking a more reserved value.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename lithium-overcharge-capacity.jpg
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The lifespan of Lithium-ion cells described by the max capacity as charge
+ cycles increase for various charge voltages, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bat-uni-prolong-liion"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:charge-lifespan"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Both of the above points, tempering DOD and charge voltage can be managed
+ by an intelligent charge system.
+ To prevent deep discharges, the charge system should instruct more ammonia
+ fuel cells to start up as the capacity decreases.
+ Additionally, it would be the system's responsibility to charge cells to
+ a reasonable voltage, 3.9 - 4.1 V can provide a balance between higher capacity
+ and longer lifespan, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bat-uni-prolong-liion"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
