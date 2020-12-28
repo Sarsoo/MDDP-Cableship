@@ -30,8 +30,11 @@ batt_capacity   = CELL_TOTAL * cell_capacity * cell_voltage / 1e3; % Wh
 
 % P_IN            = MAX_P_IN * P_IN_LOAD; % W, efficient load
 P_IN            = (MIN_P_OUT + MAX_P_OUT) / 2; % W, Average power out
+P_IN_EFF        = 200e3; % W per cell of efficiency
 
 sim_seconds     = SIMULATION_DAYS * 24 * 60 * 60;
+
+twenty_minutes  = 20 * 60; % s
 
 %%%%%%% unit conversions
 batt_capacity   = batt_capacity * 3600; % J
@@ -138,24 +141,29 @@ for SECOND=1:sim_seconds
     
     batt_percent = (battery_level(SECOND)/batt_capacity);
     
-    % BATTERY LOW, INCREASE POWER IN
-%     if battery_net < 0 && batt_percent < BATT_WARN_LEVEL
-    if batt_percent < BATT_WARN_LEVEL
-        percent_diff = (BATT_WARN_LEVEL - batt_percent) / BATT_WARN_LEVEL;
-        current_p_in = min(current_p_in + percent_diff * P_IN_INTERVAL, MAX_P_IN);
-    
-    % BATTERY HIGH, DECREASE POWER IN
-    elseif batt_percent > BATT_FULL_LEVEL && batt_percent < 1
-        percent_diff = 1 - (abs(BATT_FULL_LEVEL - batt_percent) / (1 - BATT_FULL_LEVEL));
-        current_p_in = max(current_p_in - percent_diff * P_IN_INTERVAL, MIN_P_IN);
-    
-    % NEITHER, RELAX TO EFFICIENT STATE
-    else
-        delta_to_efficiency = P_IN - current_p_in;
-        if delta_to_efficiency > 0
-            current_p_in = min(current_p_in + P_IN_INTERVAL, P_IN);
+    if mod(SECOND, twenty_minutes) == 0
+        % BATTERY LOW, INCREASE POWER IN
+    %     if battery_net < 0 && batt_percent < BATT_WARN_LEVEL
+        if batt_percent < BATT_WARN_LEVEL
+            % percent_diff = (BATT_WARN_LEVEL - batt_percent) / BATT_WARN_LEVEL;
+            %current_p_in = min(current_p_in + percent_diff * P_IN_INTERVAL, MAX_P_IN);
+            current_p_in = current_p_in + P_IN_EFF;
+
+        % BATTERY HIGH, DECREASE POWER IN
+        elseif batt_percent > BATT_FULL_LEVEL
+            % percent_diff = 1 - (abs(BATT_FULL_LEVEL - batt_percent) / (1 - BATT_FULL_LEVEL));
+            % current_p_in = max(current_p_in - percent_diff * P_IN_INTERVAL, MIN_P_IN);
+
+            current_p_in = max(current_p_in - P_IN_EFF, 0);
+
+        % NEITHER, RELAX TO EFFICIENT STATE
         else
-            current_p_in = max(current_p_in - P_IN_INTERVAL, P_IN);
+            delta_to_efficiency = P_IN - current_p_in;
+            if delta_to_efficiency > 0
+                current_p_in = min(current_p_in + P_IN_INTERVAL, P_IN);
+            else
+                current_p_in = max(current_p_in - P_IN_INTERVAL, P_IN);
+            end
         end
     end
 end

@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\pagenumbering{roman}
+\end_preamble
 \use_default_options true
 \begin_modules
 customHeadersFooters
@@ -15,7 +18,7 @@ figs-within-sections
 \maintain_unincluded_children false
 \language british
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -32,7 +35,7 @@ figs-within-sections
 \graphics default
 \default_output_format default
 \output_sync 0
-\bibtex_command default
+\bibtex_command biber
 \index_command default
 \paperfontsize default
 \spacing single
@@ -139,6 +142,17 @@ LatexCommand tableofcontents
 
 \end_layout
 
+\begin_layout List of TODOs
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Right Footer
 Andy Pack
 \end_layout
@@ -149,6 +163,31 @@ January 2021
 
 \begin_layout Left Header
 Sustainable Cable Ship - Group 1
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -175,6 +214,78 @@ Power Requirements
 Hotel Load [AP]
 \end_layout
 
+\begin_layout Standard
+The hotel load is defined as the energy usage not related to the propulsion
+ including lighting and power outlets.
+ An estimation of this load for the vessel was modelled, a breakdown can
+ be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:hotel-load"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The total was estimated at 680 kWh per day.
+ As can be seen the oven and food refrigeration make up the make up the
+ majority, 3 methods for refrigeration were investigated in order to find
+ the most energy efficient solution.
+ These included a collection of standard upright fridges, all-in-one cold
+ rooms and a bespoke cold room.
+ All-in-one cold-rooms were the most energy efficient and were selected
+ as a result.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename hotel-load.png
+	lyxscale 40
+	width 90col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Breakdown of hotel load energy for the surface vessel, totals to 
+\begin_inset Formula $\thickapprox$
+\end_inset
+
+680 kW
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:hotel-load"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Efficiency Investigations
 \end_layout
@@ -183,8 +294,27 @@ Efficiency Investigations
 Solar [AP]
 \end_layout
 
-\begin_layout Section
-Energy Storage [AP]
+\begin_layout Standard
+The scope the vessel's solar energy capabilities was investigated with the
+ intention of supplementing the chemical energy of the ammonia fuel cells.
+ The capabilities of photovoltaic cells covering an area of the vessel's
+ footprint are considered and compared with both the financial and carbon
+ cost in an effort to determine whether the proposal would be effective
+ in achieving the goal of net-zero operations.
+\end_layout
+
+\begin_layout Standard
+The expected available area capable of hosting photovoltaic cells was estimated
+ to be 26m x 30m or 780 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -192,7 +322,7 @@ Energy Storage [AP]
 status open
 
 \begin_layout Plain Layout
-Justify need for buffer battery, surrounding power electronics
+Probably not going to use
 \end_layout
 
 \end_inset
@@ -201,9 +331,52 @@ Justify need for buffer battery, surrounding power electronics
 \end_layout
 
 \begin_layout Standard
-The use of Ammonia fuel cells for power generation on the vessel provides
- the opportunity to eliminate direct 
-\begin_inset Formula $CO_{2}$
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Not using instead of a carbon producing source therefore carbon needs to
+ be offset elsewhere
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Just a carbon and financial cost, likely unnecessary
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Energy Storage [AP]
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Energy-Storage"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The use of ammonia fuel cells for power generation on the vessel provides
+ the opportunity to eliminate direct CO
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
 \end_inset
 
  emissions from the vessel; when produced using renewable energy (
@@ -371,10 +544,10 @@ name "fig:fuel-cell-iv-losses"
 \begin_layout Standard
 From these figures, fuel cells could be described as being sensitive to
  a noisy or dynamic load draw.
- This could pose a complication if these cells to be directly coupled to
- the drive motor stage where changes in thrust and therefore required power
- can be vary quickly, especially when using dynamic positioning in a high
- sea state.
+ This could pose a complication if these cells were to be directly coupled
+ to the drive motor stage where changes in thrust and therefore required
+ power can be vary quickly, especially when using dynamic positioning in
+ a high sea state.
  Ideally, the use of more cells operating in their optimum state would be
  preferred over increasing the draw on a smaller population
 \begin_inset Flex TODO Note (Margin)
@@ -1054,8 +1227,7 @@ literal "false"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Comparison of physical characteristics for common rechargeable battery chemistri
-es
+Comparison of physical characteristics for common rechargeable battery chemistry
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:battery-chemistry-stats"
@@ -1118,16 +1290,619 @@ Innovative Solutions
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
+Traditional rechargeable batteries of varying chemistry are currently the
+ standard for this domain.
+ However, other systems utilising a different technology were also considered.
+\end_layout
+
+\begin_layout Subsubsection
+Flow Battery
+\end_layout
+
+\begin_layout Standard
+A redox flow battery is a type of electrochemical cell where the energy
+ is stored in two chemicals brought together at a membrane in order to facilitat
+e ion exchange and create a potential difference or voltage.
+\end_layout
+
+\begin_layout Standard
+This can be structured to function like a rechargeable battery as the chemical
+ reaction is reversible.
+\end_layout
+
+\begin_layout Standard
+There are a number of advantages to a system like this, for example it is
+ less sensitive than Lithium-ion to overcharge and overdischarge with no
+ need for equalisation charging.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-Flow battery, solid state
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Energy Density (WhL
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Power Density (WL
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bromine-polysulphide
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 - 35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vanadium-vanadium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 - 35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60 - 100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Iron-chromium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 - 35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vanadium-bromine
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 - 35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zinc-/bromine
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 - 35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zinc-cerium
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 - 35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soluble lead-acid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 - 35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Conventional lead-acid
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+60 - 80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+230
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lithium-ion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150 - 200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+275
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nickel-metal-hydride
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100 - 150
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+330
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Energy and power densities for typical redox flow battery chemistry (top)
+ compared to traditional rechargeable cells (bottom), 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "flow-battery-energy-density"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:flow-battery-energy-density"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The main disadvantage relevant to the required applications is the required
+ space and incurred weight.
+ Flow batteries typically have a much lower energy and power density than
+ traditional rechargeable batteries, a comparison of values for various
+ structures can be seen in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:flow-battery-energy-density"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Both values are critical for our purposes; as a buffer for absorbing possibly
+ large peaks from the propulsion, it is key that a high power can be drawn
+ from the solution.
+ From the presented values, Lithium-ion can provide between about 3 and
+ 7 times as much power draw than redox flow batteries.
+ Looking to energy or capacity density, Li-ion is roughly 4 to 10 times
+ higher.
+ 
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Sentence on energy density
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To achieve the capacity and power requirements defined by the propulsion
+ system, a flow battery would likely need vastly more space and weigh significan
+tly more.
+ The weight penalty would prove the more damaging as this would require
+ more fuel for propulsion and lower the efficiency of the vessel.
+\end_layout
+
+\begin_layout Standard
+Although flow batteries have found applications in large-capacity applications
+ including grid services from load balancing to peak shaving, these are
+ typically stationary without as much of a volume restriction.
+\end_layout
+
+\begin_layout Subsubsection
+Solid-State
+\end_layout
+
+\begin_layout Standard
+The previously described traditional rechargeable batteries have a liquid
+ electrolyte in which the electrodes are submerged.
+ This solution allows ions to pass between the electrodes during charge
+ and discharge.
+ Systems in which this liquid electrolyte is instead a solid are called
+ solid-state batteries (SSB).
+ This provides an advantage in that these liquid electrolytes are typically
+ one of the key causes of safety concerns as they are flammable and sometimes
+ toxic.
+ These are important considerations for this domain.
+ With less of a concern regarding high operating temperatures, this also
+ allows SSBs to be charged faster.
+\end_layout
+
+\begin_layout Standard
+Additionally the system has the opportunity to increase energy density,
+ thereby reducing the required space while increasing the available capacity.
+ 
+\end_layout
+
+\begin_layout Standard
+Unfortunately, however, there are a number of considerations that, currently,
+ make it unsuitable for the required applications.
+ As an active area of research without much commercial availability, the
+ price of solid-state batteries is much higher than that of other formats,
+ for comparison, the 
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Price
+\end_layout
+
+\end_inset
+
+.
+ Additionally, concerns associated with Lithium-ion batteries including
+ overheating and explosion are not completely removed by transitioning to
+ an SSB.
+ Dendrites are structures of Lithium that can form during charging and dischargi
+ng as a result of electrodeposition.
+ While this should occur evenly across the electrode, if uneven it can cause
+ columns to grow towards the separator.
+ As these grow they can penetrate through this separator and make contact
+ with the cathode.
+ This will cause a short circuit, rapidly increasing heat and potentially
+ causing fire and explosion.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename dendrite.jpg
+	width 40col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dendrites growing between the Lithium battery electrodes, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "mse-supplies-dendrite"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dendrites"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand cite
+key "4-ssb-challenges-article"
+literal "false"
+
+\end_inset
+
+ summarises four current challenges to scaling up solid-state batteries
+ as investigated by 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SSB-challenges-paper"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+Stability of the electrode-electrolyte interface
+\end_layout
+
+\begin_layout Enumerate
+Characterising and analysing this interface in a now opaque structure
+\end_layout
+
+\begin_layout Enumerate
+Sustainable manufacturing processes
+\end_layout
+
+\begin_layout Enumerate
+Designing for recyclability
+\end_layout
+
+\begin_layout Standard
+These last two are critical for the project objectives.
+ With these considerations it is suggested that solid-state batteries will
+ not be ready at the time of construction to supply the scale of storage
+ array required.
 \end_layout
 
 \begin_layout Subsection
@@ -1142,25 +1917,14 @@ name "subsec:Proposed-UUV-Battery-Solution"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Justify lithium & 18650 cell
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-For this project, Lithium was proposed as the solution for a vessel energy
- storage solution.
+For this project, Lithium-ion chemistry was proposed as a solution for a
+ vessel energy storage solution.
  As previously mentioned, the domain is an area of fervent research as a
  result of it's critical importance to consumer electronics and electric
  vehicles.
- 
+ An important factor in the decision is the scale of system required, this
+ will have significant impacts on the ability to source and dispose of a
+ system as well as the financial and safety implications.
 \end_layout
 
 \begin_layout Standard
@@ -1184,7 +1948,7 @@ As with other battery cells, the voltage is a characteristic of the chemistry,
 harge C-rates.
  In order to estimate the cell specification for use in this project, the
  existing range of available cells was taken into account.
- Typical, mid-range 18650 cells can range between 2500 - 3000 mAh capacity;
+ Typical, mid-range 18650 cells can vary between 2500 - 3000 mAh capacity;
  the highest energy density can currently extend this to 3500 - 3600 mAh.
  As technology improves, it is expected that by the point of construction
  this higher range will be more accessible and reliable, as such 3500 mAh
@@ -1397,22 +2161,9 @@ Configuration
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Matlab code, C rates etc
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 The amount of required cells for the battery system was calculated using
  the expected propulsion power requirements in conjunction with the expected
- generation capabilities of the Ammonia fuel cells.
+ generation capabilities of the ammonia fuel cells.
  The specifics for the calculations can be seen in appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1442,15 +2193,20 @@ Figure?
 \end_layout
 
 \begin_layout Standard
-The balance of parallel to series blocks not necessarily a critical design
- parameter; as the drive motors are AC, transformers can be used to modify
- the two parameters.
+The balance of parallel to series blocks is not a critical parameter for
+ the application and can instead be tuned for efficiency; as the drive motors
+ are AC, transformers can be used to select a desired voltage and current
+ from a given power value.
  For high power applications high voltage is typically preferred to high
- current.
+ current which corresponds to a higher weighting of series length.
 \end_layout
 
 \begin_layout Subsubsection
 Challenges
+\end_layout
+
+\begin_layout Paragraph
+Self-discharge
 \end_layout
 
 \begin_layout Standard
@@ -1458,27 +2214,374 @@ Challenges
 status open
 
 \begin_layout Plain Layout
-\begin_inset Quotes bld
-\end_inset
-
-rapid disassembly
-\begin_inset Quotes brd
-\end_inset
-
-, lifespan reduction (replacement required)
+Self discharge per month, 1-10%?
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Paragraph
+Lifespan
+\end_layout
+
+\begin_layout Standard
+Traditional rechargeable battery cells are a consumable item, the capacity
+ and performance decreases over extended use for a number of reasons including
+ electrode corrosion, reduced porosity or a reduction in Lithium ions as
+ a result of side reactions, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "li-ion-degradation"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+After a period of time defined by the cells beginning to perform below a
+ defined acceptable level, they will require replacement.
+ This poses both financial and environmental implications.
+ As will be discussed in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Lifespan"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ this is a significant amount of money.
+ Additionally, the scale of required cells means that the disposal protocols
+ are critical.
+ Options for such disposal procedures are discussed as part of the life
+ cycle analysis in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Life-cycle-Analysis"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Safety
+\end_layout
+
+\begin_layout Standard
+Although Lithium-ion batteries are typically safe and stable if stored and
+ used correctly, abuse can cause severe safety issues.
+ As previously mentioned, the liquid organic electrolyte is flammable, this
+ along with the high energy density of Li-ion batteries can lead to thermal
+ runaway and eventually fire if not handled correctly.
+\end_layout
+
+\begin_layout Standard
+There are a couple of causes for such a thermal runaway, these include physical
+ damage, short circuits, overcharging and exposure to high temperature,
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "washington-lithium-safety"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Multiple measures must be implemented to ensure safety, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "washington-lithium-safety"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Reputable manufacturers must be used as defects during construction can
+ cause or exacerbate faults.
+ 
+\end_layout
+
+\begin_layout Itemize
+The battery system should be located far from combustible materials
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Contextually this would primarily be the fuel cells.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+The cell's temperature should be monitored and controlled.
+\end_layout
+
+\begin_layout Itemize
+Cells of the same age must be grouped and used together
+\end_layout
+
+\begin_layout Itemize
+Cells should be charged intelligently in order to mitigate overcharge and
+ implement equalisation charging, see 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Safety-Circuitry"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The battery system should be stored in an water/air-tight container
+\end_layout
+
+\begin_layout Itemize
+This container should be able to safely vent gases
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+In the event of an emergency, cells can release toxic gases (CO
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+, CO, HF)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+With regards to the described container, as previously outlined, standard
+ shipping containers will be used
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Container spec?
+\end_layout
+
+\end_inset
+
+.
+ This provides a good base to extend in order to meet the above, i.e.
+ air/water-tight and venting.
 \end_layout
 
 \begin_layout Subsubsection
-Safety Circuitry
+Charging & Safety Circuitry
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Safety-Circuitry"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As previously described, Lithium-ion cells are sensitive to stressful electrical
+ conditions such as overcharging, deep discharging and excessive current
+ draw.
+\end_layout
+
+\begin_layout Standard
+In order to protect and enforce operating conditions for the Lithium cells,
+ a battery management system or BMS is used.
+ A BMS implements safety protocols to mitigate the above effects as well
+ as providing information to the load and other monitoring services such
+ as state-of-charge information (remaining capacity), 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "batt-uni-bms"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
 Lifespan
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Lifespan"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lithium-ion cells are a consumable item that degrades.
+ The environmental and financial cost of replacement creates a significant
+ incentive to extend this as much as possible as long as this does not inhibit
+ the operating capabilities beyond the specification.
+\end_layout
+
+\begin_layout Standard
+As previously mentioned, the temperature of the cells is a key parameter
+ affecting both performance and lifespan, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "batt-uni-discharge-temp"
+literal "false"
+
+\end_inset
+
+.
+ Although operating at a higher temperature increases performance it also
+ decreases lifespan.
+ Temperature control is already critical for safety purposes, 20°C provides
+ the ideal temperature for prolonging lifespan and as such will be set as
+ the target temperature, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "batt-uni-discharge-temp"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Another important aspect to the lifespan of Lithium-ion batteries is the
+ depth-of-discharge (DOD) which determines the number of charge cycles that
+ the battery will last for.
+ The depth-of-discharge describes the amount of capacity used each cycle
+ before recharging.
+ Lithium batteries are able to handle moderate DOD without significantly
+ affecting the lifespan however frequent deep discharge cycles, completely
+ emptying the battery, will reduce shorten it's life, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bat-uni-prolong-liion"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Similar to frequently completely discharging the battery, storing a battery
+ fully charged for long periods of time can also shorten it's lifespan.
+ This can be seen presented in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:charge-lifespan"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ where higher cell charge voltages can be seen to reduce capacity much faster
+ as time or charge cycles increases
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Worth noting that the capacity is initially higher for higher voltages,
+ it is the lifespan that can be extended by picking a more reserved value.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename lithium-overcharge-capacity.jpg
+	width 55col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The lifespan of Lithium-ion cells described by the max capacity as charge
+ cycles increase for various charge voltages, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bat-uni-prolong-liion"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:charge-lifespan"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Both of the above points, tempering DOD and charge voltage rely on the BMS.
+ To prevent deep discharges, more ammonia fuel cells should start up as
+ the capacity decreases in order to balance the workload, the ammonia management
+ system will need to interface with the BMS.
+ Additionally, it would be the responsibility of the BMS to charge cells
+ to a reasonable voltage, 3.9 - 4.1 V can provide a balance between higher
+ capacity and longer lifespan, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bat-uni-prolong-liion"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1492,7 +2595,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename discharge-voltage-temperature.jpg
-	lyxscale 30
+	lyxscale 60
 	width 60col%
 
 \end_inset
@@ -1537,16 +2640,12 @@ name "fig:temperature-characteristics"
 
 \end_layout
 
-\begin_layout Subsubsection
-Financial
-\end_layout
-
 \begin_layout Standard
 \begin_inset Flex TODO Note (inline)
 status open
 
 \begin_layout Plain Layout
-Price per pack
+Define a replacement interval
 \end_layout
 
 \end_inset
@@ -1554,8 +2653,49 @@ Price per pack
 
 \end_layout
 
+\begin_layout Subsubsection
+Financial
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:batteryFinancial"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As described, a battery array lasts approximately 2.3 years, after this point
+ a new set must be sourced.
+ 18650 cells vary in price across manufacturers and distributors, a range
+ of RRPs were taken from UK distributors, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "18650-ecolux,18650.uk,18350-fogstar"
+literal "false"
+
+\end_inset
+
+.
+ In general a cell's RRP ranged between £4 and £7, it is assumed that a
+ procurement department would secure a unit price at the lower end of this
+ for the scale of order required and £5 is used.
+\end_layout
+
+\begin_layout Standard
+A set of 193,600 cells at this cost totals to £968,000 which averages to
+ £420,869 a year for modelling purposes.
+\end_layout
+
 \begin_layout Subsection
 Life-cycle Analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Life-cycle-Analysis"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1564,7 +2704,7 @@ The life-cycle analysis (LCA) of Lithium-ion batteries is a complicated
  As repeatedly stated, Li-ion batteries have been critical to the explosion
  of mobile consumer electronics; the development of the fabrication process
  and the associated environmental effects has changed dramatically.
- More recent LCAs and meta-analyses of previous data is considered in order
+ More recent LCAs and meta-analyses of previous data are considered in order
  to account for this.
  Additionally, as a global product the values for various greenhouse gas
  (GHG) and other emissions is contingent on the country within which the
@@ -1573,8 +2713,8 @@ The life-cycle analysis (LCA) of Lithium-ion batteries is a complicated
 
 \begin_layout Standard
 Both the cumulative energy demand (CED) and the GHG emissions are considered.
- Cumulative energy demand allows abstraction over the specific method of
- energy production and the associated emissions.
+ Cumulative energy demand allows abstraction of the specific method of energy
+ production and the associated emissions.
 \end_layout
 
 \begin_layout Standard
@@ -1661,7 +2801,7 @@ literal "false"
 \end_inset
 
  points out, cathodes are tending towards a higher cathode composition of
- Nickel, however the general proportions are relevant to other chemistries.
+ Nickel, however the general proportions are relevant to other chemistry.
  It can be seen that the production of the cells constitutes the majority
  of the required CED at 75% of the total.
  As this is also the element of the battery that requires periodic replacement
@@ -1785,6 +2925,32 @@ name "fig:battery-co2e-breakdown"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Finish
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Suggest using recycled material in construction to save on largest contributor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Use
 \end_layout
@@ -1826,141 +2992,18 @@ The use of the batteries does require analysis, however.
 \end_layout
 
 \begin_layout Standard
-There are a number of ways to increase the lifespan of a battery pack.
- As previously mentioned, the temperature of the cells is a key parameter
- affecting both performance and lifespan, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "batt-uni-discharge-temp"
-literal "false"
-
-\end_inset
-
-.
- Although operating at a higher temperature increases performance it also
- decreases lifespan.
- Temperature control is already critical for safety purposes, 20°C provides
- the ideal temperature for prolonging lifespan and as such will be set as
- the target temperature, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "batt-uni-discharge-temp"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Another important aspect to the lifespan of Lithium-ion batteries is the
- depth-of-discharge (DOD) which determines the number of charge cycles that
- the battery will last for.
- The depth-of-discharge describes the amount of capacity used each cycle
- before recharging.
- Lithium batteries are able to handle moderate DOD without significantly
- affecting the lifespan however frequent deep discharge cycles, completely
- emptying the battery, will reduce shorten it's life, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bat-uni-prolong-liion"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Similar to frequently completely discharging the battery, storing a battery
- fully charged for long periods of time can also shorten it's lifespan.
- This can be seen presented in figure 
+There are a number of ways to increase the lifespan of a battery pack, these
+ have been outlined in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:charge-lifespan"
+reference "subsec:Lifespan"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
- where higher cell charge voltages can be seen to reduce capacity much faster
- as time or charge cycles increases.
- Also worth noting is that the capacity is initially higher for higher voltages,
- it is the lifespan that can be extended by picking a more reserved value.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename lithium-overcharge-capacity.jpg
-	width 70col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-The lifespan of Lithium-ion cells described by the max capacity as charge
- cycles increase for various charge voltages, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bat-uni-prolong-liion"
-literal "false"
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:charge-lifespan"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Both of the above points, tempering DOD and charge voltage can be managed
- by an intelligent charge system.
- To prevent deep discharges, the charge system should instruct more ammonia
- fuel cells to start up as the capacity decreases.
- Additionally, it would be the system's responsibility to charge cells to
- a reasonable voltage, 3.9 - 4.1 V can provide a balance between higher capacity
- and longer lifespan, 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bat-uni-prolong-liion"
-literal "false"
-
-\end_inset
-
-.
+ and are critical for reducing the environmental impact of the system.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1972,8 +3015,64 @@ There are two main approaches to sustainable end-of-life processing for
  Lithium-ion processing, second-use and recycling.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Explain both
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Think second use is better, might want to force recycling afterwards though?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Summary
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Summarise chemistry, amount of cells, lifespan, end-of-life procedure
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is worth noting that this is the proposed solution based on the current
+ state of energy storage.
+ One of the only advantages of rechargeable batteries being a consumable
+ item requiring replacement is that when this occurs, it is an opportunity
+ to re-evaluate the system design.
+ With an expected project lifespan of 30 years, it is highly unlikely that
+ the use of Li-ion cells will remain the best option.
+ 
+\end_layout
+
+\begin_layout Standard
+Systems based on a solid-state chemistry will likely become more stable
+ and less expensive to the point that the advantages in safety and energy
+ density can be fully utilised without the heavy downsides.
 \end_layout
 
 \begin_layout Subsection
@@ -2119,6 +3218,188 @@ DRC political implications
 Time-dependent Modelling
 \end_layout
 
+\begin_layout Standard
+In order to validate this buffer configuration, a model was constructed
+ to visualise the capacity of the battery system while in use.
+ Explanations as to the specific behaviour and assumptions made can be seen
+ in appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Time-dependent-Power-Modelling"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ An example model describing the vessel dynamic positioning above a cable
+ fault can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dyn-pos-power-model"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../maths/final_report_res/dynpos1.png
+	lyxscale 20
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power model describing the vessel dynamic positioning on mission
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dyn-pos-power-model"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The top sub-figure describes the power in from the ammonia fuel cells and
+ the load power drawn from the hotel and propulsion systems.
+ The middle figure describes the effect this has on the capacity of the
+ battery.
+ The bottom figure describes the efficiency of this system, the 
+\emph on
+unused
+\emph default
+ power describes when more fuel cells than required are turned on and power
+ is drawn below the most efficient state.
+ The 
+\emph on
+unavailable
+\emph default
+ power describes when the fuel cells in their most efficient state and the
+ battery combined cannot meet the requirement.
+ As a result, extra power would be drawn from both pulling them into an
+ inefficient or damaging state.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../maths/final_report_res/mission3.png
+	lyxscale 20
+	width 80col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power model describing one mission including travelling and dynamic positioning
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:mission-power-model"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This model was extended to simulate an entire mission (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:mission-power-model"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) including: 
+\end_layout
+
+\begin_layout Itemize
+Outbound journey (3 days)
+\end_layout
+
+\begin_layout Itemize
+Manoeuvring to the fault (1 day)
+\end_layout
+
+\begin_layout Itemize
+Dynamic positioning while completing the first splice (2 days)
+\end_layout
+
+\begin_layout Itemize
+Manoeuvring to the other half of the cable (1 day)
+\end_layout
+
+\begin_layout Itemize
+Dynamic positioning while completing the second splice (2 days)
+\end_layout
+
+\begin_layout Itemize
+Homeward journey (3 days)
+\end_layout
+
+\begin_layout Standard
+From these models, the amount of battery charge cycles was estimated to
+ be around 2 per day.
+ Extrapolating this to a yearly usage value using the expected vessel usage,
+ a battery array was estimated to last 2.3 years.
+ This is a typical value for the lifespan of Lithium-ion batteries.
+\end_layout
+
 \begin_layout Section
 Mission Ops
 \end_layout
@@ -2196,7 +3477,7 @@ UUVs can be divided into two categories based on their control scheme.
  ROVs have been the vehicle class of choice where complex intervention and
  actuation is required such as offshore oil and gas operations and cable
  repair.
- A human operator controls the vehicle from the surface vessel, bi-directional
+ A human operator controls the vehicle from the surface vessel; bi-directional
  communication including data, control, video and power are transmitted
  through an umbilical cord tether between the two vessels.
  AUVs on the other hand have primarily been used for survey and research
@@ -2235,7 +3516,6 @@ status open
 
 \begin_layout Plain Layout
 determined by the size and range of the vehicle.
- 
 \end_layout
 
 \end_inset
@@ -2259,7 +3539,7 @@ trolled ROVs.
  to identify, cut and grip the cable for retrieval to the surface-vessel.
  In doing so the need for repeated motions of the ship across the cable
  is removed, saving time and fuel.
- Instead the surface vessel uses dynamic positioning in order to maintain
+ Instead, the surface vessel uses dynamic positioning in order to maintain
  it's position above the ROV and cable.
 \end_layout
 
@@ -2280,9 +3560,9 @@ literal "false"
 .
  As such, the ability to protect sub-sea cables in shallower waters by burying
  them from human intervention is a key parameter in protecting cables from
- further damage.
+ further damage and extending the time between repairs.
  While this can be completed with a separate plough, this would require
- more deck space, motion of the surface vessel.
+ more deck space and motion of the surface vessel.
  Ploughs are also typically extremely heavy pieces of equipment and would
  make the vessel less efficient overall.
 \end_layout
@@ -2837,7 +4117,7 @@ noprefix "false"
 status open
 
 \begin_layout Plain Layout
-bathymetry chart
+bathymetry chart?
 \end_layout
 
 \end_inset
@@ -2992,7 +4272,17 @@ Another advantage could be a reduction in risk during mission operations.
  in less likely scenarios, animal intervention.
  An autonomous vehicle has no tether to break and a hybrid ROV/AUV could
  likely be instructed to take control and return home should the tether
- break during missions involving direct human control.
+ break during missions involving direct human control
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+No longer valid, battery is removable when using TMS
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3080,16 +4370,119 @@ Launch & Recovery
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (Margin)
+By allowing the UUV to operate untethered underwater, complications are
+ introduced to the method by which it is launched and recovered to the surface
+ vessel.
+ A tethered ROV of the size being considered typically has a top-hat tether
+ management system (TMS) responsible for controlling the slack in the umbilical
+ cable, an example can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:top-hat-tether"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Smaller vehicles can also use a garage-style TMS where the tether attaches
+ to a box-like cradle that houses the UUV within.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-Top hat or garage TMS to act as LARS interface?
+\noindent
+\align center
+\begin_inset Graphics
+	filename tophat.png
+	lyxscale 50
+	width 40col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A top-hat tether management system attached to the top of an ROV, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tophat-tms"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:top-hat-tether"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This results in the UUV being under control by the surface vessel as it
+ is being lifted from the water, especially during the 
+\emph on
+splash zone
+\emph default
+, the area surrounding the average water level.
+ As the UUV is lifted or dropped through this area and it beings to make
+ contact with the water, the weight load on the crane can change dramatically,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "splash-zone"
+literal "false"
+
+\end_inset
+
+.
+ During this period, the UUV is most at risk of damage as wind and sea forces
+ can make it swing towards the surface vessel.
+ 
+\end_layout
+
+\begin_layout Standard
+The TMS and LARS system together aim to protect both vessels as the UUV
+ descends through the splash zone by dampening the lateral movement of the
+ UUV and by limiting the amount of umbilical slack; this keeps it away from
+ the surface vessel's thrusters, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rov-tms-splash-zone"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+These methods are effective in protecting tethered UUVs during launch and
+ recovery, the challenge comes in defining how the UUV will be deployed
+ when operating autonomously without a tether.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3140,8 +4533,8 @@ Communication
 
 \begin_layout Standard
 As the UUV is now expected to operate independently of the surface vessel,
- it should have the ability to bi-directionally wirelessly communicate with
- the surface vessel.
+ it should have the ability to bi-directionally, wirelessly communicate
+ with the surface vessel.
  Uses for such a communications channel include the UUV reporting it's mission
  status and the surface vessel providing high-level instructions such as
  
@@ -3293,9 +4686,7 @@ smart buoys
 \emph default
  around the expected working area of the UUV.
  The use of buoys as opposed to beacons on the sea-floor significantly decreases
- the preparation and clean-up mission phases.75% would likely be an overestimatio
-n for an overall average usage, 10 hours would be a minimum range for the
- vehicle
+ the preparation and clean-up mission phases.
 \end_layout
 
 \begin_layout Standard
@@ -3387,6 +4778,70 @@ noprefix "false"
 Control
 \end_layout
 
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Maybe unnecessary?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+LARS
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Explain use of top-hat as 
+\begin_inset Quotes bld
+\end_inset
+
+house
+\begin_inset Quotes brd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Deploy through splash zone and detach
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Reference hugin torpedo LARS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Power
 \end_layout
@@ -3409,20 +4864,6 @@ As mentioned, much of the vehicle specification is being inherited from
  capabilities, an operating time of 10 hours was also defined.
  An average draw of 50% max power was used to calculate 1.5 MWh of required
  storage.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-It is proposed that the UUV battery be removable and that two are available.
- This will provide redundancy as well as providing flexibility during missions.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3469,12 +4910,71 @@ The battery system constitutes an extra 5,700 kg of extra weight for the
  in order to increase efficiency when independent operation is not required.
 \end_layout
 
+\begin_layout Standard
+As this battery array will experience less usage than the surface vessel's
+ set, it is expected that it will last longer.
+ Despite undergoing less charge cycles, Lithium-ion cells still have a finite
+ lifespan and would not be expected to last beyond 4 years.
+ As such this is defined as the battery replacement time period.
+\end_layout
+
+\begin_layout Subsubsection
+Sustainability
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Point to surface vessel battery for LCA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Financials
 \end_layout
 
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Find number for cost of UUV
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As described, a single type of Lithium cell are being used in order to benefit
+ from the economy of scale.
+ Using the previously specified £5 unit price, a set of UUV battery cells
+ will cost £595,240.
+ Modelling this across it's lifespan averages to £148,810 per year.
+\end_layout
+
 \begin_layout Subsubsection
 Summary
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Summarise choice, batteries, AUV/ROV setup
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part
@@ -3599,6 +5099,45 @@ name "fig:Network-topology"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Heartbeat data points, battery level, fuel levels, location, bearing etc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Remote control of surface vessel and UUV?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+Smart lighting etc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -3634,6 +5173,123 @@ name "sec:Battery-Cell-Calculations"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+C rates
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Time-dependent Power Modelling
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Time-dependent-Power-Modelling"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Power In
+\end_layout
+
+\begin_layout Standard
+As described in the premise for why a buffer is needed (section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Energy-Storage"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), the power from the ammonia fuel cells will primarily be varied by changing
+ the population of active cells as opposed to drawing varied power from
+ each individually.
+ This allows the cells to operate as much as possible in their most efficient
+ state.
+ However cells require time to turn on and reach this efficient state, about
+ 20 minutes.
+ This was modelled by having the input power move in discrete steps as cells
+ are turned on and off.
+ This step value was defined as 200kW, the most efficient state for a single
+ fuel cell.
+ 
+\end_layout
+
+\begin_layout Standard
+As time increases, every twenty minutes the amount of active cells can be
+ incremented or decremented.
+ This over-simplifies the actual behaviour as this would, in reality, be
+ a gradual process as opposed to one of discrete steps however it was deemed
+ acceptable in order to enforce the time penalty in changing the number
+ of powering cells.
+\end_layout
+
+\begin_layout Subsection
+Power Out
+\end_layout
+
+\begin_layout Standard
+In order to model the load draw from the propulsion and hotel load, a random
+ differential was applied each second.
+ This was done in order to provide a dynamic environment, were the load
+ power to stay the same the battery would either charge or discharge entirely
+ and then stay in this state.
+ A random change each second more closely matches the expected power requirement
+s as the wind and currents are also dynamic.
+ 
+\end_layout
+
+\begin_layout Standard
+The max load differential was defined as 10 kW.
+ This means that each second the load could change by a maximum of 
+\begin_inset Formula $\pm$
+\end_inset
+
+10kW as a random number between -1 and 1 was generated and used as a coefficient.
+\end_layout
+
+\begin_layout Standard
+The different stages of a mission were defined as having a maximum and minimum
+ load power which the random function was able to fluctuate between.
+ When dynamic positioning it could be expected that more power would be
+ used than when completing either the out or home-bound journey.
+\end_layout
+
+\begin_layout Subsection
+Efficiencies
+\end_layout
+
+\begin_layout Standard
+The charging and discharging of the battery is not a completely efficient
+ process.
+ In order to take this into account, both processes were treated as 80%
+ efficient.
+\end_layout
+
+\begin_layout Subsection
+Validity
+\end_layout
+
+\begin_layout Standard
+In terms of applicability, the model provides a good high-level approximation
+ of the relationship between the fuel cells and the battery usage.
+ In reality, however, the system would be far more complex.
+ For example, the model only increments or decrements the active fuel cells
+ by one at each twenty minute interval when in reality many could be activated
+ or deactivated simultaneously.
 \end_layout
 
 \end_body

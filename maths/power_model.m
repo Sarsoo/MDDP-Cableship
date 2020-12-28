@@ -27,7 +27,7 @@ P_IN_LOAD       = 0.3;  % most efficient load percent
 %%%%% DP (SS7)
 MAX_P_OUT       = 3842e3;  % W
 MIN_P_OUT       = 362e3;    % W
-TITLE           = 'Dyn. Pos. Sea State 7';
+TITLE           = 'Dynamic Positioning Sea State 7';
 SIMULATION_DAYS = 2;   % days
 
 cable_drum      = get_extra_p(SIMULATION_DAYS*day_to_seconds, 3*hours_to_seconds, 1.5*hours_to_seconds, 946.26e3);
@@ -84,7 +84,7 @@ figure('Renderer', 'painters', 'Position', [10 10 1000 800])
 
 line_width = 1;
 subplot(3, 1, 1);
-%sgtitle(TITLE);
+sgtitle(TITLE);
 hold on;
 grid on;
 
@@ -98,7 +98,7 @@ plot(x, power_out / 1e6, 'r', 'LineWidth', 1);
 
 %yline(p_av / 1e6, '--m', 'LineWidth', line_width * 0.5);
 
-legend('P In', 'P Out', 'Max P Out', 'Min P Out', 'Average P In');
+legend('Power In', 'Power Out', 'Max P Out', 'Min P Out', 'Average P In');
 ylabel('Power (MW)')
 xlim([0 inf])
 % ylim([0 ceil(max(max(power_in/1e6), max(power_out/1e6)))])

@@ -109,7 +109,7 @@ figure('Renderer', 'painters', 'Position', [10 10 1000 800])
 
 line_width = 1;
 subplot(3, 1, 1);
-%sgtitle('Mission Power Usage');
+sgtitle('Mission Power Usage');
 % sgtitle(TITLE);
 hold on;
 grid on;
@@ -124,7 +124,7 @@ plot(x, power_out / 1e6, 'r', 'LineWidth', 1);
 
 % yline(P_IN / 1e6, '--m', 'LineWidth', line_width * 0.5);
 
-legend('P In', 'P Out');
+legend('Power In', 'Power Out');
 ylabel('Power (MW)')
 xlim([0 inf])
 ylim([0 ceil(max(max(power_in/1e6), max(power_out/1e6)))])
