@@ -217,8 +217,8 @@ Hotel Load [AP]
 \begin_layout Standard
 The hotel load is defined as the energy usage not related to the propulsion
  including lighting and power outlets.
- An estimation of this load for the vessel was modelled, a breakdown can
- be seen in figure 
+ An estimation of this load for the vessel was modelled and a breakdown
+ can be seen in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:hotel-load"
@@ -229,10 +229,10 @@ noprefix "false"
 \end_inset
 
 .
- The total was estimated at 680 kWh per day.
- As can be seen the oven and food refrigeration make up the make up the
- majority, 3 methods for refrigeration were investigated in order to find
- the most energy efficient solution.
+ The total load was estimated at 680 kWh per day.
+ As can be seen the oven and food refrigeration make up the majority and
+ so 3 methods for refrigeration were investigated in order to find the most
+ energy efficient solution.
  These included a collection of standard upright fridges, all-in-one cold
  rooms and a bespoke cold room.
  All-in-one cold-rooms were the most energy efficient and were selected
@@ -295,8 +295,9 @@ Solar [AP]
 \end_layout
 
 \begin_layout Standard
-The scope the vessel's solar energy capabilities was investigated with the
- intention of supplementing the chemical energy of the ammonia fuel cells.
+The scope of the vessel's solar energy capabilities was investigated with
+ the intention of supplementing the chemical energy of the ammonia fuel
+ cells.
  The capabilities of photovoltaic cells covering an area of the vessel's
  footprint are considered and compared with both the financial and carbon
  cost in an effort to determine whether the proposal would be effective
@@ -402,7 +403,7 @@ noprefix "false"
 \end_inset
 
  presents the I-V characteristics for a typical fuel cell, it can be seen
- that drawing more current from a cell reduces it's voltage.
+ that drawing more current from a cell reduces its voltage.
  As 
 \begin_inset Formula $P=IV$
 \end_inset
@@ -543,11 +544,9 @@ name "fig:fuel-cell-iv-losses"
 
 \begin_layout Standard
 From these figures, fuel cells could be described as being sensitive to
- a noisy or dynamic load draw.
- This could pose a complication if these cells were to be directly coupled
- to the drive motor stage where changes in thrust and therefore required
- power can be vary quickly, especially when using dynamic positioning in
- a high sea state.
+ a noisy or dynamic load such as when changes in thrust and therefore required
+ power vary quickly.
+ For example, when using dynamic positioning in a high sea state.
  Ideally, the use of more cells operating in their optimum state would be
  preferred over increasing the draw on a smaller population
 \begin_inset Flex TODO Note (Margin)
@@ -571,7 +570,7 @@ Is this valid?
 \end_layout
 
 \begin_layout Standard
-The following outlines solutions for this described buffer, rechargeable
+The following section outlines solutions for this described buffer, rechargeable
  batteries are the natural option and as such this is considered first.
  Other, innovative solutions are also outlined before the implementation
  of a suitable solution is presented along with the safety and financial
@@ -593,8 +592,8 @@ secondary cell
  Secondary cells are a consumable item, their components degrade with usage
  and this lifespan will be reduced if not constructed and maintained correctly.
  This only accentuates the importance of the solution's sustainability as
- it constitute a significant amount of material which will periodically
- require source and disposal.
+ it constitutes a significant amount of material which will periodically
+ require replacing and disposal.
 \end_layout
 
 \begin_layout Standard
@@ -1274,7 +1273,7 @@ remembering
 \emph default
  the point at which charging began and experiencing a drop in voltage past
  this point.
- Additionally, Cadmium is a highly toxic heavy metal requiring specialist
+ Additionally, Cadmium is a highly toxic heavy metal, requiring specialist
  containment; in fact, many types of Cadmium battery are now banned in the
  EU.
 \end_layout
@@ -1292,7 +1291,7 @@ Innovative Solutions
 \begin_layout Standard
 Traditional rechargeable batteries of varying chemistry are currently the
  standard for this domain.
- However, other systems utilising a different technology were also considered.
+ However, other systems utilising different technologies were also considered.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1710,7 +1709,7 @@ name "tab:flow-battery-energy-density"
 
 \begin_layout Standard
 The main disadvantage relevant to the required applications is the required
- space and incurred weight.
+ space and weight.
  Flow batteries typically have a much lower energy and power density than
  traditional rechargeable batteries, a comparison of values for various
  structures can be seen in table 
@@ -1724,9 +1723,9 @@ noprefix "false"
 \end_inset
 
 .
- Both values are critical for our purposes; as a buffer for absorbing possibly
- large peaks from the propulsion, it is key that a high power can be drawn
- from the solution.
+ Both values are critical for the vessel; as a buffer for absorbing large
+ peaks from the propulsion, it is key that a high power can be drawn from
+ the solution.
  From the presented values, Lithium-ion can provide between about 3 and
  7 times as much power draw than redox flow batteries.
  Looking to energy or capacity density, Li-ion is roughly 4 to 10 times
@@ -1748,8 +1747,8 @@ Sentence on energy density
 To achieve the capacity and power requirements defined by the propulsion
  system, a flow battery would likely need vastly more space and weigh significan
 tly more.
- The weight penalty would prove the more damaging as this would require
- more fuel for propulsion and lower the efficiency of the vessel.
+ The weight penalty would prove more damaging as this would require more
+ fuel for propulsion and lower the efficiency of the vessel.
 \end_layout
 
 \begin_layout Standard
@@ -1778,14 +1777,14 @@ The previously described traditional rechargeable batteries have a liquid
 \end_layout
 
 \begin_layout Standard
-Additionally the system has the opportunity to increase energy density,
+Additionally, the system has the opportunity to increase energy density,
  thereby reducing the required space while increasing the available capacity.
  
 \end_layout
 
 \begin_layout Standard
 Unfortunately, however, there are a number of considerations that, currently,
- make it unsuitable for the required applications.
+ make it unsuitable for the required application.
  As an active area of research without much commercial availability, the
  price of solid-state batteries is much higher than that of other formats,
  for comparison, the 
@@ -1917,22 +1916,38 @@ name "subsec:Proposed-UUV-Battery-Solution"
 \end_layout
 
 \begin_layout Standard
-For this project, Lithium-ion chemistry was proposed as a solution for a
- vessel energy storage solution.
+For this project, Lithium-ion chemistry was proposed as the solution for
+ the vessel energy storage.
  As previously mentioned, the domain is an area of fervent research as a
- result of it's critical importance to consumer electronics and electric
- vehicles.
+ result of its importance to consumer electronics and electric vehicles.
  An important factor in the decision is the scale of system required, this
  will have significant impacts on the ability to source and dispose of a
  system as well as the financial and safety implications.
 \end_layout
 
 \begin_layout Standard
+There are a variety of chemical compositions for Lithium-ion batteries depending
+ on the other materials used in the electrodes including Lithium Manganese
+ Oxide and Lithium Cobalt Oxide.
+ Each have specific benefits and associated applications, for our purposes
+ Lithium Nickel Manganese Cobalt Oxide will be used as it is a common chemistry
+ with high specific energy, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "batt-uni-lithium-chemistry"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 There are many standard Lithium-ion standard cell formats from flat pouches
- and prismatic cells designed for mobile phones to the more standard cylindrical
- cells.
- For these applications, cylindrical cells are a suitable choice where compactne
-ss and thinness are not critical design parameters.
+ and prismatic cells designed for mobile phones, to the more standard cylindrica
+l cells.
+ For this application, cylindrical cells are a suitable choice as compactness
+ and thinness are not critical design parameters.
 \end_layout
 
 \begin_layout Standard
@@ -1951,8 +1966,8 @@ harge C-rates.
  Typical, mid-range 18650 cells can vary between 2500 - 3000 mAh capacity;
  the highest energy density can currently extend this to 3500 - 3600 mAh.
  As technology improves, it is expected that by the point of construction
- this higher range will be more accessible and reliable, as such 3500 mAh
- is used as the cell capacity for further calculations.
+ this higher range will be more accessible and reliable, and as such, 3500
+ mAh is used as the cell capacity for further calculations.
 \end_layout
 
 \begin_layout Standard
@@ -2161,7 +2176,7 @@ Configuration
 \end_layout
 
 \begin_layout Standard
-The amount of required cells for the battery system was calculated using
+The quantity of required cells for the battery system was calculated using
  the expected propulsion power requirements in conjunction with the expected
  generation capabilities of the ammonia fuel cells.
  The specifics for the calculations can be seen in appendix 
@@ -2174,7 +2189,7 @@ noprefix "false"
 
 \end_inset
 
-; to summarise, the amount of required cells was calculated from the required
+; to summarise, the quantity of required cells was calculated from the required
  power draw of the battery and the characteristics of the 18650 Lithium
  cell being used.
  The result was 193,600 cells.
@@ -2194,9 +2209,9 @@ Figure?
 
 \begin_layout Standard
 The balance of parallel to series blocks is not a critical parameter for
- the application and can instead be tuned for efficiency; as the drive motors
- are AC, transformers can be used to select a desired voltage and current
- from a given power value.
+ the application and can instead be tuned for efficiency; as the propulsion
+ units require AC power, transformers can be used to select a desired voltage
+ and current from a given power value.
  For high power applications high voltage is typically preferred to high
  current which corresponds to a higher weighting of series length.
 \end_layout
@@ -2223,14 +2238,14 @@ Self discharge per month, 1-10%?
 \end_layout
 
 \begin_layout Paragraph
-Lifespan
+Limited Lifespan
 \end_layout
 
 \begin_layout Standard
-Traditional rechargeable battery cells are a consumable item, the capacity
- and performance decreases over extended use for a number of reasons including
- electrode corrosion, reduced porosity or a reduction in Lithium ions as
- a result of side reactions, 
+Traditional rechargeable battery cells are a consumable item with the capacity
+ and performance decreasing over extended use for a number of reasons.
+ These include electrode corrosion, reduced porosity or a reduction in Lithium
+ ions as a result of side reactions, 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "li-ion-degradation"
@@ -2243,13 +2258,13 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-After a period of time defined by the cells beginning to perform below a
- defined acceptable level, they will require replacement.
+When the cells begin to perform below a defined acceptable level, they will
+ require replacement.
  This poses both financial and environmental implications.
  As will be discussed in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Lifespan"
+reference "subsec:Extending Lifespan"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2280,8 +2295,8 @@ Safety
 \begin_layout Standard
 Although Lithium-ion batteries are typically safe and stable if stored and
  used correctly, abuse can cause severe safety issues.
- As previously mentioned, the liquid organic electrolyte is flammable, this
- along with the high energy density of Li-ion batteries can lead to thermal
+ As previously mentioned, the liquid organic electrolyte is flammable, and
+ combined with the high energy density of Li-ion batteries can lead to thermal
  runaway and eventually fire if not handled correctly.
 \end_layout
 
@@ -2323,7 +2338,7 @@ The battery system should be located far from combustible materials
 
 \begin_deeper
 \begin_layout Itemize
-Contextually this would primarily be the fuel cells.
+Contextually this would primarily be the fuel tanks.
  
 \end_layout
 
@@ -2387,7 +2402,7 @@ Container spec?
 \end_inset
 
 .
- This provides a good base to extend in order to meet the above, i.e.
+ This provides a good base to modify in order to meet the above, i.e.
  air/water-tight and venting.
 \end_layout
 
@@ -2425,10 +2440,10 @@ literal "false"
 \end_layout
 
 \begin_layout Subsubsection
-Lifespan
+Extending Lifespan
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:Lifespan"
+name "subsec:Extending Lifespan"
 
 \end_inset
 
@@ -2455,9 +2470,9 @@ literal "false"
 .
  Although operating at a higher temperature increases performance it also
  decreases lifespan.
- Temperature control is already critical for safety purposes, 20°C provides
- the ideal temperature for prolonging lifespan and as such will be set as
- the target temperature, 
+ Temperature control is already critical for safety purposes.
+ 20°C provides the ideal temperature for prolonging lifespan and as such
+ will be set as the target temperature, 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "batt-uni-discharge-temp"
@@ -2475,8 +2490,8 @@ Another important aspect to the lifespan of Lithium-ion batteries is the
  The depth-of-discharge describes the amount of capacity used each cycle
  before recharging.
  Lithium batteries are able to handle moderate DOD without significantly
- affecting the lifespan however frequent deep discharge cycles, completely
- emptying the battery, will reduce shorten it's life, 
+ affecting the lifespan, however, frequent deep discharge cycles, completely
+ emptying the battery, will shorten its life, 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bat-uni-prolong-liion"
@@ -2489,7 +2504,7 @@ literal "false"
 
 \begin_layout Standard
 Similar to frequently completely discharging the battery, storing a battery
- fully charged for long periods of time can also shorten it's lifespan.
+ fully charged for long periods of time can also shorten its lifespan.
  This can be seen presented in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2569,8 +2584,8 @@ name "fig:charge-lifespan"
 \begin_layout Standard
 Both of the above points, tempering DOD and charge voltage rely on the BMS.
  To prevent deep discharges, more ammonia fuel cells should start up as
- the capacity decreases in order to balance the workload, the ammonia management
- system will need to interface with the BMS.
+ the capacity decreases in order to balance the workload meaning that the
+ ammonia management system will need to interface with the BMS.
  Additionally, it would be the responsibility of the BMS to charge cells
  to a reasonable voltage, 3.9 - 4.1 V can provide a balance between higher
  capacity and longer lifespan, 
@@ -2665,7 +2680,7 @@ name "subsec:batteryFinancial"
 \end_layout
 
 \begin_layout Standard
-As described, a battery array lasts approximately 2.3 years, after this point
+As described, a battery array lasts approximately 2.3 years, after which,
  a new set must be sourced.
  18650 cells vary in price across manufacturers and distributors, a range
  of RRPs were taken from UK distributors, 
@@ -2677,14 +2692,31 @@ literal "false"
 \end_inset
 
 .
- In general a cell's RRP ranged between £4 and £7, it is assumed that a
- procurement department would secure a unit price at the lower end of this
- for the scale of order required and £5 is used.
+ In general, a cell's RRP ranged between £4 and £7, and so it is assumed
+ that a procurement department would secure a unit price at the lower end
+ of this for the scale of order required, £5 is used.
 \end_layout
 
 \begin_layout Standard
 A set of 193,600 cells at this cost totals to £968,000 which averages to
  £420,869 a year for modelling purposes.
+\end_layout
+
+\begin_layout Standard
+Costing a battery management system is complicated by the scale of battery
+ being proposed.
+ A mega-watt scale battery will require a complex BMS without publicly available
+ prices and an estimation must be made.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bms-cost-article,bms-cost-report"
+literal "false"
+
+\end_inset
+
+ suggests that cells constitute 60% of the total system price.
+ Using this estimate the BMS and pack is estimated to cost £645,000.
 \end_layout
 
 \begin_layout Subsection
@@ -2872,6 +2904,29 @@ noprefix "false"
 \end_inset
 
 .
+ The precursors, Li
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+CO
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+
+ and cathode production constitute almost 50% of the cell's CED, these are
+ the Lithium intensive processes.
+ By using recycled Lithium, this major contributor can be reduced.
+ As such, a cell manufacturer using recycled Lithium should be identified
+ and used.
 \end_layout
 
 \begin_layout Standard
@@ -2885,7 +2940,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename battery-breakdown-c02e-kwh.png
-	lyxscale 50
+	lyxscale 40
 	width 75col%
 
 \end_inset
@@ -2926,46 +2981,32 @@ name "fig:battery-co2e-breakdown"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Finish
-\end_layout
+The contributions of each stage to the embodied carbon can be seen in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:battery-co2e-breakdown"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
-
+.
+ As previously shown, the Lithium-containing NCM powder constitutes the
+ largest contributor.
+ The 73 kg CO2e/kWh quoted value is dependent on the location of manufacture,
+ a slightly more conservative 80 kg CO2e/kWh will be used for calculating
+ the battery systems embodied carbon from production.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Suggest using recycled material in construction to save on largest contributor
-\end_layout
-
-\end_inset
-
-
+Using this value, a set of cells represents 191 tonnes of embodied carbon.
+ This will be included in the total embodied for the project requiring offset.
 \end_layout
 
 \begin_layout Subsubsection
 Use
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Smart charging
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2996,7 +3037,7 @@ There are a number of ways to increase the lifespan of a battery pack, these
  have been outlined in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Lifespan"
+reference "subsec:Extending Lifespan"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3016,29 +3057,63 @@ There are two main approaches to sustainable end-of-life processing for
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Explain both
-\end_layout
-
-\end_inset
-
-
+Second-use describes the use of a battery for new applications after the
+ performance is deemed too low for the vessel's buffer.
+ By doing so the lifespan of the batteries can be extended and reducing
+ the amount being constructed.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
+There are many methods for recycling Lithium batteries, and it is important
+ to identify a process that will not use more energy than that required
+ to mine virgin materials.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "circular-energy-li-lca"
+literal "false"
+
+\end_inset
+
+ summarises that up to 48% of the CED and CO
+\begin_inset script subscript
 
 \begin_layout Plain Layout
-Think second use is better, might want to force recycling afterwards though?
+2
 \end_layout
 
 \end_inset
 
+e could be saved.
+ They identify 
+\emph on
+direct recycling
+\emph default
+ as the best option for this.
+ This method allows the electrodes to retain their composition as opposed
+ to breaking it down into constituent parts, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "li-direct-recycling"
+literal "false"
 
+\end_inset
+
+.
+ This has applicability across Lithium-ion chemistry including the form
+ used herein, NCM.
+\end_layout
+
+\begin_layout Standard
+For the vessel battery, the use of an intelligent BMS and tight integration
+ with the ammonia cells should allow it to be treated well such that it
+ is kept in comparably good condition.
+ As such it is proposed that they would be well suited for second-use applicatio
+ns such as energy storage.
+ The battery will not be used until failure but instead until it cannot
+ be used for the high-draw requirements of the buffer.
+ They would likely have good applicability to purposes without such focus
+ on high draw but that will make use of the remaining capacity.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3077,6 +3152,13 @@ Systems based on a solid-state chemistry will likely become more stable
 
 \begin_layout Subsection
 Sustainability
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:SurfaceVesselBatterySustainability"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3111,9 +3193,9 @@ literal "false"
 \end_inset
 
 .
- The extraction process is a water-intensive process in an area already
- without an adequate supply; in Chile this is as much as 65% of the area's
- water or 500,000 gallons per tonne of Lithium, 
+ The extraction is a water-intensive process in an area already without
+ an adequate supply; in Chile this is as much as 65% of the area's water
+ or 500,000 gallons per tonne of Lithium, 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "wired-lithium"
@@ -3156,9 +3238,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Although not widely officially designated as such, there are efforts to
- class Cobalt as a conflict mineral as it's importance grows to one of the
- most notorious countries for other such minerals including Gold and Tungsten.
+Although not officially designated as such, there are efforts to class Cobalt
+ as a conflict mineral as its importance grows to one of the most notorious
+ countries for other such minerals including Gold and Tungsten.
  
 \end_layout
 
@@ -3219,8 +3301,8 @@ Time-dependent Modelling
 \end_layout
 
 \begin_layout Standard
-In order to validate this buffer configuration, a model was constructed
- to visualise the capacity of the battery system while in use.
+In order to validate the buffer configuration, a model was constructed to
+ visualise the capacity of the battery system while in use.
  Explanations as to the specific behaviour and assumptions made can be seen
  in appendix 
 \begin_inset CommandInset ref
@@ -3233,7 +3315,7 @@ noprefix "false"
 \end_inset
 
 .
- An example model describing the vessel dynamic positioning above a cable
+ An example model describing the vessel's dynamic positioning above a cable
  fault can be seen in figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3320,6 +3402,7 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+second
 \begin_inset Graphics
 	filename ../maths/final_report_res/mission3.png
 	lyxscale 20
@@ -3355,7 +3438,18 @@ name "fig:mission-power-model"
 \end_layout
 
 \begin_layout Standard
-This model was extended to simulate an entire mission (figure 
+This model was extended to simulate an entire mission as described in section
+ 
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+NICKS SECTION
+\end_layout
+
+\end_inset
+
+ (figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:mission-power-model"
@@ -3393,8 +3487,21 @@ Homeward journey (3 days)
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Probably covered by Nick
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
 From these models, the amount of battery charge cycles was estimated to
- be around 2 per day.
+ be 2 per day.
  Extrapolating this to a yearly usage value using the expected vessel usage,
  a battery array was estimated to last 2.3 years.
  This is a typical value for the lifespan of Lithium-ion batteries.
@@ -3409,10 +3516,18 @@ Grapnel-based Operations [AP]
 \end_layout
 
 \begin_layout Standard
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+Possibly covered by Nick
+\end_layout
+
+\end_inset
+
 While the use of robotics has made sub-sea cable repair operations more
- efficient, durable and accurate, as will be discussed there are situations
- where this is not available and it is worth briefly outlining how grapnels
- are used in repair operations.
+ efficient, there are situations where this is not available and it is worth
+ briefly outlining how grapnels are used in repair operations.
 \end_layout
 
 \begin_layout Standard
@@ -3540,7 +3655,7 @@ trolled ROVs.
  In doing so the need for repeated motions of the ship across the cable
  is removed, saving time and fuel.
  Instead, the surface vessel uses dynamic positioning in order to maintain
- it's position above the ROV and cable.
+ its position above the ROV and cable.
 \end_layout
 
 \begin_layout Standard
@@ -3563,8 +3678,6 @@ literal "false"
  further damage and extending the time between repairs.
  While this can be completed with a separate plough, this would require
  more deck space and motion of the surface vessel.
- Ploughs are also typically extremely heavy pieces of equipment and would
- make the vessel less efficient overall.
 \end_layout
 
 \begin_layout Standard
@@ -4126,9 +4239,9 @@ bathymetry chart?
  While ROVs could be capable, in theory, of reaching lower depths it is
  important to balance these working capabilities with other considerations
  such as price and weight.
- In practice, this working depth is a reasonable range to work within, it
- could be argued that the most important capability of current ROVs is their
- ability to re-bury the cable post-repair.
+ In practice, while this working depth is a reasonable range to work within,
+ it could be argued that the most important capability of current ROVs is
+ their ability to re-bury the cable post-repair.
  As described previously, this is in order to protect the cable from human
  intervention including fishing and anchor operations.
  These incidents are more prevalent in shallower waters within the operating
@@ -4141,7 +4254,7 @@ Requirements Specification
 \end_layout
 
 \begin_layout Standard
-Using this information the requirements for a cable repair UUV could be
+Using this information, the requirements for a cable repair UUV could be
  described as the following,
 \end_layout
 
@@ -4256,8 +4369,8 @@ An advantage of using an autonomous vehicle would be the lack of need for
  contact with the UUV.
  This could reduce the required power directed to dynamic positioning which
  in higher sea states can become a significant draw.
- Additionally as the UUV can move independently, the surface vehicle would
- not need to directly track the vehicles movement; for example when the
+ Additionally, as the UUV can move independently, the surface vehicle would
+ not need to directly track the vehicles movement; for example, when the
  UUV is re-burying the repaired cable in shallower waters.
  This would, again, lower the required propulsion power used by the surface
  vessel.
@@ -4348,8 +4461,8 @@ With an accurate system, this will satisfy many surveying and research use
  This will prove less effective when the vehicle is expected to autonomously
  navigate to a specific location (the cable fault).
  A dead reckoning system as described above uses relative sensors to measure
- it's speed and infer it's current location however these relative sensors
- have associated measurement errors which accumulate over time.
+ speed and infer the current location however these relative sensors have
+ associated measurement errors which accumulate over time.
  This would be more pronounced under the water where sea currents are liable
  to accentuate these errors, the efficacy of an AUV's fault location capabilitie
 s may be reduced to the point of unacceptability.
@@ -4496,7 +4609,8 @@ The vehicle will be designed for hybrid ROV/AUV operations.
  (human controller, tethered power and data connection).
  This will have a number of benefits, primarily that the vehicle should
  be able to benefit from autonomous operation where possible with the ability
- for direct human control in missions deemed to complex for autonomous control.
+ for direct human control in missions deemed too complex for autonomous
+ control.
  
 \end_layout
 
@@ -4504,9 +4618,9 @@ The vehicle will be designed for hybrid ROV/AUV operations.
 The existing remit of AUV operations is primarily survey, inspection and
  light intervention, it is likely that the autonomous capabilities of this
  vehicle would not be capable of conducting all existing cable repair missions
- which involve a lot more involved intervention.
+ which involve more intervention.
  It is important that enabling autonomous operations does not ultimately
- reduce it's operating capabilities.
+ reduce its operating capabilities.
 \end_layout
 
 \begin_layout Standard
@@ -4535,7 +4649,7 @@ Communication
 As the UUV is now expected to operate independently of the surface vessel,
  it should have the ability to bi-directionally, wirelessly communicate
  with the surface vessel.
- Uses for such a communications channel include the UUV reporting it's mission
+ Uses for such a communications channel include the UUV reporting its mission
  status and the surface vessel providing high-level instructions such as
  
 \emph on
@@ -4566,8 +4680,7 @@ dead reckoning
 \emph default
  using an inertial navigation system (INS).
  An INS uses input from many types of sensor such as accelerometers and
- gyroscopes to measure the movement of the vehicle and hence infer it's
- location.
+ gyroscopes to measure the movement of the vehicle and hence infer its location.
  None of these could individually provide an accurate determination of location
  and as such 
 \emph on
@@ -4597,9 +4710,8 @@ reference, explain?
 
 \begin_layout Standard
 However, despite the use of a Kalman filter allowing more precise approximations
- of the vehicles relative location, the lack of external calibrating updates
- means that the overall uncertainty will still continually increase over
- time.
+ of the vehicle's relative location, the lack of external calibration means
+ that the overall uncertaintiy will still increase over time.
  In land-based robotics this is mitigated through the use of periodic GPS
  measurements which have low, constant uncertainty and help to place an
  upper bound on the overall error.
@@ -4614,7 +4726,7 @@ The following proposes methods for providing global positioning to the UUV
  This will be completed in two stages, the first being to provide the UUV
  with the ability to measure the location of a fixed point relative to itself.
  In parallel, the global co-ordinates of this fixed point will be communicated
- to the UUV in order to infer it's own global location.
+ to the UUV in order to infer its own global location.
 \end_layout
 
 \begin_layout Paragraph
@@ -4726,9 +4838,9 @@ Global Calibration
 
 \begin_layout Standard
 The above underwater acoustic positioning system will allow the UUV to keep
- track of it's position relative to known points at the surface, however
+ track of its position relative to known points at the surface, however
  this alone will not provide the UUV with its global location.
- In order for the UUV to calibrate it's local map to global co-ordinates,
+ In order for the UUV to calibrate its local map to global co-ordinates,
  the global position of these surface points must be provided.
  This will be conducted over the previously described acoustic communication
  channel.
@@ -4772,74 +4884,6 @@ noprefix "false"
 , a sensor who's measurement error does not compound and grow but stays
  constant is important as it places an upper bound on the overall error
  and allows the system to maintain accuracy over time.
-\end_layout
-
-\begin_layout Subsubsection
-Control
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Maybe unnecessary?
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-LARS
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Explain use of top-hat as 
-\begin_inset Quotes bld
-\end_inset
-
-house
-\begin_inset Quotes brd
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Deploy through splash zone and detach
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Reference hugin torpedo LARS
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -4919,20 +4963,207 @@ As this battery array will experience less usage than the surface vessel's
 \end_layout
 
 \begin_layout Subsubsection
-Sustainability
+LARS
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
+The proposal for hybrid AUV/ROV capabilities somewhat simplifies the required
+ LARS methods.
+ As the vehicle must still be able to operate while tethered, from the surface
+ vessel's perspective a traditional LARS system with a top-hat TMS will
+ be used.
+ When operating as an ROV, the underwater vehicle will not have the battery
+ system mounted on the top and the tether will directly connect to the vehicle.
+ In these scenarios the LARS processes will be as previously described,
+ see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:tethered tms"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-Point to surface vessel battery for LCA
+\noindent
+\align center
+\begin_inset Graphics
+	filename tms-lars.png
+	lyxscale 50
+	width 40col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TMS and UUV structure when operating tethered
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:tethered tms"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+When operating autonomously, the battery system will be mounted on the top
+ of the vehicle.
+ It is proposed that the battery system have an interface for the top-hat
+ TMS on the top, see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:untethered tms"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ An acoustic location and communication beacon will be mounted on the underside
+ of the TMS in order to provide a reference to the UUV for navigating towards
+ and docking, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "hugin-lars-article"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename tms-lars-auv.png
+	lyxscale 50
+	width 30col%
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename tms-lars-disconnected.png
+	lyxscale 50
+	width 50col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TMS and UUV structure when operating autonomously, indicating mount point
+ for re-housing
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:untethered tms"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This allows the actual LARS processes to be conducted in the traditional
+ secure manor through the splash zone and then allow detachment for autonomous
+ operation when safely under the water.
+\end_layout
+
+\begin_layout Subsubsection
+Sustainability
+\end_layout
+
+\begin_layout Standard
+With regards to the battery system, the same principles as described for
+ the surface vessel battery in sections 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Life-cycle-Analysis"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:SurfaceVesselBatterySustainability"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ apply including procurement, and lifespan extension.
+ 
+\end_layout
+
+\begin_layout Standard
+However, the difference in usage patterns for the UUV may make the battery's
+ applicability to second-usage less viable.
+ This would be because it would be expected to sustain higher depth-of-discharge
+ without the ability to activate more ammonia cells and keep the capacity
+ higher.
+ As such the direct recycling processes previously described may be more
+ appropriate as an end-of-life procedure.
+\end_layout
+
+\begin_layout Standard
+Using the previous per kilowatt embodied carbon value, a UUV battery set
+ represents 120 tonnes of carbon requiring offset to achieve net-zero.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4940,16 +5171,30 @@ Financials
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Find number for cost of UUV
-\end_layout
+UUVs and TMSs are typically bespoke, purpose-built projects without publicly
+ available prices.
+ As such estimations were made in order to cost the entire system.
+ UUVs with publicly available prices tend to be light intervention and autonomou
+s survey vehicles with a max depth of 300m, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "price-amron-rov,price-deep-trekker"
+literal "false"
 
 \end_inset
 
+.
+ These vehicles tend to cost between £24,000 and £50,000.
+ The proposed vehicle is far more powerful and is not the same class of
+ vehicle.
+ 
+\end_layout
 
+\begin_layout Standard
+Including the advancements of autonomous capabilities it is proposed that
+ an industrial vehicle of the requirements described would cost £2,000,000.
+ Additionally it is proposed that the tether management system would cost
+ £400,000.
 \end_layout
 
 \begin_layout Standard
@@ -4957,7 +5202,9 @@ As described, a single type of Lithium cell are being used in order to benefit
  from the economy of scale.
  Using the previously specified £5 unit price, a set of UUV battery cells
  will cost £595,240.
- Modelling this across it's lifespan averages to £148,810 per year.
+ Modelling this across its lifespan averages to £148,810 per year.
+ For costing the associated BMS, the previously mentioned 60% cell cost
+ contribution would suggest a price of £397,000.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5219,8 +5466,8 @@ noprefix "false"
  each individually.
  This allows the cells to operate as much as possible in their most efficient
  state.
- However cells require time to turn on and reach this efficient state, about
- 20 minutes.
+ However, cells require time to turn on and reach this efficient state,
+ about 20 minutes.
  This was modelled by having the input power move in discrete steps as cells
  are turned on and off.
  This step value was defined as 200kW, the most efficient state for a single
@@ -5232,9 +5479,9 @@ noprefix "false"
 As time increases, every twenty minutes the amount of active cells can be
  incremented or decremented.
  This over-simplifies the actual behaviour as this would, in reality, be
- a gradual process as opposed to one of discrete steps however it was deemed
- acceptable in order to enforce the time penalty in changing the number
- of powering cells.
+ a gradual process as opposed to one of discrete steps, however, it was
+ deemed acceptable in order to enforce the time penalty in changing the
+ number of powering cells.
 \end_layout
 
 \begin_layout Subsection

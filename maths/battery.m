@@ -30,7 +30,7 @@ cell_height     = 65;   % mm
 %cell_price      = 6;    % £
 cell_price      = 5;    % £
 
-cell_emb_c      = 117.5; % kgCO2eq/kWh
+cell_emb_c      = 80; % kgCO2eq/kWh
 cell_rec_emb_c  = 15; % kgCO2eq/kWh
 
 
