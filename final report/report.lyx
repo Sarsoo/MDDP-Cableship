@@ -316,46 +316,27 @@ The expected available area capable of hosting photovoltaic cells was estimated
 \end_inset
 
 .
+ Using the same solar panel modelling of GEORGE, this would equate to 441
+ panels with a max power of 176 kW, an order of magnitude smaller than the
+ ammonia fuel cell capabilities.
+ This would represent 123 tonnes of embodied carbon which could be reduced
+ to 65 tonnes by recycling following decommission.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Probably not going to use
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Not using instead of a carbon producing source therefore carbon needs to
- be offset elsewhere
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Just a carbon and financial cost, likely unnecessary
-\end_layout
-
-\end_inset
-
-
+As a result of this projection, it is proposed that the vessel is not fitted
+ with solar panels.
+ As the other energy being generated via the ammonia cells is already carbon-zer
+o (assuming the use of 
+\emph on
+green ammonia
+\emph default
+), the embodied carbon of the panels would not be offset through their own
+ use.
+ This carbon cost would need to be offset via the project-level offsetting
+ processes, see JASON.
+ The benefits would be limited to the financial savings of reducing fuel
+ usage, limiting carbon cost is more of a priority for this project.
 \end_layout
 
 \begin_layout Section
@@ -3116,40 +3097,6 @@ ns such as energy storage.
  on high draw but that will make use of the remaining capacity.
 \end_layout
 
-\begin_layout Subsubsection
-Summary
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Summarise chemistry, amount of cells, lifespan, end-of-life procedure
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-It is worth noting that this is the proposed solution based on the current
- state of energy storage.
- One of the only advantages of rechargeable batteries being a consumable
- item requiring replacement is that when this occurs, it is an opportunity
- to re-evaluate the system design.
- With an expected project lifespan of 30 years, it is highly unlikely that
- the use of Li-ion cells will remain the best option.
- 
-\end_layout
-
-\begin_layout Standard
-Systems based on a solid-state chemistry will likely become more stable
- and less expensive to the point that the advantages in safety and energy
- density can be fully utilised without the heavy downsides.
-\end_layout
-
 \begin_layout Subsection
 Sustainability
 \begin_inset CommandInset label
@@ -3208,16 +3155,16 @@ literal "false"
 
 \begin_layout Standard
 The processing can also include dangerous chemicals including various acids
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-Leaking into water supply Tibet
-\end_layout
+ that can pollute local water supplies as a result of leaks, leaching and
+ emissions, 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wired-lithium"
+literal "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3255,45 +3202,27 @@ literal "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Child workers
-\end_layout
+ These are small-scale mines known for a lack of safety standards including
+ minimal personal protective equipment, structural requirements and child
+ labour, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wef-cobalt-mining"
+literal "false"
 
 \end_inset
 
+.
+\end_layout
 
+\begin_layout Subsubsection
+Summary
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Overworked, bad conditions, no PPE, lung disease
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-DRC political implications
-\end_layout
-
-\end_inset
-
-
+The above emphasises the need to identify Lithium cell manufacturers using
+ recycled materials in order to reduce the amount of virgin material being
+ mined and assembled.
 \end_layout
 
 \begin_layout Subsection
@@ -3505,6 +3434,37 @@ From these models, the amount of battery charge cycles was estimated to
  Extrapolating this to a yearly usage value using the expected vessel usage,
  a battery array was estimated to last 2.3 years.
  This is a typical value for the lifespan of Lithium-ion batteries.
+\end_layout
+
+\begin_layout Subsection
+Summary
+\end_layout
+
+\begin_layout Standard
+The proposed buffer solution includes 193,600 NCM Lithium-ion cells requiring
+ replacement every 2.3 years.
+ As a result of this replacement rate, it is stipulated that the battery
+ be re-appropriated for second-use such as energy storage following decommission
+ in order to extend their life and reduce the environmental impact.
+ Manufacturers using recycled materials should also be identified in order
+ to reduce the impact of mining virgin materials.
+\end_layout
+
+\begin_layout Standard
+It is worth noting that this is the proposed solution based on the current
+ state of energy storage.
+ One of the only advantages of rechargeable batteries being a consumable
+ item requiring replacement is that when this occurs, it is an opportunity
+ to re-evaluate the system design.
+ With an expected project lifespan of 30 years, it is highly unlikely that
+ the use of Li-ion cells will remain the best option.
+ 
+\end_layout
+
+\begin_layout Standard
+Systems based on a solid-state chemistry will likely become more stable
+ and less expensive to the point that the advantages in safety and energy
+ density can be fully utilised without the heavy downsides.
 \end_layout
 
 \begin_layout Section
@@ -5212,16 +5172,15 @@ Summary
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Summarise choice, batteries, AUV/ROV setup
-\end_layout
-
-\end_inset
-
-
+The proposed UUV describes an extension to existing ROV capabilities by
+ allowing untethered autonomous operations.
+ This requires a wireless communication channel between the surface and
+ underwater vessel which will be completed using acoustic waves.
+ The UUV will effectively be GNSS-enabled by proxy from the surface vessel,
+ allowing it to navigate to the fault locations.
+ In order to operate autonomously, the UUV will require onboard power, a
+ battery system of suitable scale was described along with protocols for
+ decommissioning sustainably.
 \end_layout
 
 \begin_layout Part
@@ -5346,42 +5305,28 @@ name "fig:Network-topology"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Heartbeat data points, battery level, fuel levels, location, bearing etc
-\end_layout
-
-\end_inset
-
-
+With a fully connected environment, head-office and the depot will be able
+ to monitor and control aspects of the vessel.
+ In theory, head-office would be able to remotely command both the vessel
+ and UUV, although proper authorisation, safety and business practices would
+ need to be defined for where this is appropriate.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Remote control of surface vessel and UUV?
-\end_layout
-
-\end_inset
-
-
+Live access will be available for information about the vessels including
+ location data, course information, battery capacity information and remaining
+ fuel levels.
+ This could be used in order to sync depot operations with the vessels mission
+ status, for example by preparing the local electrical supply for cold-ironing
+ the vessel.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Smart lighting etc
-\end_layout
-
-\end_inset
-
-
+Within the vessels, machine learning (ML) and AI will have varying applicability.
+ The UUV, for example, would likely apply both for applications such as
+ image recognition from the visual cameras.
+ Kalman filters have already been discussed for calculating the vessel's
+ location.
 \end_layout
 
 \begin_layout Standard
