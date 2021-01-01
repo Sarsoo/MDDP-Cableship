@@ -525,8 +525,8 @@ name "fig:fuel-cell-iv-losses"
 
 \begin_layout Standard
 From these figures, fuel cells could be described as being sensitive to
- a noisy or dynamic load such as when changes in thrust and therefore required
- power vary quickly.
+ a noisy or dynamic load such as changes in thrust and therefore the required
+ power can vary quickly.
  For example, when using dynamic positioning in a high sea state.
  Ideally, the use of more cells operating in their optimum state would be
  preferred over increasing the draw on a smaller population
