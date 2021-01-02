@@ -76,6 +76,11 @@ figs-within-sections
 \justification false
 \use_refstyle 1
 \use_minted 0
+\branch extra
+\selected 0
+\filename_suffix 1
+\color #9b94fa
+\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -274,7 +279,18 @@ Power Requirements
 \end_layout
 
 \begin_layout Subsubsection
-Hotel Load [AP]
+Hotel Load 
+\begin_inset Branch extra
+inverted 1
+status open
+
+\begin_layout Standard
+[AP]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -354,7 +370,18 @@ Efficiency Investigations
 \end_layout
 
 \begin_layout Subsection
-Solar [AP]
+Solar 
+\begin_inset Branch extra
+inverted 1
+status open
+
+\begin_layout Standard
+[AP]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -403,7 +430,18 @@ green ammonia
 \end_layout
 
 \begin_layout Section
-Energy Storage [AP]
+Energy Storage 
+\begin_inset Branch extra
+inverted 1
+status open
+
+\begin_layout Standard
+[AP]
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Energy-Storage"
@@ -480,7 +518,7 @@ noprefix "false"
 ); in fact drawing excess current and pushing into R-3 can damage the cell,
  
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "elec-a2z-fuel-cell-iv"
 literal "false"
 
@@ -602,17 +640,7 @@ From these figures, fuel cells could be described as being sensitive to
  power can vary quickly.
  For example, when using dynamic positioning in a high sea state.
  Ideally, the use of more cells operating in their optimum state would be
- preferred over increasing the draw on a smaller population
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-Is this valid?
-\end_layout
-
-\end_inset
-
-.
+ preferred over increasing the draw on a smaller population.
  However, this increase in active cells is not an instantaneous operation
  and cells require time to reach their optimum state.
  To allow this focus on efficiency, the load including hotel and propulsion
@@ -1321,7 +1349,13 @@ noprefix "false"
  of the categories.
  While Nickel-Cadmium has a higher lifespan than Li-ion there are other
  factors that led to this being discounted.
- NiCd suffers from the 
+ 
+\begin_inset Branch extra
+inverted 0
+status open
+
+\begin_layout Standard
+NiCd suffers from the 
 \emph on
 memory effect
 \emph default
@@ -1331,9 +1365,21 @@ remembering
 \emph default
  the point at which charging began and experiencing a drop in voltage past
  this point.
- Additionally, Cadmium is a highly toxic heavy metal, requiring specialist
- containment; in fact, many types of Cadmium battery are now banned in the
- EU.
+ Additionally, 
+\end_layout
+
+\end_inset
+
+Cadmium is a highly toxic heavy metal, requiring specialist containment;
+ in fact, many types of Cadmium battery are now banned in the EU, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "eu-cadmium-batteries"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1359,7 +1405,15 @@ Flow Battery
 \begin_layout Standard
 A redox flow battery is a type of electrochemical cell where the energy
  is stored in two chemicals brought together at a membrane in order to facilitat
-e ion exchange and create a potential difference or voltage.
+e ion exchange and create a potential difference or voltage, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "redox-flow-energy-storage"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1370,7 +1424,15 @@ This can be structured to function like a rechargeable battery as the chemical
 \begin_layout Standard
 There are a number of advantages to a system like this, for example it is
  less sensitive than Lithium-ion to overcharge and overdischarge with no
- need for equalisation charging.
+ need for charge balancing, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dnvgl-flow-batteries"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1739,7 +1801,7 @@ Nickel-metal-hydride
 Energy and power densities for typical redox flow battery chemistry (top)
  compared to traditional rechargeable cells (bottom), 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "flow-battery-energy-density"
 literal "false"
 
@@ -1828,7 +1890,7 @@ The previously described traditional rechargeable batteries have a liquid
  solid-state batteries (SSB).
  This provides an advantage in that these liquid electrolytes are typically
  one of the key causes of safety concerns as they are flammable and sometimes
- toxic.
+ toxic, .
  These are important considerations for this domain.
  With less of a concern regarding high operating temperatures, this also
  allows SSBs to be charged faster.
@@ -1844,23 +1906,21 @@ Additionally, the system has the opportunity to increase energy density,
 Unfortunately, however, there are a number of considerations that, currently,
  make it unsuitable for the required application.
  As an active area of research without much commercial availability, the
- price of solid-state batteries is much higher than that of other formats,
- for comparison, the 
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-Price
-\end_layout
-
-\end_inset
-
-.
+ price of solid-state batteries will likely be much higher than that of
+ other formats.
  Additionally, concerns associated with Lithium-ion batteries including
  overheating and explosion are not completely removed by transitioning to
  an SSB.
  Dendrites are structures of Lithium that can form during charging and dischargi
-ng as a result of electrodeposition.
+ng as a result of electrodeposition, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dendrite-growth"
+literal "false"
+
+\end_inset
+
+.
  While this should occur evenly across the electrode, if uneven it can cause
  columns to grow towards the separator, figure 
 \begin_inset CommandInset ref
@@ -1903,7 +1963,7 @@ status open
 \begin_layout Plain Layout
 Dendrites growing between the Lithium battery electrodes, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "mse-supplies-dendrite"
 literal "false"
 
@@ -2015,24 +2075,76 @@ There are many standard Lithium-ion standard cell formats from flat pouches
  and prismatic cells designed for mobile phones, to the more standard cylindrica
 l cells.
  For this application, cylindrical cells are a suitable choice as compactness
- and thinness are not critical design parameters.
+ and thinness are not critical design parameters
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+reference?
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 The 18650 cell is a mature cylindrical cell with good reliability records
- and high rates of use among medical equipment, drones and electric vehicles;
- Tesla uses battery packs composed of 18650 cells.
+ and high rates of use among medical equipment, drones and electric vehicles,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "18650-about"
+literal "false"
+
+\end_inset
+
+; Tesla uses battery packs composed of 18650 cells, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "18650-tesla"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 As with other battery cells, the voltage is a characteristic of the chemistry,
- for Lithium this is around 3.6 V.
+ for Lithium this is around 3.6 V, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "batt-uni-lithium-chemistry"
+literal "false"
+
+\end_inset
+
+.
  The key parameters that vary amongst producers are the capacity and charge/disc
 harge C-rates.
  In order to estimate the cell specification for use in this project, the
  existing range of available cells was taken into account.
- Typical, mid-range 18650 cells can vary between 2500 - 3000 mAh capacity;
- the highest energy density can currently extend this to 3500 - 3600 mAh.
+ Typical, mid-range 18650 cells can vary between 2500 - 3000 mAh capacity,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "18650-about"
+literal "false"
+
+\end_inset
+
+; the highest energy density can currently extend this to 3500 - 3600 mAh
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+reference?
+\end_layout
+
+\end_inset
+
+.
  As technology improves, it is expected that by the point of construction
  this higher range will be more accessible and reliable, and as such, 3500
  mAh is used as the cell capacity for further calculations.
@@ -2247,19 +2359,9 @@ Configuration
 The quantity of required cells for the battery system was calculated using
  the expected propulsion power requirements in conjunction with the expected
  generation capabilities of the ammonia fuel cells.
- The specifics for the calculations can be seen in appendix 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Battery-Cell-Calculations"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-; to summarise, the quantity of required cells was calculated from the required
- power draw of the battery and the characteristics of the 18650 Lithium
- cell being used.
+ The quantity of required cells was calculated from the required power draw
+ of the battery and the characteristics of the 18650 Lithium cell being
+ used.
  The result was 193,600 cells.
  These cells are arranged into a matrix of parallel and series blocks, all
  the series blocks connected in parallel must be of the same length
@@ -2281,28 +2383,12 @@ The balance of parallel to series blocks is not a critical parameter for
  units require AC power, transformers can be used to select a desired voltage
  and current from a given power value.
  For high power applications high voltage is typically preferred to high
- current which corresponds to a higher weighting of series length.
+ current to reduce heat losses which corresponds to a higher weighting of
+ series length.
 \end_layout
 
 \begin_layout Subsubsection
 Challenges
-\end_layout
-
-\begin_layout Paragraph
-Self-discharge
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-Self discharge per month, 1-10%?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Paragraph
@@ -2315,7 +2401,7 @@ Traditional rechargeable battery cells are a consumable item with the capacity
  These include electrode corrosion, reduced porosity or a reduction in Lithium
  ions as a result of side reactions, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "li-ion-degradation"
 literal "false"
 
@@ -2373,7 +2459,7 @@ There are a couple of causes for such a thermal runaway, these include physical
  damage, short circuits, overcharging and exposure to high temperature,
  
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "washington-lithium-safety"
 literal "false"
 
@@ -2385,7 +2471,7 @@ literal "false"
 \begin_layout Standard
 Multiple measures must be implemented to ensure safety, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "washington-lithium-safety"
 literal "false"
 
@@ -2421,7 +2507,7 @@ Cells of the same age must be grouped and used together
 
 \begin_layout Itemize
 Cells should be charged intelligently in order to mitigate overcharge and
- implement equalisation charging, see 
+ implement charge balancing, see 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Safety-Circuitry"
@@ -2504,6 +2590,16 @@ literal "false"
 
 \end_inset
 
+
+\begin_inset Flex TODO Note (Margin)
+status open
+
+\begin_layout Plain Layout
+More?
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
@@ -2529,7 +2625,7 @@ Lithium-ion cells are a consumable item that degrades.
 As previously mentioned, the temperature of the cells is a key parameter
  affecting both performance and lifespan, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "batt-uni-discharge-temp"
 literal "false"
 
@@ -2542,7 +2638,7 @@ literal "false"
  20°C provides the ideal temperature for prolonging lifespan and as such
  will be set as the target temperature, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "batt-uni-discharge-temp"
 literal "false"
 
@@ -2561,7 +2657,7 @@ Another important aspect to the lifespan of Lithium-ion batteries is the
  affecting the lifespan, however, frequent deep discharge cycles, completely
  emptying the battery, will shorten its life, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "bat-uni-prolong-liion"
 literal "false"
 
@@ -2623,7 +2719,7 @@ status open
 The lifespan of Lithium-ion cells described by the max capacity as charge
  cycles increase for various charge voltages, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "bat-uni-prolong-liion"
 literal "false"
 
@@ -2693,7 +2789,7 @@ status open
 Voltage-Capacity characteristics for a 18650 Li-ion cell at varying temperatures
 , 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "batt-uni-discharge-temp"
 literal "false"
 
@@ -2748,8 +2844,18 @@ name "subsec:batteryFinancial"
 \end_layout
 
 \begin_layout Standard
-As described, a battery array lasts approximately 2.3 years, after which,
- a new set must be sourced.
+As will be described (section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Time-dependent-Modelling"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), a battery array lasts approximately 2.3 years, after which, a new set
+ must be sourced.
  18650 cells vary in price across manufacturers and distributors, a range
  of RRPs were taken from UK distributors, 
 \begin_inset CommandInset citation
@@ -2853,7 +2959,7 @@ status open
 \begin_layout Plain Layout
 CED breakdown for a NCM11 battery pack (MJ/kWh), 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "circular-energy-li-lca,argonne-li-ion-lca"
 literal "false"
 
@@ -2934,7 +3040,7 @@ status open
 \begin_layout Plain Layout
 CED breakdown for a NCM11 cell without BMS or pack (MJ/kWh), 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "circular-energy-li-lca,argonne-li-ion-lca"
 literal "false"
 
@@ -2992,7 +3098,7 @@ CO
 
  and cathode production constitute almost 50% of the cell's CED, these are
  the Lithium intensive processes.
- By using recycled Lithium, this major contributor can be reduced.
+ By using recycled Lithium, this major contributor could be reduced.
  As such, a cell manufacturer using recycled Lithium should be identified
  and used.
 \end_layout
@@ -3022,7 +3128,7 @@ status open
 \begin_layout Plain Layout
 Equivalent carbon breakdown for a NCM11 battery pack (kg CO2e/kWh), 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "circular-energy-li-lca,argonne-li-ion-lca"
 literal "false"
 
@@ -3080,23 +3186,13 @@ Use
 \begin_layout Standard
 The use of Lithium batteries does not inherently incur a Carbon cost; the
  associated cost of energy stored is accounted for by the source of this
- energy, in this case ammonia fuel cells
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-solar panels?
-\end_layout
-
-\end_inset
-
-.
+ energy, in this case ammonia fuel cells.
 \end_layout
 
 \begin_layout Standard
 The use of the batteries does require analysis, however.
- The source and end-of-life procedures for a battery pack is a carbon intensive
- operation and the ability to extend the time in-between replacement will
+ The source and end-of-life procedures for a battery pack are carbon intensive
+ operations and the ability to extend the time in-between replacement will
  improve the environmental impact overall.
 \end_layout
 
@@ -3126,7 +3222,15 @@ There are two main approaches to sustainable end-of-life processing for
 
 \begin_layout Standard
 Second-use describes the use of a battery for new applications after the
- performance is deemed too low for the vessel's buffer.
+ performance is deemed too low for the vessel's buffer, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "circular-energy-li-lca"
+literal "false"
+
+\end_inset
+
+.
  By doing so the lifespan of the batteries can be extended and reducing
  the amount being constructed.
 \end_layout
@@ -3220,7 +3324,7 @@ Lithium Triangle
  The area has been estimated to constitute between 54 and 70% of the world's
  deposits, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "wired-lithium,resourceworld-54-lithium"
 literal "false"
 
@@ -3231,7 +3335,7 @@ literal "false"
  an adequate supply; in Chile this is as much as 65% of the area's water
  or 500,000 gallons per tonne of Lithium, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "wired-lithium"
 literal "false"
 
@@ -3245,7 +3349,7 @@ The processing can also include dangerous chemicals including various acids
  that can pollute local water supplies as a result of leaks, leaching and
  emissions, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "wired-lithium"
 literal "false"
 
@@ -3262,7 +3366,7 @@ Cobalt
 Over half of the world's Cobalt deposits are found in the Democratic Republic
  of Congo, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "wired-lithium,ethical-consumer-conflict-materials"
 literal "false"
 
@@ -3282,7 +3386,7 @@ Although not officially designated as such, there are efforts to class Cobalt
 20% of the exported cobalt has been estimated to come from artisanal mines,
  
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "ethical-consumer-conflict-materials"
 literal "false"
 
@@ -3314,6 +3418,13 @@ The above emphasises the need to identify Lithium cell manufacturers using
 
 \begin_layout Subsection
 Time-dependent Modelling
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Time-dependent-Modelling"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3454,18 +3565,29 @@ name "fig:mission-power-model"
 \end_layout
 
 \begin_layout Standard
-This model was extended to simulate an entire mission as described in section
- 
-\begin_inset Flex TODO Note (Margin)
+This model was extended to simulate an entire mission with 
+\begin_inset Branch extra
+inverted 0
 status open
 
-\begin_layout Plain Layout
-NICKS SECTION
+\begin_layout Standard
+defined 
 \end_layout
 
 \end_inset
 
- (figure 
+power requirements 
+\begin_inset Branch extra
+inverted 1
+status open
+
+\begin_layout Standard
+as described in section NICK 
+\end_layout
+
+\end_inset
+
+(figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:mission-power-model"
@@ -3476,7 +3598,9 @@ noprefix "false"
 \end_inset
 
 ) including: 
-\end_layout
+\begin_inset Branch extra
+inverted 0
+status open
 
 \begin_layout Itemize
 Outbound journey (3 days)
@@ -3502,17 +3626,9 @@ Dynamic positioning while completing the second splice (2 days)
 Homeward journey (3 days)
 \end_layout
 
-\begin_layout Standard
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-Probably covered by Nick
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -3555,23 +3671,315 @@ Systems based on a solid-state chemistry will likely become more stable
 \end_layout
 
 \begin_layout Section
-Mission Ops
-\end_layout
-
-\begin_layout Subsection
-Grapnel-based Operations [AP]
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (Margin)
+Onboard Systems 
+\begin_inset Branch extra
+inverted 1
 status open
 
-\begin_layout Plain Layout
-Possibly covered by Nick
+\begin_layout Standard
+[AP]
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+The vessel will be fitted with a number of operating systems responsible
+ for navigation and communications.
+ Many are required as part of SOLAS regulations chapters IV and V, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "solas"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Navigation
+\end_layout
+
+\begin_layout Standard
+A number of standard systems will be fitted for navigation including GPS,
+ radar, sonar and depth finder.
+ These are often combined for display on a multi-function display or MFD
+ at the bridge.
+ The radar will include an automatic identification system (AIS) which allows
+ vessels to identify themselves to each other and include information such
+ as vehicle class and bearing, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "marininsight-ais"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+When designing a new ship, the level of autonomy should be considered.
+ The development of robotic navigation in conjunction with machine learning
+ and artificial intelligence have allowed an increase in autonomous operations,
+ a number of projects for independent vessels are already in development,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "autonomous-timeline"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The difference in autonomy levels are defined by Lloyd's Register 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lloyds-al-levels"
+literal "false"
+
+\end_inset
+
+ in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Shipping-ALs"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Up to level 2 involves human control with varying degrees of support from
+ the computer.
+ Levels 3 and 4 involve the human supervising the computer's actions and
+ levels 5 and 6 involve the computer operating independently with an optional
+ crew.
+ For this project, level 3 should be targeted, beyond this would be unnecessary
+ considering the domain.
+ The aim is not to remove the crew entirely as a team of specialists will
+ still be required to complete the mission operations including cable splicing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename autonomous-shipping-levels.png
+	lyxscale 50
+	width 60col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Outline of the 6 levels of autonomy for shipping, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lloyds-autonomous-shipping-2019"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Shipping-ALs"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The benefits of increased autonomy include higher fuel efficiency as a result
+ of the computer's ability to maintain course and a reduction in human error.
+\end_layout
+
+\begin_layout Subsection
+Communications
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Communications"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In compliance with chapter 4 of the SOLAS standards, the vessel will be
+ fitted with a very-high-frequency (VHF) radio as well as Emergency Position
+ Indicating Radio Beacons (EPIRBs) and Search and Rescue Transponders (SARTs)
+ in order to meet the Global Maritime Distress Safety System (GMDSS) requirement
+s, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "marine-insight-gmdss"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Internet
+\end_layout
+
+\begin_layout Standard
+The surface vessel will be connected to the internet via two gateways.
+ While berthed, the vessel should be able to connect to the depot via Ethernet
+ which can be run alongside the shore power line.
+ For internet connectivity while at sea, the vessel will be equipped with
+ satellite internet apparatus.
+\end_layout
+
+\begin_layout Standard
+A network layout for the whole environment
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Many business-level services including Active Directory can be seen at the
+ depot, in reality these would likely be based at head office
+\end_layout
+
+\end_inset
+
+ can be seen in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Network-topology"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../network/FinalNetwork.png
+	lyxscale 30
+	width 75col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Network topology across the depot, vessel and cloud environment; main services
+ highlighted
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Network-topology"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Computation
+\end_layout
+
+\begin_layout Standard
+Many of the onboard operating systems including the dynamic positioning
+ control, autonomous navigation services and many of the network services
+ are not provided as hardware units but as software packages that will require
+ hosting.
+ As such, a capacity of server hardware will be required, possibly with
+ GPU-acceleration for deep learning functionality.
+ There are many options for this, for modelling purposes a single Dell R740
+ would meet the requirements, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dell-poweredge"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Mission Ops
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Branch extra
+inverted 0
+status open
+
+\begin_layout Standard
+Grapnel-based Operations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch extra
+inverted 0
+status open
+
+\begin_layout Standard
 While the use of robotics has made sub-sea cable repair operations more
  efficient, there are situations where this is not available and it is worth
  briefly outlining how grapnels are used in repair operations.
@@ -3606,8 +4014,24 @@ Disadvantages
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-Unmanned Underwater Vehicle Operations [AP]
+Unmanned Underwater Vehicle Operations 
+\begin_inset Branch extra
+inverted 1
+status open
+
+\begin_layout Standard
+[AP]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3716,10 +4140,10 @@ While this finer control is a key benefit for ROV use over grapnels, one
  of the most important benefits is the ability to bury repaired cables in
  the sea floor using high-powered water jets.
  70% of cable damage is caused by man-made activity, of which over a third
- is a result of fishing activity; another quarter is as a result ship anchors
+ is a result of fishing activity; another quarter is as a result ship anchors,
  
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "ultra-map-cable-damage-causes"
 literal "false"
 
@@ -3775,7 +4199,7 @@ status open
 SIMEC Technology's HECTOR-7 ROV used on Orange Marine's Pierre de Fermat,
  
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "rov-hector-7-datasheet"
 literal "false"
 
@@ -4227,7 +4651,7 @@ Burial Depth
 
 \begin_layout Plain Layout
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "rov-hector-7-datasheet,global-marine-atlas-data-sheet,glboal-marine-st200-datasheet,smd-qtrencher-600-datasheet"
 literal "false"
 
@@ -4388,7 +4812,7 @@ status open
 \begin_layout Plain Layout
 Kongsberg Maritime's HUGIN Superior AUV, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "auv-hugin-superior-datasheet"
 literal "false"
 
@@ -4770,7 +5194,16 @@ However, despite the use of a Kalman filter allowing more precise approximations
  upper bound on the overall error.
  As previously mentioned, GNSS systems do not work deep underwater and as
  such, another method for providing these external updates must be used.
- 
+ A Doppler velocity log is a common sensor with a constant error that can
+ also be used to limit error growth, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nortek-subsea-navigation"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4902,8 +5335,23 @@ The above underwater acoustic positioning system will allow the UUV to keep
 \end_layout
 
 \begin_layout Paragraph
+\begin_inset Branch extra
+inverted 0
+status open
+
+\begin_layout Standard
 Acoustic Doppler Current Profiling
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch extra
+inverted 0
+status open
 
 \begin_layout Standard
 While accelerometers and gyroscopes would be expected components of any
@@ -4937,6 +5385,11 @@ noprefix "false"
 , a sensor who's measurement error does not compound and grow but stays
  constant is important as it places an upper bound on the overall error
  and allows the system to maintain accuracy over time.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -5276,25 +5729,19 @@ The proposed UUV describes an extension to existing ROV capabilities by
  decommissioning sustainably.
 \end_layout
 
-\begin_layout Subsection
-Onboard Systems
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
+\begin_layout Part
+Digitalisation 
+\begin_inset Branch extra
+inverted 1
 status open
 
-\begin_layout Plain Layout
-nav, comms systems
+\begin_layout Standard
+[AP]
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Part
-Digitalisation
 \end_layout
 
 \begin_layout Standard
@@ -5349,10 +5796,10 @@ smart ship
 \emph default
 .
  Many of the features rely on interconnected sites, the internet network
- topology can be seen in figure 
+ topology has been discussed in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Network-topology"
+reference "subsec:Communications"
 plural "false"
 caps "false"
 noprefix "false"
@@ -5360,58 +5807,6 @@ noprefix "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-The surface vessel will be connected to the internet via two gateways.
- While berthed, the vessel should be able to connect to the depot via Ethernet
- which can be run alongside the shore power line.
- For internet connectivity while at sea, the vessel will be equipped with
- satellite internet apparatus.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename ../network/NetworkDiagramJointDepot.png
-	lyxscale 30
-	width 75col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Network topology across the depot, vessel and cloud environment; main services
- highlighted
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Network-topology"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -5467,30 +5862,6 @@ options "bibtotoc"
 
 \begin_layout Section
 \start_of_appendix
-Battery Cell Calculations
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Battery-Cell-Calculations"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex TODO Note (inline)
-status open
-
-\begin_layout Plain Layout
-C rates
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
 Time-dependent Power Modelling
 \begin_inset CommandInset label
 LatexCommand label
