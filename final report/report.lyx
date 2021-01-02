@@ -198,6 +198,69 @@ Introduction
 Sustainability
 \end_layout
 
+\begin_layout Standard
+Sustainability defines operating such that the needs of the present can
+ be satisfied without compromising the needs of the future, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BrundtlandReport"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Although colloquially associated with environmental concerns, sustainability
+ is a wide field with 3 pillars, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "un-assembly-sustainability-pillars"
+literal "false"
+
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+Economic
+\end_layout
+
+\begin_layout Itemize
+Social
+\end_layout
+
+\begin_layout Itemize
+Environmental
+\end_layout
+
+\begin_layout Standard
+Environmental sustainability includes consideration of concepts such as
+ energy usage and production, emissions, water usage and quality, food and
+ land usage.
+\end_layout
+
+\begin_layout Standard
+The social aspect includes consideration for the effects of war, labour
+ standards, social justice and poverty among others.
+\end_layout
+
+\begin_layout Standard
+Economic sustainability can define economic growth that takes into account
+ the above concepts.
+ For example, economic development is typically measured in gross domestic
+ product (GDP), however this metric does not include social aspects such
+ as equality, a population's average wage or access to healthcare.
+\end_layout
+
+\begin_layout Standard
+There are many formal initiatives and goals for sustainable development,
+ the main strategies with which this project aligns itself are the United
+ Nation's Sustainable Development Goals.
+\end_layout
+
 \begin_layout Part
 Vessel Study
 \end_layout
@@ -230,9 +293,9 @@ noprefix "false"
 
 .
  The total load was estimated at 680 kWh per day.
- As can be seen the oven and food refrigeration make up the majority and
+ As can be seen, the oven and food refrigeration make up the majority and
  so 3 methods for refrigeration were investigated in order to find the most
- energy efficient solution.
+ energy efficient solution with SDG 7 in mind.
  These included a collection of standard upright fridges, all-in-one cold
  rooms and a bespoke cold room.
  All-in-one cold-rooms were the most energy efficient and were selected
@@ -250,7 +313,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename hotel-load.png
-	lyxscale 40
+	lyxscale 10
 	width 90col%
 
 \end_inset
@@ -295,13 +358,13 @@ Solar [AP]
 \end_layout
 
 \begin_layout Standard
-The scope of the vessel's solar energy capabilities was investigated with
+The scope of the vessel's solar energy capabilities were investigated with
  the intention of supplementing the chemical energy of the ammonia fuel
  cells.
  The capabilities of photovoltaic cells covering an area of the vessel's
  footprint are considered and compared with both the financial and carbon
  cost in an effort to determine whether the proposal would be effective
- in achieving the goal of net-zero operations.
+ in achieving the goal of net-zero operations and SDG 9 specifically.
 \end_layout
 
 \begin_layout Standard
@@ -404,8 +467,18 @@ noprefix "false"
 
 .
  Comparing the two graphs, it can be seen that the optimum operating state
- would be in R-2; in fact drawing excess current and pushing into R-3 can
- damage the cell, 
+ would be in R-2 (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:fuel-cell-iv-losses"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+); in fact drawing excess current and pushing into R-3 can damage the cell,
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "elec-a2z-fuel-cell-iv"
@@ -546,8 +619,12 @@ Is this valid?
  power should be decoupled from the fuel cells with an electrical storage
  buffer in between.
  This will allow the buffer to absorb spikes in load draw and allow the
- fuel cells to increase power generation by increasing active cells instead
+ fuel cells to increase power output by increasing active cells instead
  of individual draw.
+ This initiative was conducted with SDGs 7 (Affordable and clean energy)
+ and 12 (Responsible consumption and production) in mind, although goal
+ 14 (Life below the water) is also important due to the materials involved
+ in the considered solutions.
 \end_layout
 
 \begin_layout Standard
@@ -1785,7 +1862,17 @@ Price
  Dendrites are structures of Lithium that can form during charging and dischargi
 ng as a result of electrodeposition.
  While this should occur evenly across the electrode, if uneven it can cause
- columns to grow towards the separator.
+ columns to grow towards the separator, figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Dendrites"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
  As these grow they can penetrate through this separator and make contact
  with the cathode.
  This will cause a short circuit, rapidly increasing heat and potentially
@@ -3536,6 +3623,12 @@ The following section outlines how the use of an unmanned underwater vehicle
  the scope of available vehicles.
 \end_layout
 
+\begin_layout Standard
+The developments are aligned with UNSDGs 9 (Industry, Innovation and Infrastruct
+ure) and 12 (Responsible consumption and production) for the ability to
+ reduce required fuel usage of the surface vessel.
+\end_layout
+
 \begin_layout Subsubsection
 UUV Classes
 \end_layout
@@ -4671,7 +4764,7 @@ reference, explain?
 \begin_layout Standard
 However, despite the use of a Kalman filter allowing more precise approximations
  of the vehicle's relative location, the lack of external calibration means
- that the overall uncertaintiy will still increase over time.
+ that the overall uncertainty will still increase over time.
  In land-based robotics this is mitigated through the use of periodic GPS
  measurements which have low, constant uncertainty and help to place an
  upper bound on the overall error.
@@ -5181,6 +5274,23 @@ The proposed UUV describes an extension to existing ROV capabilities by
  In order to operate autonomously, the UUV will require onboard power, a
  battery system of suitable scale was described along with protocols for
  decommissioning sustainably.
+\end_layout
+
+\begin_layout Subsection
+Onboard Systems
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex TODO Note (inline)
+status open
+
+\begin_layout Plain Layout
+nav, comms systems
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part
