@@ -2375,6 +2375,7 @@ Figure?
 \end_inset
 
 .
+ This will provide 2.44 MWh of electrical energy storage for the buffer system.
 \end_layout
 
 \begin_layout Standard
@@ -3644,8 +3645,8 @@ Summary
 \end_layout
 
 \begin_layout Standard
-The proposed buffer solution includes 193,600 NCM Lithium-ion cells requiring
- replacement every 2.3 years.
+The proposed 2.44 MWh buffer solution includes 193,600 NCM Lithium-ion cells
+ requiring replacement every 2.3 years.
  As a result of this replacement rate, it is stipulated that the battery
  be re-appropriated for second-use such as energy storage following decommission
  in order to extend their life and reduce the environmental impact.
@@ -4065,13 +4066,30 @@ ROVs and AUVs
 UUVs can be divided into two categories based on their control scheme.
  Remotely operated underwater vehicles (ROV) and autonomous underwater vehicles
  (AUV) are distinguished by whether a human is controlling the vehicle or
- whether it operates independently; as such they have different applications.
+ whether it operates independently; as such they have different applications,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "whats-an-auv"
+literal "false"
+
+\end_inset
+
+.
  ROVs have been the vehicle class of choice where complex intervention and
  actuation is required such as offshore oil and gas operations and cable
  repair.
  A human operator controls the vehicle from the surface vessel; bi-directional
  communication including data, control, video and power are transmitted
- through an umbilical cord tether between the two vessels.
+ through an umbilical cord tether between the two vessels, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "what-is-an-rov"
+literal "false"
+
+\end_inset
+
+.
  AUVs on the other hand have primarily been used for survey and research
  purposes.
  
@@ -4101,7 +4119,15 @@ Physical Configuration
 
 \begin_layout Standard
 The physical layout of a UUV can generally be described by one of two classes,
- box frames or torpedo shaped.
+ box frames or torpedo shaped, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rov-manual"
+literal "false"
+
+\end_inset
+
+.
  
 \begin_inset Flex TODO Note (Margin)
 status open
@@ -4128,7 +4154,16 @@ Current ROV Usage
 Cable repair operations are currently undertaken, where possible, with human-con
 trolled ROVs.
  With visual contact and direct actuation at the seabed, the ROV is used
- to identify, cut and grip the cable for retrieval to the surface-vessel.
+ to identify, cut and grip the cable for retrieval to the surface-vessel,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wired-cable-repair-ops"
+literal "false"
+
+\end_inset
+
+.
  In doing so the need for repeated motions of the ship across the cable
  is removed, saving time and fuel.
  Instead, the surface vessel uses dynamic positioning in order to maintain
@@ -4138,7 +4173,15 @@ trolled ROVs.
 \begin_layout Standard
 While this finer control is a key benefit for ROV use over grapnels, one
  of the most important benefits is the ability to bury repaired cables in
- the sea floor using high-powered water jets.
+ the sea floor using high-powered water jets, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "smd-qtrencher-600-datasheet"
+literal "false"
+
+\end_inset
+
+.
  70% of cable damage is caused by man-made activity, of which over a third
  is a result of fishing activity; another quarter is as a result ship anchors,
  
@@ -4703,12 +4746,12 @@ noprefix "false"
  of about 3 km.
  This poses a problem to cable repair operations where, further out to sea,
  the sea floor can extend much further, see figure 
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-bathymetry chart?
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:bathymetry-rov-range-estimation"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -4724,6 +4767,58 @@ bathymetry chart?
  These incidents are more prevalent in shallower waters within the operating
  range of the ROV, therefore it is acceptable to use a grapnel outside of
  this operating range where burying the cable is less important.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename rov range.png
+	lyxscale 40
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+An estiamtion as to the operating range of the ROV, shaded red indicates
+ seabed outside of the operating area, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noaa-depth-google,ap-submarine-cable-map"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bathymetry-rov-range-estimation"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -4784,7 +4879,16 @@ Measurement of the depth of a body of water
 
 \end_inset
 
-, surveys and chemical composition investigations such as pH and toxin levels.
+, surveys and chemical composition investigations such as pH and toxin levels,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "noaa-what-are-auvs-and-why"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4847,7 +4951,7 @@ An advantage of using an autonomous vehicle would be the lack of need for
  This could reduce the required power directed to dynamic positioning which
  in higher sea states can become a significant draw.
  Additionally, as the UUV can move independently, the surface vehicle would
- not need to directly track the vehicles movement; for example, when the
+ not need to directly track the vehicle's movement; for example, when the
  UUV is re-burying the repaired cable in shallower waters.
  This would, again, lower the required propulsion power used by the surface
  vessel.
@@ -4920,7 +5024,15 @@ Decoupling the vehicles introduces complications that are not necessarily
  typical to the existing use cases for AUVs.
  The frequency of EM waves used by GNSS systems do not penetrate deep through
  the water and an AUV must be able to operate without world co-ordinates
- provided in this manner.
+ provided in this manner, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "underwater-gps-problem"
+literal "false"
+
+\end_inset
+
+.
  As such, navigation systems used by AUVs are typically 
 \emph on
 dead reckoning
@@ -4928,7 +5040,15 @@ dead reckoning
  systems.
  This is a form of navigation that operates relative to a known fixed point
  (where a UUV is deployed for example) as opposed to one relative to world
- co-ordinates.
+ co-ordinates, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "marine-insight-dead-reckoning"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4939,7 +5059,15 @@ With an accurate system, this will satisfy many surveying and research use
  navigate to a specific location (the cable fault).
  A dead reckoning system as described above uses relative sensors to measure
  speed and infer the current location however these relative sensors have
- associated measurement errors which accumulate over time.
+ associated measurement errors which accumulate over time, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "aviation-dead-reckoning"
+literal "false"
+
+\end_inset
+
+.
  This would be more pronounced under the water where sea currents are liable
  to accentuate these errors, the efficacy of an AUV's fault location capabilitie
 s may be reduced to the point of unacceptability.
@@ -5112,10 +5240,21 @@ literal "false"
 
 \end_inset
 
- will be used.
+ will be implemented.
  The vehicle will likely be at the larger and heavier end of existing ROVs
  as the vehicle must now have the onboard energy capabilities to complete
  a mission without a constant power supply from the surface vessel.
+ The vehicle is assumed to have similar dimensions to existing vehicles,
+ an estimation of 4m x 4m x 2m for a volume of 32m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+
+ is used as well as an estimation of 10 t for weight.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5135,7 +5274,17 @@ return home
  orders.
  When operating underwater, acoustic signals are the primary medium for
  wireless communication.
+ JANUS is a NATO standard for underwater communications using modulated
+ audio signals, as such this protocol will be used between the two vessels,
  
+\begin_inset CommandInset citation
+LatexCommand cite
+key "janus-uac"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5157,7 +5306,16 @@ dead reckoning
 \emph default
  using an inertial navigation system (INS).
  An INS uses input from many types of sensor such as accelerometers and
- gyroscopes to measure the movement of the vehicle and hence infer its location.
+ gyroscopes to measure the movement of the vehicle and hence infer its location,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nortek-subsea-navigation"
+literal "false"
+
+\end_inset
+
+.
  None of these could individually provide an accurate determination of location
  and as such 
 \emph on
@@ -5172,13 +5330,11 @@ sensor fusion
 \emph on
 Kalman filter
 \emph default
-
-\begin_inset Flex TODO Note (Margin)
-status open
-
-\begin_layout Plain Layout
-reference, explain?
-\end_layout
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kalman-filter-paper,kalman-filter-intro"
+literal "false"
 
 \end_inset
 
@@ -5224,13 +5380,29 @@ Alongside the use of acoustic signals for communications it will also be
  employed for positioning.
  One application for this is underwater acoustic positioning which employs
  the use of time-of-flight measurements to beacons of a known location to
- triangulate an object's location.
+ triangulate an object's location, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "acoustic-positioning-overview"
+literal "false"
+
+\end_inset
+
+.
  There are different configurations for such a system depending on how these
  beacons are laid out, 
 \emph on
 long-baseline
 \emph default
- (LBL) systems involve beacons located on the sea floor.
+ (LBL) systems involve beacons located on the sea floor, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nortek-subsea-navigation"
+literal "false"
+
+\end_inset
+
+.
  Spreading these beacons around the working area of an ROV widens the baseline
  of the system and provides higher accuracy when triangulating.
  This configuration is best suited to static areas of research such as ship
@@ -5249,7 +5421,15 @@ Short-baseline
 \emph default
  (SBL) systems involve a number of beacons placed at the furthest corners
  of the surface vessel, this has the benefit of requiring little set-up
- and pack-down at the cost of reduced accuracy.
+ and pack-down at the cost of reduced accuracy, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "acoustic-positioning-overview,usbl-aup"
+literal "false"
+
+\end_inset
+
+.
  Relative to the UUV these beacons are all on a similar bearing when operating
  at a distance, as a result changes in the vehicle's location would be reflected
  in similar changes to the measurements from all of the beacons.
@@ -5282,7 +5462,15 @@ inverted long-baseline
 \emph on
 smart buoys
 \emph default
- around the expected working area of the UUV.
+ around the expected working area of the UUV, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "uan-italian-thesis,gib-diver"
+literal "false"
+
+\end_inset
+
+.
  The use of buoys as opposed to beacons on the sea-floor significantly decreases
  the preparation and clean-up mission phases.
 \end_layout
@@ -5458,6 +5646,17 @@ The cell voltage (3.6 V) and capacity (3.5 Ah) were multiplied for 12.6 Wh
 The battery system constitutes an extra 5,700 kg of extra weight for the
  UUV, it is important that the battery be removable for tethered operation
  in order to increase efficiency when independent operation is not required.
+ This will bring the total weight of the vehicle to 16t when operating in
+ AUV mode and is estimated to take up 2.5 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+
+ of space.
 \end_layout
 
 \begin_layout Standard
@@ -5757,7 +5956,7 @@ digitisation
  Digitisation describes the transforming of data or a process from an analogue
  system to a digital one, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "workingmouse-digitalisation"
 literal "false"
 
@@ -5775,7 +5974,7 @@ literal "false"
 Digitalisation describes the use of digitisation to increase efficiency
  and access new value-producing business opportunities, 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "workingmouse-digitalisation,gartner-digitalization"
 literal "false"
 
@@ -5832,6 +6031,41 @@ Within the vessels, machine learning (ML) and AI will have varying applicability
  image recognition from the visual cameras.
  Kalman filters have already been discussed for calculating the vessel's
  location.
+\end_layout
+
+\begin_layout Part
+Design Summary
+\end_layout
+
+\begin_layout Section
+Vessel
+\end_layout
+
+\begin_layout Subsection
+Electrical Energy Storage
+\end_layout
+
+\begin_layout Standard
+The surface will be fitted with 2.44 MWh of electrical energy storage acting
+ as a buffer between the ammonia fuel cells and the thrusters.
+ This will allow the power from the ammonia cells to be generated in the
+ most efficient manner possible with this primarily being varied by changing
+ the population of active cells instead of the draw on a fixed group.
+ The system will be repurposed following decommission in order to extend
+ the life of the system and reduce the environmental impact.
+\end_layout
+
+\begin_layout Subsection
+Autonomous Underwater Vehicle Capabilities
+\end_layout
+
+\begin_layout Standard
+The proposed UUV inherits the operating capabilities of existing ROVs used
+ in the domain while proposing extensions to allow autonomous operations.
+ This allows an increase in efficiency while decoupling the two vessels
+ in order to save fuel for the ship.
+ The UUV has 1.5 MWh of removable onboard power storage for autonomous missions
+ in order to allow a 20 hour operating time.
 \end_layout
 
 \begin_layout Standard
