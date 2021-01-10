@@ -6148,7 +6148,7 @@ noprefix "false"
  about 20 minutes.
  This was modelled by having the input power move in discrete steps as cells
  are turned on and off.
- This step value was defined as 200kW, the most efficient state for a single
+ This step value was defined as 200 kW, the most efficient state for a single
  fuel cell.
  
 \end_layout
@@ -6168,28 +6168,24 @@ Power Out
 
 \begin_layout Standard
 In order to model the load draw from the propulsion and hotel load, a random
- differential was applied each second.
+ power load delta was added or subtracted each second.
  This was done in order to provide a dynamic environment, were the load
  power to stay the same the battery would either charge or discharge entirely
  and then stay in this state.
  A random change each second more closely matches the expected power requirement
-s as the wind and currents are also dynamic.
- 
+s as the wind and currents required a dynamic load to be drawn.
 \end_layout
 
 \begin_layout Standard
-The max load differential was defined as 10 kW.
- This means that each second the load could change by a maximum of 
-\begin_inset Formula $\pm$
-\end_inset
-
-10kW as a random number between -1 and 1 was generated and used as a coefficient.
+The max load delta was defined as 10 kW.
+ This means that each second the load could change by a maximum of ±10 kW
+ with a random number between -1 and 1 used as a scale factor.
 \end_layout
 
 \begin_layout Standard
 The different stages of a mission were defined as having a maximum and minimum
  load power which the random function was able to fluctuate between.
- When dynamic positioning it could be expected that more power would be
+ When dynamic positioning, it could be expected that more power would be
  used than when completing either the out or home-bound journey.
 \end_layout
 
@@ -6215,6 +6211,10 @@ In terms of applicability, the model provides a good high-level approximation
  For example, the model only increments or decrements the active fuel cells
  by one at each twenty minute interval when in reality many could be activated
  or deactivated simultaneously.
+ The model was also entirely reactive, acting only on the current capacity
+ of the battery.
+ In practice, knowledge of other factors including the upcoming mission
+ stages and weather forecast would allow the system to be more pro-active.
 \end_layout
 
 \end_body
